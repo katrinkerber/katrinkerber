@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]>      <html class="no-js ie ie-six" lang="en"> <![endif]--> 
+<!--[if IE 7 ]>         <html class="no-js ie seven" lang="en"> <![endif]--> 
+<!--[if IE 8 ]>         <html class="no-js ie eight" lang="en"> <![endif]--> 
+<!--[if IE 9 ]>         <html class="no-js ie nine" lang="en"> <![endif]--> 
+<!--[if (gt IE 9)|!(IE)]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8" />
+
+  <title>{{ if ! segment_1 }} Katrin Kerber - Developing for the web {{ else }} {{ title }} - Katrin Kerber {{ endif }}</title>
+  <meta name="description" content="{{ meta_description }}" /> 
+  
+  <meta name="author" content="{{ _site_root }}humans.txt" />
+  <meta name="robots" content="{{ _site_root }}robots.txt" /> 
+   
+  <!-- Disable skype from styling numbers as skype buttons, which is sooo annoying - DOES NOT VALIDATE -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Styles are written as SCSS and then minified using CodeKit -->
+  <link rel="stylesheet" href="{{ theme:css src='styles-min.css'}}" />
+  
+  <link rel="shortcut icon" href="{{ _site_root }}favicon.ico" />
+  <link rel="apple-touch-icon" href="{{ _site_root }}apple-touch-icon.png" />
+
+  {{ if segment_1 == 'notes' }}
+  <link rel="alternate" type="application/rss+xml" href="{{ _site_root }}notes/feed" title="Katrin Kerber's Notes" />
+  {{ endif }}
+    
+  <!-- All JavaScript at bottom for optimal page load times, except for modernizr and GA -->
+    <!-- custom build of modernizr, only contains HTML5 shiv -->
+    <script src="{{ theme:js src='libs/modernizr.js' }}"></script>
+    <!-- adding GA in head to increase likelihood of tracking even if user should leave before page has completely loaded -->
+    <!-- <script src="js/analytics.js"></script> -->
+</head>
+<body id="{{ if segment_1 == 'notes' AND segment_2 }}note{{ elseif is_page == 'Hell yeah!' }}page{{ else }}{{ title|lower|slugify }}{{ endif }}">
+<!-- 
+  _   _      _ _         _   _                        __     _ _               
+ | | | |    | | |       | | | |                      / _|   | | |              
+ | |_| | ___| | | ___   | |_| |__   ___ _ __ ___    | |_ ___| | | _____      __
+ |  _  |/ _ \ | |/ _ \  | __| '_ \ / _ \ '__/ _ \   |  _/ _ \ | |/ _ \ \ /\ / /
+ | | | |  __/ | | (_) | | |_| | | |  __/ | |  __/_  | ||  __/ | | (_) \ V  V / 
+ \_| |_/\___|_|_|\___/   \__|_| |_|\___|_|  \___( ) |_| \___|_|_|\___/ \_/\_/  
+                                                |/                             
+                                                                               
+                _                  _  __  __          _ 
+               | |                (_)/ _|/ _|        | |
+   ___ ___   __| | ___   ___ _ __  _| |_| |_ ___ _ __| |
+  / __/ _ \ / _` |/ _ \ / __| '_ \| |  _|  _/ _ \ '__| |
+ | (_| (_) | (_| |  __/ \__ \ | | | | | | ||  __/ |  |_|
+  \___\___/ \__,_|\___| |___/_| |_|_|_| |_| \___|_|  (_)
+
+
+Thank you for taking in interest in the building blocks of my humble web abode :)
+Do send any constructive feedback or tips for improvements my way to hello@katrinkerber.com or @katrinkerber
+
+
+-->
+<header role="banner" id="site-header" class="clearfix">
+  <div class="colwrapper">
+    {{ if ! segment_1 }}
+      <h1>Katrin Kerber</h1>
+    {{ else }}
+      <hgroup>
+        <h1><a href="{{ homepage }}" title="Beam me home, Scotty">Katrin Kerber</a></h1>
+        <h2>I build web experiences with love for code, great CMS, passion for standards, and attention to detail.</h2>
+      </hgroup>
+    {{ endif }}
+
+    <nav role="navigation">
+      <ul>
+        <li><a href="{{ homepage }}" {{if page_url == "/" }} class="current" {{ endif }}>Home</a></li>
+        {{ nav from="/" }}
+        <li><a href="{{ url }}"{{ if is_current || is_parent }} class="current"{{ endif }}>{{ if slug == "03-notes" }}Notes{{ else }}{{ title }}{{ endif }}</a></li>
+        {{ /nav }}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section role="main" id="content">
+  {{ layout_content }}
+
+  <a href="#site-header" class="go-up"><i class="icon-chevron-up"></i>Back to top</a>
+</section>
+
+<footer role="contentinfo" id="site-footer">
+  <div class="colwrapper">
+    <h2><i aria-hidden="true" class="icon-bookmark"></i>Appendix</h2>
+    <p>This site is built with HTML5. CSS, jQuery and the brilliant <a href="http://statamic.com/">Statamic</a>. It is hosted carbon-neutrally with <a href="http://ecohosting.co.uk/">Eco Hosting</a>. Used fonts are <a href="http://www.google.com/webfonts/specimen/News+Cycle">News Cycle</a> and <a href="http://www.google.com/webfonts/specimen/Open+Sans">Open Sans</a> from Google Web Fonts. The custom icon font has been generated with <a href="http://icomoon.io/">IcoMoon</a> using the <a href="http://www.entypo.com/">Entypo</a> icon set. The colour base was taken from the tasty <a href="http://www.colourlovers.com/palette/617340/%E2%99%A5_candy">♥ candy palette</a>.</p>
+    <p>Other site resources: <a href="{{ _site_root }}styleguide/">Style guide</a>, <a href="{{ _site_root }}assets/img/style-tile.jpg">style tile</a>, <a href="#">GitHub repo</a> and <a href="{{ theme:css src='styles-max.css'}}">maxified CSS</a>.</p>
+    
+    <p>I want the 'real' world to be beautiful too, so always prefer to work with non-profits and have <a href="{{ _site_root }}ethical-policy/">ethical guidelines</a>.</p>
+    
+    <p>This site uses analytical cookies, which might not be tasty but aren't harmful either.</p>
+  </div>
+</footer>
+<!-- JavaScript -->
+<!-- Grab Google-hosted jQuery. Fall back to locally saved file if necessary. -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/_themes/js/libs/jquery-1.8.0.min.js"><\/script>')</script>
+<!-- Site's plugins and functions merged and minimized with CodeKit-->
+<script src="{{ theme:js src='scripts-min.js' }}"></script>
+</body>
+</html>

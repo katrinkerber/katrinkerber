@@ -1,0 +1,38 @@
+fields:
+  _template:
+    display: Template
+    type: hidden
+    default: gallery
+
+  slider:
+    display: Slider
+    type:grid
+    fields:
+      img:
+        display: Image
+        type: file
+        allowed: [png, gif, jpg, jpeg]
+        destination: assets/img/gallery
+      caption:
+        display: Caption
+        type: text
+
+  gallery_images:
+    display: Gallery Images
+    type:grid
+    fields:
+        img:
+          display: Image
+          type: file
+          allowed: [png, gif, jpg, jpeg]
+          destination: assets/img/gallery
+  
+  hide_header_image:
+    display: Hide Header Image
+    type: select
+    default: yes
+    options: ['yes', 'no']
+
+  content:
+    display: Content
+    type:hidden

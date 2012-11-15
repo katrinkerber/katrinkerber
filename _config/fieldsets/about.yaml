@@ -1,0 +1,18 @@
+include:
+  - _page
+
+fields:
+  page_content:
+    display: Content
+    type: redactor
+  trade_tools:
+    display: Trade tools
+    type: redactor
+  library:
+    display: Library
+    type: redactor
+  podcasts:
+    display: Podcasts
+    type: redactor
+  content:
+    type: hidden

@@ -1,0 +1,58 @@
+type:
+  prefix: date  # or number
+
+fields:
+  categories:
+    display: Categories
+    required: false
+    default: 
+    type: tags
+
+  featured:
+    display: Featured
+    required: false
+    default: "no"
+    type: select
+    options: ["no", "yes"]
+
+  items:
+    display: Items
+    required: false
+    default: fish
+    type: select
+    options:
+      beans: Baked Beans
+      fish: Delicious Bass
+      bark: Redwood Bark
+      elk: Reindeer
+    
+  listing_image:
+    display: Listing Image
+    type: file
+    allowed: [png, gif, jpg, jpeg]
+    destination: assets/img/blog
+
+  the_grid:
+    display: The Grid
+    required: false
+    type: grid
+    fields: 
+      img:
+        display: Image
+        type: file
+        allowed: [png, gif, jpg, jpeg]
+        destination: assets/img/blog
+      caption:
+        display: Caption
+        type: text
+      some_text:
+        display: Some Text
+        type: textarea
+      this_or_that:
+        display: This or That
+        type: select
+        default: This
+        options:
+          - This
+          - That
+          - The Other

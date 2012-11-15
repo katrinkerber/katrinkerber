@@ -1,0 +1,54 @@
+fields:
+  _template:
+    display: Template
+    type: templates
+
+  status:
+    display: Status
+    type: status
+  
+  is_page:
+    display: Generic page?
+    type: radio
+    options: [Nope, Hell yeah!]
+    default: 'Nope'
+
+  meta_description:
+    display: Meta Description
+    type: textarea
+    default: "I build web experiences with love for code, great CMS, passion for standards, and attention to detail. I specialise in Expression Engine and Statamic. Based in Surrey."
+
+  page_lead:
+    display: Page lead
+    type: textarea
+
+  icon_1:
+    display: Icon 1 - icon and colour class
+    type: text
+  icon_2:
+    display: Icon 2 - icon and colour class
+    type: text
+
+  content:
+    type: redactor
+    image_dir: /assets/img/
+
+  call_for_action:
+    display: Call for action
+    type: grid
+    fields:
+      copy:
+        display: Copy
+        type: textarea
+      linktext:
+        display: Link text
+        type: textarea
+      link:
+        display: URL
+        type: text
+      backgroundcolour:
+        display: Main colour class
+        type: text
+      buttoncolour:
+        display: Button colour class
+        type: text

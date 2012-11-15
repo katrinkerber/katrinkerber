@@ -1,0 +1,11 @@
+include:
+  - _page
+
+fields:
+  availability:
+    display: Availability
+    type: text
+  call_for_action:
+    type: hidden
+  content:
+    type: hidden

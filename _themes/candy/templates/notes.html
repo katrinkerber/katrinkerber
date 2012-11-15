@@ -1,0 +1,35 @@
+<h1 class="visuallyhidden">
+  <i aria-hidden="true" class="icon-document yellow"></i><i aria-hidden="true" class="icon-pen red"></i>
+  <br>
+  {{ title }}
+</h1>
+
+<div class="colwrapper">
+  <p class="lead col-10 d-offset-1 d-col-8">{{ page_lead }}</p>
+
+  {{ entries:listing folder="notes" limit="6" }}
+    <article class="d-offset-1 d-col-5">
+      <h2><a href="{{ url }}">{{ title }}</a></h2>
+      <time datetime="{{ datestamp format='Y-m-j' }}">{{ datestamp format="jS F Y" }}</time>
+      {{ truncate:words limit="50" ending="&hellip;</p>" }}{ content }{{ /truncate:words }}
+      <a href="{{ url }}">Continue reading <i aria-hidden="true" class="icon-chevron-right right"></i></a>
+    </article>
+  {{ /entries:listing }}
+
+  
+  {{ entries:pagination folder="notes" limit="6"}}
+    {{ if total_items > 6 }}
+    <ol class="pagination unstyled">
+      {{ if previous_page }}
+        <li><a href="{{ previous_page }}"><i aria-hidden="true" class="icon-chevron-left"></i>Previous page</a></li>
+      {{ endif }}
+     
+      <li> <a href="{{ current_page }}">{{ current_page }}</a> </li>
+      
+      {{ if next_page }}
+        <li><a href="{{ next_page }}">Next page <i aria-hidden="true" class="icon-chevron-right right"></i></a></li>
+      {{ endif }}
+    {{ endif }}
+    </ol>
+  {{ /entries:pagination }}
+</div>

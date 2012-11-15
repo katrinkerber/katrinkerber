@@ -1,0 +1,62 @@
+$col: 8.3333333%;
+
+@media only screen and (min-width: 37.5em) { /* small - from 530px */
+[class*=col-] { float: left; @include border-box; }
+.colwrapper { @include border-box; position: relative; width: 100%; max-width: 1040px; float: none; margin: 0 auto; padding: 0 20px;}
+/* ensure wrapper wraps round floating children */
+.colwrapper:before, .colwrapper:after { display:table; content:""; }
+.colwrapper:after { clear:both; }
+.colwrapper { *zoom:1; } /* for IE 6/7 only */
+
+.col-1 { width: $col; } 
+.col-2 { width: $col * 2; } 
+.col-3 { width: $col * 3; } 
+.col-4 { width: $col * 4; } 
+.col-5 { width: $col * 5; } 
+.col-6 { width: $col * 6; } 
+.col-7 { width: $col * 7; } 
+.col-8 { width: $col * 8; }
+.col-9 { width: $col * 9; }
+.col-10 { width: $col * 10; }
+.col-11 { width: $col * 11; }
+.col-12 { width: $col * 12; }
+.offset-1 { margin-left: $col; }
+.offset-2 { margin-left: $col * 2; }
+.offset-3 { margin-left: $col * 3; }
+.offset-4 { margin-left: $col * 4; }
+.offset-5 { margin-left: $col * 5; }
+.offset-6 { margin-left: $col * 6; }
+.offset-7 { margin-left: $col * 7; }
+.offset-8 { margin-left: $col * 8; }
+.offset-9 { margin-left: $col * 9; }
+.offset-10 { margin-left: $col * 10; }
+.offset-11 { margin-left: $col * 11; }
+.offset-12 { margin-left: $col * 12; } 
+}
+/* again for large viewports to allow fine-tuning of display */
+@media only screen and (min-width: 55em) { /* large - from 880px */
+  .d-col-1 { width: $col; } 
+  .d-col-2 { width: $col * 2; } 
+  .d-col-3 { width: $col * 3; } 
+  .d-col-4 { width: $col * 4; } 
+  .d-col-5 { width: $col * 5; } 
+  .d-col-6 { width: $col * 6; } 
+  .d-col-7 { width: $col * 7; } 
+  .d-col-8 { width: $col * 8; }
+  .d-col-9 { width: $col * 9; }
+  .d-col-10 { width: $col * 10; }
+  .d-col-11 { width: $col * 11; }
+  .d-col-12 { width: $col * 12; }
+  .d-offset-1 { margin-left: $col; }
+  .d-offset-2 { margin-left: $col * 2; }
+  .d-offset-3 { margin-left: $col * 3; }
+  .d-offset-4 { margin-left: $col * 4; }
+  .d-offset-5 { margin-left: $col * 5; }
+  .d-offset-6 { margin-left: $col * 6; }
+  .d-offset-7 { margin-left: $col * 7; }
+  .d-offset-8 { margin-left: $col * 8; }
+  .d-offset-9 { margin-left: $col * 9; }
+  .d-offset-10 { margin-left: $col * 10; }
+  .d-offset-11 { margin-left: $col * 11; }
+  .d-offset-12 { margin-left: $col * 12; }
+}

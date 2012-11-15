@@ -1,0 +1,42 @@
+<h1 class="visuallyhidden">{{ title }}</h1>
+<div class="colwrapper">
+  <p class="lead offset-2">{{ page_lead }}</p>
+
+  <i aria-hidden="true" class="icon-address yellow col-2"></i>
+  <div class="col-10 clearfix">
+    <h2>How I got here</h2>
+    {{ page_content }}
+
+    {{ if trade_tools }}
+      <div class="d-col-3">
+        <h2><i aria-hidden="true" class="icon-settings"></i>Trade tools</h2>
+        {{ trade_tools }}
+      </div>
+    {{ endif }}
+
+    {{ if library }}
+      <div class="d-col-3 d-offset-1">
+        <h2><i aria-hidden="true" class="icon-book"></i>In my library</h2>
+        {{ library }}
+      </div>
+    {{ endif }}
+
+    {{ if podcasts }}
+      <div class="d-col-3 d-offset-1">
+        <h2><i aria-hidden="true" class="icon-broadcast"></i>Listening to</h2>
+        {{ podcasts }}
+      </div>
+    {{ endif }}
+  </div>
+</div> <!-- end colwrapper -->
+
+{{ if call_for_action }}
+  {{ call_for_action }}
+    <aside class="call-for-action {{ backgroundcolour }}">
+        <div class="colwrapper">  
+          <p class="d-offset-2 d-col-8">{{ copy }}</p>
+          <a href="{{ link }}" class="btn {{ buttoncolour }}">{{ linktext }} <i aria-hidden="true" class="icon-chevron-right"></i></a>
+        </div>
+    </aside>
+  {{ /call_for_action }}
+{{ endif }}

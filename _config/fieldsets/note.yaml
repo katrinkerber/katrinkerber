@@ -1,0 +1,14 @@
+type:
+  prefix: date
+
+include:
+  - _page
+
+fields:
+  content:
+    type: redactor
+    image_dir: /assets/img/notes/
+  page_lead:
+    type: hidden
+  call_for_action:
+    type: hidden

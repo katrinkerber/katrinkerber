@@ -1,0 +1,26 @@
+include:
+  - _page
+
+fields:
+  intro_para:
+    display: Intro paragraph
+    type: textarea
+
+  items:
+    display: Items
+    type: grid
+    fields:
+      icon_1:
+        display: Icon 1 - add icon and colour class
+        type: text
+      icon_2:
+        display: Icon 2 - add icon and colour class
+        type: text
+      heading:
+        display: Heading
+        type: text
+      copy:
+        display: Copy
+        type: redactor
+  content:
+    type: hidden

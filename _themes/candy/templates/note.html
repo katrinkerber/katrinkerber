@@ -1,0 +1,46 @@
+<div class="colwrapper">
+  {{ if icon_1 OR icon_2 }}
+    <div class="icons col-2 d-col-2 d-offset-1">
+      {{ if icon_1 }}
+        <i aria-hidden="true" class="{{ icon_1 }}"></i>
+      {{ endif }}
+      {{ if icon_2 }}
+        <i aria-hidden="true" class="{{ icon_2 }}"></i>
+      {{ endif }}
+    </div>
+  {{ endif }}
+  <article class="col-10 d-col-8 clearfix">
+    <h1>
+      {{ title }}
+    </h1>
+    <time datetime="{{ datestamp format='Y-m-j' }}">{{ datestamp format="jS F Y" }}</time>
+    {{ content }}
+<!--     <aside class="comments">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          var disqus_shortname = 'katrinkerber';
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>      
+    </aside> -->
+  </article>
+
+  {{ entries:listing folder="notes" limit="4" sort_by="random" conditions="title:not { title }" }}
+    {{ if no_results }}
+    {{ else }}
+      {{ if first }}
+        <aside class="clear col-10 d-col-8 offset-2 d-offset-3">
+          <h2>Other notes</h2>
+          <ul class="unstyled">
+      {{ endif }}
+            <li><a href="{{ url }}">{{ title }} <i class="icon-chevron-right right"></i></a></li>
+      {{ if last }}
+          </ul>
+        </aside>
+      {{ endif }}
+    {{ endif }}
+  {{ /entries:listing }}
+</div> <!-- end colwrapper -->

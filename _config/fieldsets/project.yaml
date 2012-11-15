@@ -1,0 +1,42 @@
+type:
+  prefix: number
+
+fields:
+  status:
+    display: Status
+    type: status
+  launched:
+    display: Launched
+    type: text
+  intro:
+    display: Intro para
+    type: redactor
+  snapshot:
+    display: Snapshot
+    type: file
+    allowed: [png, gif, jpg, jpeg]
+    destination: assets/img/projects
+  goal:
+    display: Goal
+    type: redactor
+  involvement:
+    display: My involvement
+    type: redactor
+  special:
+    display: Special features
+    type: redactor
+  slideshow:
+    display: Slideshow images
+    type: grid
+    fields:
+      img:
+        display: Image
+        type: file
+        allowed: [png, gif, jpg, jpeg]
+        destination: assets/img/projects
+  link:
+    display: Link to site
+    type: text
+
+  content:
+    type: hidden

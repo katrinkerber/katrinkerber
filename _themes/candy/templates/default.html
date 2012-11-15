@@ -1,0 +1,38 @@
+<div class="intro clearfix">
+  <div class="colwrapper">
+    <div class="icons col-4 d-col-3 d-offset-1">
+      <i aria-hidden="true" class="icon-browser redFaded"></i>
+      <i aria-hidden="true" class="icon-keyboard red"></i>
+      <i aria-hidden="true" class="icon-heart yellow"></i>
+    </div>
+    <p class="lead col-8 d-col-7 d-offset-1">{{ page_lead }}</p>
+  </div>
+</div>
+
+<div class="colwrapper">
+  <p class="col-8 offset-4 d-offset-2">{{ intro_para }}</p>
+</div>
+
+{{ items }}
+  <section class="item colwrapper clearfix">
+    <div class="icons col-4 d-col-3">
+      <i aria-hidden="true" class="{{ icon_1 }}"></i>
+      <i aria-hidden="true" class="{{ icon_2 }}"></i>
+    </div>
+    <div class="col-8 d-col-6">
+      <h2>{{ heading }}</h2>
+      {{ copy }}
+    </div>
+  </section>
+{{ /items }}
+
+{{ if call_for_action }}
+  {{ call_for_action }}
+    <aside class="call-for-action {{ backgroundcolour }}">
+        <div class="colwrapper">  
+          <p class="d-offset-2 d-col-8">{{ copy }}</p>
+          <a href="{{ link }}" class="btn {{ buttoncolour }}">{{ linktext }} <i aria-hidden="true" class="icon-chevron-right"></i></a>
+        </div>
+    </aside>
+  {{ /call_for_action }}
+{{ endif }}

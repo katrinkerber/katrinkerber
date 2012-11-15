@@ -1,0 +1,408 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]>            <html class="no-js ie ie-six" lang="en"> <![endif]--> 
+<!--[if IE 7 ]>               <html class="no-js ie seven" lang="en"> <![endif]--> 
+<!--[if IE 8 ]>               <html class="no-js ie eight" lang="en"> <![endif]--> 
+<!--[if IE 9 ]>               <html class="no-js ie nine" lang="en"> <![endif]--> 
+<!--[if (gt IE 9)|!(IE)]><!-->   <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8" />
+
+  <title>Style guide for katrinkerber.com</title>
+  
+  <meta name="author" content="{{ _site_root }}humans.txt" />
+  <meta name="robots" content="{{ _site_root }}robots.txt" /> 
+   
+  <!-- Disable skype from styling numbers as skype buttons, which is sooo annoying - DOES NOT VALIDATE -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Styles are written as SCSS and then minified using CodeKit -->
+  <link rel="stylesheet" href="{{ theme:css src='styles-min.css'}}" />
+
+  <!-- Style guide specific  -->
+  <link rel="stylesheet" href="{{ theme:css src='prism.css'}}">
+  <style type="text/css">
+    #typography.show-baseline { background: url('baseline.png') left top repeat; }
+    #icons li { padding: 0.21em 0; }
+    #icons [class*='icon'] { font-size: 1.29em; }
+  </style>
+  
+  <link rel="shortcut icon" href="{{ _site_root }}favicon.ico" />
+  <link rel="apple-touch-icon" href="{{ _site_root }}apple-touch-icon.png" />
+    
+  <!-- All JavaScript at bottom for optimal page load times, except for modernizr and GA -->
+    <!-- custom build of modernizr, only contains HTML5 shiv -->
+    <script src="{{ theme:js src='libs/modernizr.js' }}"></script>
+    <!-- adding GA in head to increase likelihood of tracking even if user should leave before page has completely loaded -->
+    <!-- <script src="js/analytics.js"></script> -->
+</head>
+<body>
+<!-- 
+  _   _      _ _         _   _                        __     _ _               
+ | | | |    | | |       | | | |                      / _|   | | |              
+ | |_| | ___| | | ___   | |_| |__   ___ _ __ ___    | |_ ___| | | _____      __
+ |  _  |/ _ \ | |/ _ \  | __| '_ \ / _ \ '__/ _ \   |  _/ _ \ | |/ _ \ \ /\ / /
+ | | | |  __/ | | (_) | | |_| | | |  __/ | |  __/_  | ||  __/ | | (_) \ V  V / 
+ \_| |_/\___|_|_|\___/   \__|_| |_|\___|_|  \___( ) |_| \___|_|_|\___/ \_/\_/  
+                                                |/                             
+                                                                               
+                _                  _  __  __          _ 
+               | |                (_)/ _|/ _|        | |
+   ___ ___   __| | ___   ___ _ __  _| |_| |_ ___ _ __| |
+  / __/ _ \ / _` |/ _ \ / __| '_ \| |  _|  _/ _ \ '__| |
+ | (_| (_) | (_| |  __/ \__ \ | | | | | | ||  __/ |  |_|
+  \___\___/ \__,_|\___| |___/_| |_|_|_| |_| \___|_|  (_)
+
+
+Thank you for taking in interest in the building blocks of my humble web abode :)
+Do send any constructive feedback or tips for improvements my way to hello@katrinkerber.com or @katrinkerber
+
+
+-->
+  <header role="banner" id="site-header" class="clearfix">
+    <hgroup>
+      <h1><a href="{{ homepage }}">Katrin Kerber</a></h1>
+      <h2>Style guide</h2>
+    </hgroup>
+    <nav role="navigation">
+      <ul>
+          <li><a href="#colours" class="active">Colours</a></li>
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#icons">Icons</a></li>
+          <li><a href="#buttons">Buttons</a></li>
+          <!-- <li><a href="#grid">Grid</a></li>  -->         
+        </ul>
+    </nav>
+  </header>
+  
+  <section role="main" id="content">
+      <section id="colours" class="colwrapper">
+        <h1>Colours</h1>
+        <table>
+          <thead>
+            <tr>
+              <th style="width:33%;">Colour</th>
+              <th style="width:33%;">LESS</th>
+              <th style="width:33%;">HEX</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="background-color:#47392d"></td>
+              <td>@chocolate</td>
+              <td>#47392d</td>
+            </tr>
+            <tr>
+              <td style="background-color:#fef8e8"></td>
+              <td>@offWhite</td>
+              <td>#fef8e8</td>
+            </tr>
+            <tr>
+              <td style="background-color:#c32c48"></td>
+              <td>@red</td>
+              <td>#c32c48</td>
+            </tr>
+            <tr>
+              <td style="background-color:#eb7259"></td>
+              <td>@redFaded</td>
+              <td>#eb7259</td>
+            </tr>
+            <tr>
+              <td style="background-color:#fda023"></td>
+              <td>@yellow</td>
+              <td>#fda023</td>
+            </tr>
+            <tr>
+              <td style="background-color:#efbf6a"></td>
+              <td>@yellowFaded</td>
+              <td>#efbf6a</td>
+            </tr>
+            <tr>
+              <td style="background-color:#75b3a7"></td>
+              <td>@teal</td>
+              <td>#75b3a7</td>
+            </tr>
+            <tr>
+              <td style="background-color:#39816b"></td>
+              <td>@tealDark</td>
+              <td>#39816b</td>
+            </tr>
+          </tbody>
+        </table>
+      </section> <!-- / colours -->
+
+      <section id="typography">
+        <div class="colwrapper">
+          <h1>Typography</h1>
+          <p class="lead">The default font is <a href="http://www.google.com/webfonts/specimen/Open+Sans#charset"><strong>Open Sans Light/Book</strong></a> set to <strong>16px</strong> with a 24px line height on the body. This is a <code>lead</code> paragraph.</p>
+          <h1>Heading 1</h1>
+            <p>Uses <a href="http://www.google.com/webfonts/specimen/News+Cycle">News Cycle Regular</a>.</p>
+            <p>Besides the heading tags, header styles can also be applied to elements by using the <code>faux_h1</code>, <code>faux_h2</code>, <code>faux_h3</code>, <code>faux_h4</code>, <code>faux_h5</code>, <code>faux_h6</code> classes.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, <a href="#">inline link</a> illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem <a href="http://dailybunny.org/">external link</a> qui ratione voluptatem.</p>
+          <h2>Heading 2</h2>
+             <p>Sed ut perspiciatis <strong>bold text</strong> sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <em>italised text</em> voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem <small>small text</small>. </p>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+          <h3>Heading 3</h3>
+            <p>Uses <a href="http://www.google.com/webfonts/specimen/Open+Sans#charset">Open Sans Regular</a>.</p>
+            <p>Sed ut perspiciatis unde <sub>subscript text</sub> sit voluptatem accusantium doloremque <sup>superscript text</sup>, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione <del>deleted text</del>.</p>
+          <h4>Heading 4</h4>
+            <p>Sed ut perspiciatis <strong>unde omnis iste natus error</strong> sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <em>Nemo enim ipsam voluptatem quia</em> voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+            <p>An abbreviation: <abbr title="World Wildlife Fund">WWF</abbr>. <strong>Acronyms are now also marked up as abbr, as the acronym element is obsolete</strong>.</p>
+          <h5>Heading 5</h5>
+            <p>Sed ut perspiciatis <strong>unde omnis iste natus error</strong> sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <em>Nemo enim ipsam voluptatem quia</em> voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+            <p><small>Some small text. Lorem ipsum amet id veniam quis dolor irure veniam ad ut adipisicing non laborum Duis non reprehenderit ut.</small></p>
+          <hr>
+          <h2>Lists</h2>
+            <h3>Unordered</h3>
+            <ul>
+              <li>Blue Arrow fraud</li>
+              <li>Maxwell brothers fraud</li>
+              <li>Jubilee line fraud</li>
+              <li>Microsoft fraud</li>
+              <li>Wickes fraud</li>
+              <li>London City Bond fraud</li>
+            </ul>
+            <h3>Ordered</h3>
+            <ol>
+              <li>List item</li>
+              <li>List item</li>
+              <li>Another item which has a bit more text Another item which has a bit more text Another item which has a bit more text</li>
+            </ol>
+          <h2>Definition lists</h2>
+            <dl>
+              <dt>Coffee</dt>
+              <dd>- black hot drink</dd>
+              <dt>Milk</dt>
+              <dd>- white cold drink</dd>
+            </dl>
+          <hr>
+          <h2>Quotes</h2>
+            <h3>Blockquote</h3>
+              <blockquote>
+                <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.</p>
+                <cite>Franz Kafka</cite>
+              </blockquote>
+          
+            <h3>Short quote</h3>
+              <p>
+                <q>"One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin."</q>
+              </p>
+          <hr>
+          <h2>Calls for action</h2> 
+          <p>Default background colour is yellow. The colour classes <code>red</code>, <code>redFaded</code>, <code>yellowFaded</code>, <code>teal</code>, or <code>tealDark</code> can be used to adjust this.</p>
+        </div>
+
+        <aside class="call-for-action">
+            <div class="colwrapper">
+              <p>I am currently available to work on new projects and would love to hear about yours.</p>
+              <a href="contact.html" class="btn red">Let's work together <i aria-hidden="true" class="icon-chevron-right"></i></a>
+            </div>
+        </aside>      
+      </section>
+
+      <section id="icons" class="colwrapper">
+        <h1>Icons</h1>
+        <p>The icons used on this site have been generated with </p>
+        <p>An icon is added with an <code>&lt;i&gt;</code> element and an icon class.</p>
+        <p>For example, <code>&lt;i class="icon-heart" aria-hidden="true"&gt;&lt;/i&gt;</code> generates a <i class="icon-heart"></i>.</p>
+        <p>Adding the colour classes <code>white</code>, <code>chocolate</code>, <code>red</code>, <code>redFaded</code>, <code>yellow</code>, <code>yellowFaded</code>, <code>teal</code>, or <code>tealDark</code> will change the icon's colour.</p>
+        <h2>Available icons and their classes</h2>
+        <ul class="unstyled">
+          <li><i class="icon-address yellow" aria-hidden="true"></i>.icon-address</li>
+          <li><i class="icon-bell yellow" aria-hidden="true"></i>.icon-bell</li>
+          <li><i class="icon-chevron-down yellow" aria-hidden="true"></i>.icon-chevron-down</li>
+          <li><i class="icon-chevron-up yellow" aria-hidden="true"></i>.icon-chevron-up</li>
+          <li><i class="icon-chevron-right yellow" aria-hidden="true"></i>.icon-chevron-right</li>
+          <li><i class="icon-chevron-left yellow" aria-hidden="true"></i>.icon-chevron-left</li>
+          <li><i class="icon-book yellow" aria-hidden="true"></i>.icon-book</li>
+          <li><i class="icon-bookmark yellow" aria-hidden="true"></i>.icon-bookmark</li>
+          <li><i class="icon-broadcast yellow" aria-hidden="true"></i>.icon-broadcast</li>
+          <li><i class="icon-browser yellow" aria-hidden="true"></i>.icon-browser</li>
+          <li><i class="icon-card yellow" aria-hidden="true"></i>.icon-card</li>
+          <li><i class="icon-chat yellow" aria-hidden="true"></i>.icon-chat</li>
+          <li><i class="icon-clock yellow" aria-hidden="true"></i>.icon-clock</li>
+          <li><i class="icon-close yellow" aria-hidden="true"></i>.icon-close</li>
+          <li><i class="icon-comment yellow" aria-hidden="true"></i>.icon-comment</li>
+          <li><i class="icon-compass yellow" aria-hidden="true"></i>.icon-compass</li>
+          <li><i class="icon-copy yellow" aria-hidden="true"></i>.icon-copy</li>
+          <li><i class="icon-cube yellow" aria-hidden="true"></i>.icon-cube</li>
+          <li><i class="icon-database yellow" aria-hidden="true"></i>.icon-database</li>
+          <li><i class="icon-direction yellow" aria-hidden="true"></i>.icon-direction</li>
+          <li><i class="icon-document yellow" aria-hidden="true"></i>.icon-document</li>
+          <li><i class="icon-document-empty yellow" aria-hidden="true"></i>.icon-document-empty</li>
+          <li><i class="icon-documents yellow" aria-hidden="true"></i>.icon-documents</li>
+          <li><i class="icon-email yellow" aria-hidden="true"></i>.icon-email</li>
+          <li><i class="icon-export yellow" aria-hidden="true"></i>.icon-export</li>
+          <li><i class="icon-eye yellow" aria-hidden="true"></i>.icon-eye</li>
+          <li><i class="icon-grid yellow" aria-hidden="true"></i>.icon-grid</li>
+          <li><i class="icon-heart yellow" aria-hidden="true"></i>.icon-heart</li>
+          <li><i class="icon-images yellow" aria-hidden="true"></i>.icon-images</li>
+          <li><i class="icon-keyboard yellow" aria-hidden="true"></i>.icon-keyboard</li>
+          <li><i class="icon-lightbulb yellow" aria-hidden="true"></i>.icon-lightbulb</li>
+          <li><i class="icon-location yellow" aria-hidden="true"></i>.icon-location</li>
+          <li><i class="icon-map yellow" aria-hidden="true"></i>.icon-map</li>
+          <li><i class="icon-minus yellow" aria-hidden="true"></i>.icon-minus</li>
+          <li><i class="icon-minus-circle yellow" aria-hidden="true"></i>.icon-minus-circle</li>
+          <li><i class="icon-mobile yellow" aria-hidden="true"></i>.icon-mobile</li>
+          <li><i class="icon-mouse yellow" aria-hidden="true"></i>.icon-mouse</li>
+          <li><i class="icon-pen yellow" aria-hidden="true"></i>.icon-pen</li>
+          <li><i class="icon-plus yellow" aria-hidden="true"></i>.icon-plus</li>
+          <li><i class="icon-plus-circle yellow" aria-hidden="true"></i>.icon-plus-circle</li>
+          <li><i class="icon-pointer-left yellow" aria-hidden="true"></i>.icon-pointer-left</li>
+          <li><i class="icon-pointer-down yellow" aria-hidden="true"></i>.icon-pointer-down</li>
+          <li><i class="icon-pointer-up yellow" aria-hidden="true"></i>.icon-pointer-up</li>
+          <li><i class="icon-pointer-right yellow" aria-hidden="true"></i>.icon-pointer-right</li>
+          <li><i class="icon-popup yellow" aria-hidden="true"></i>.icon-popup</li>
+          <li><i class="icon-quote yellow" aria-hidden="true"></i>.icon-quote</li>
+          <li><i class="icon-retweet yellow" aria-hidden="true"></i>.icon-retweet</li>
+          <li><i class="icon-rss yellow" aria-hidden="true"></i>.icon-rss</li>
+          <li><i class="icon-screen yellow" aria-hidden="true"></i>.icon-screen</li>
+          <li><i class="icon-search yellow" aria-hidden="true"></i>.icon-search</li>
+          <li><i class="icon-settings yellow" aria-hidden="true"></i>.icon-settings</li>
+          <li><i class="icon-star yellow" aria-hidden="true"></i>.icon-star</li>
+          <li><i class="icon-star-fill yellow" aria-hidden="true"></i>.icon-star-fill</li>
+          <li><i class="icon-tag yellow" aria-hidden="true"></i>.icon-tag</li>
+          <li><i class="icon-tick yellow" aria-hidden="true"></i>.icon-tick</li>
+        </ul>
+      </section> <!-- / icons -->
+
+      <section id="buttons" class="colwrapper">
+        <h1>Buttons</h1>
+        <p>Every button has the <code>.btn</code> class attached to it.</p>
+        <p>To change the colour from the default red, these colour classes can be used: <code>redFaded</code>, <code>yellow</code>, <code>yellowFaded</code>, <code>teal</code>, <code>tealDark</code>, and <code>chocolate</code>.</p>
+        <h2>Examples</h2>
+        <button class="btn">Default button</button>
+        <pre class="language-markup"><code>&lt;button class="btn"&gt;Default button&lt;/button&gt;</code></pre>
+        <button class="btn yellow">Yellow button <i class="icon-pointer-right" aria-hidden="true"></i></button>
+        <pre class="language-markup"><code>&lt;button class="btn yellow"&gt;Yellow button &lt;i class="icon-pointer-right" aria-hidden="true"&gt;&lt;/i&gt;&lt;/button&gt;</code></pre>
+      
+        <button class="btn chocolate">Mmmm, chocolate <i class="icon-heart" aria-hidden="true"></i></button>
+        <pre class="language-markup"><code>&lt;button class="btn chocolate"&gt;Mmmm, chocolate &lt;i class="icon-heart" aria-hidden="true"&gt;&lt;/i&gt;&lt;/button&gt;</code></pre>
+
+      </section> <!-- / buttons -->
+
+      <!-- <section id="grid">
+        <h1>Grid</h1>
+        <p>The grid is built with 12 columns, each 60px wide, with a 20px gutter on the left. Classes from <code>.col-1</code> to <code>.col-12</code> determine the width of a column.</p>
+        <p>Columns need to be surrounded by an element with the <code>.colwrapper</code> class.</p>
+        <pre class="language-markup"><code>
+&lt;div class="colwrapper"&gt;
+&lt;div class="col-2 first"&gt;&lt;/div&gt;
+&lt;div class="col-4"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <p>A <code>.col-12</code> column, or columns with the <code>.first</code> or <code>.nogutter</code> class, will have no gutter.</p>
+        <p>Columns can have padding of 20px through the <code>.padleft</code>, <code>.padright</code>, or <code>.padboth</code> classes.</p>
+        <p>Columns can also be offset from the left by a number of columns using an offset from 1 to 11, e.g. <code>.offset-1</code>.</p>
+
+        <h2>Examples</h2>
+          <table>
+            <thead>
+              <tr>
+                <th style="width:75%">Column</th>
+                <th>Class(es)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="col-2">
+                    A simple column
+                  </div>
+                  <div class="col-2">
+                    A simple column
+                  </div>
+                </td>
+                <td>
+                  <code>.col-2</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="col-4 first">
+                    A column with no gutter
+                  </div>
+                </td>
+                <td>
+                  <code>.col-4.first</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="col-5 padboth">
+                    <span>A column with padding on both sides</span>
+                  </div>
+                </td>
+                <td>
+                  <code>.col-5.padboth</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="col-4 padboth offset-1">
+                    <span>A column offset by 1</span>
+                  </div>
+                </td>
+                <td>
+                  <code>.col-4.padboth.offset-1</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="col-4 padboth offset-2">
+                    <span>A column offset by 2</span>
+                  </div>
+                </td>
+                <td>
+                  <code>.col-4.padboth.offset-2</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </section> -->
+
+      <a href="#site-header" class="go-up"><i class="icon-chevron-up"></i>Back to top</a>
+  </section> <!-- / main content -->
+  
+  <footer role="contentinfo" id="site-footer">
+    <p>&copy; 2012 Katrin Kerber. All rights reserved.</p>
+  </footer>
+  
+  <!-- JavaScript -->
+  <!-- Grab Google-hosted jQuery. Fall back to locally saved file if necessary. -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/_themes/js/libs/jquery-1.8.0.min.js"><\/script>')</script>
+  <!-- Site's plugins and functions merged and minimized with CodeKit-->
+  <script src="{{ theme:js src='scripts-min.js' }}"></script>
+    <!-- Styleguide specific -->
+    <!-- PRISM code highlighter --> 
+    <script src="{{ theme:js src='plugins/prism.js' }}"></script>
+    <script>
+      $(document).ready(function(){
+        // navigation tabs
+        var $links    = $('header').find('nav a');
+        var $sections = $('#content').find('> section[id]');
+        if(window.location.hash) {
+          $sections.hide();
+          $('nav li:first-child a').removeClass('current');
+          $('#content').find('> section' + window.location.hash).show();
+          $('header').find('nav a[href="' + window.location.hash + '"]').addClass('current');
+        } else {
+          $sections.hide();
+          $('#content').find('> section[id]:first-child').show();
+          $('nav li:first-child a').addClass('current');
+        }
+        $links.click(function(){
+          var $this  = $(this);
+          var target = $(this).attr('href');
+          window.location.hash = target;
+          $links.not(this).removeClass('current');
+          $sections.not('section' +target).hide();
+          $this.addClass('current');
+          $('section' +target).fadeIn(500);
+          return false;
+        });
+      });
+    </script>
+</body>
+</html>
