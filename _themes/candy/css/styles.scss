@@ -183,14 +183,14 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
 }
 @media only screen and (min-width: 42.19em) { /* medium - from 675px */
   #site-header { padding: 1.88em 25px; border-bottom: 1px solid $tealDark;}
-  #site-header hgroup { float: left; width: 30%; margin: 0;}
+  #site-header hgroup { float: left; width: 28%; margin: 0;}
   #site-header h1, #site-header h2 { text-align: left;}
   #site-header h2 { margin-bottom: 0;}
   #site-header nav { float: right;width: 70%; margin-top: 0; background: none; text-align: right; }
   #site-header nav li { padding-left: 15px; font-size: 1.14em;} 
   #site-header nav li:first-child { padding-left: 0;}
   #site-header nav a { padding: 0.36em 10px 0.5em; color: $tealDark; @include rounded-corners(0.3em);}
-  #site-header nav a:hover { background-color: $redFaded; color: #FFF;}
+  #site-header nav a:hover, #site-header nav a:active { background-color: $redFaded; color: #FFF;}
   #site-header nav .current { position: relative; background-color: $yellow; color: #FFF;}
   #site-header nav .current:before { content: "";}
 }
