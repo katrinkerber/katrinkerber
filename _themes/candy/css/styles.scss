@@ -108,6 +108,9 @@ table { width: 100%; margin-bottom: 1.31em; text-align: left; }
 th {padding: 0.31em 10px; border-bottom: 1px solid $chocolate; font-weight: bold; text-align: left; vertical-align: top; }
 td {padding: 0.31em 10px; border-bottom: 1px solid lighten($chocolate, 50%); vertical-align: top; }
 
+/* enfore typography on button elements */
+button { font-size: 1em; font-family: $OpenSansLight;}
+
 /*###########################################################################################*\
     £MODULAR COMPONENTS
 \*###########################################################################################*/
@@ -256,7 +259,7 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
 }
 @media only screen and (min-width: 55em) { /* large - from 880px */
   #home #site-header { margin-bottom: 0; border-bottom: none;}
-  #home .intro { padding: 4.5em 0; margin: 0 -25px 1.31em; background: url('img/home-intro-bg.png') left top repeat; }
+  #home .intro { padding: 4.5em 0; margin: 0 0 1.31em; background: url('img/home-intro-bg.png') left top repeat; }
   #home .intro i { font-size: 8em;}
   @include keyframes(grow) { 0% { font-size: 2em; opacity: 0; } 50% { font-size: 4em; opacity: 0.5; } 100% { font-size: 8em; opacity: 1;} }
   #home .intro i.icon-browser { margin: 0.15em 0 0 -200px; @include animate(grow 2s linear); color: #FFF;}
@@ -411,7 +414,7 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
 /*###########################################################################################*\
     £NO JS
 \*###########################################################################################*/
-.no-js {  }
+.no-js #projects .screenshot-gallery { display: none;}
 /*###########################################################################################*\
     £IE
 \*###########################################################################################*/
@@ -435,8 +438,10 @@ body, body * {font-family: Arial, Helvetica, sans-serif;}
       text-shadow: none !important;
   }
 
+  #content a { border: none; text-decoration: underline;}
   #content a[href]:after { content:" (" attr(href) ")"; }
   #content  abbr[title]:after { content: " (" attr(title) ")"; }
+  
   thead { display: table-header-group; /* repeats table header on each page - h5bp.com/t */}
 
   tr,
@@ -444,7 +449,14 @@ body, body * {font-family: Arial, Helvetica, sans-serif;}
 
   img { max-width: 100% !important;}
 
+
   header nav,
-  .go-up,
-  footer[role=contentinfo] { display: none;}
+  .call-for-action,
+  #content .go-up,
+  footer[role=contentinfo],
+  #projects .screenshot-gallery,
+  #note aside { display: none;}
+
+  #projects #content article figure { width: 100%; border: none; }
+  #projects #content article figure img { width: 50%;}
 }
