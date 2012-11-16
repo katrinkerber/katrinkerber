@@ -49,12 +49,27 @@ $(document).ready(function(){
   // iOS5+ allows for positon fixed, so adding a class to html used for snazzy fixed menu \o/ - http://stackoverflow.com/questions/8348139/detect-ios-version-less-than-5-with-javascript
   if( /(iPhone|iPod)/i.test(navigator.userAgent) ) { 
       if(/OS [2-4]_\d(_\d)? like Mac OS X/i.test(navigator.userAgent)) {  
-          // iOS 2-4 
+          // iOS 2-4
       } else if(/CPU like Mac OS X/i.test(navigator.userAgent)) {
           // iOS 1
       } else {
         $('html').addClass('positionfixed');
       }
+  }
+
+  // <iOS3 and Android <4 don't display icon font, so adding class to HTML to hide them via CSS
+  if(/OS [2-3]_\d(_\d)? like Mac OS X/i.test(navigator.userAgent)) {  
+      // iOS 2-3 - this OS doesn't display the IcoMoon webfonts, so I am adding a class for this as well to disable them
+      $('html').addClass('old-mobile');
+  }
+  var ua = navigator.userAgent;
+  if( ua.indexOf("Android") >= 0 )
+  {
+    var androidversion = parseFloat(ua.slice(ua.indexOf("Android")+8)); 
+    if (androidversion < 4)
+    {
+        $('html').addClass('old-mobile');
+    }
   }
 
   // projects accordion for mobile devices
