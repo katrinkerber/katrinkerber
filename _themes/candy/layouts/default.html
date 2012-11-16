@@ -12,10 +12,12 @@
   
   <meta name="author" content="{{ _site_root }}humans.txt" />
   <meta name="robots" content="{{ _site_root }}robots.txt" /> 
-   
+  
+  {{ if segment_1 == 'contact' }}
   <!-- Disable skype from styling numbers as skype buttons, which is sooo annoying - DOES NOT VALIDATE -->
   <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
-   
+  {{ endif }}
+     
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Styles are written as SCSS and then minified using CodeKit -->
