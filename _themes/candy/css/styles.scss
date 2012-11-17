@@ -108,8 +108,8 @@ table { width: 100%; margin-bottom: 1.31em; text-align: left; }
 th {padding: 0.31em 10px; border-bottom: 1px solid $chocolate; font-weight: bold; text-align: left; vertical-align: top; }
 td {padding: 0.31em 10px; border-bottom: 1px solid lighten($chocolate, 50%); vertical-align: top; }
 
-/* enfore typography on button elements */
-button { font-size: 1em; font-family: $OpenSansLight;}
+/* button element reset and typography enforcement */
+button { background-color: transparent; border: none; font-size: 1em; font-family: $OpenSansLight;}
 
 /*###########################################################################################*\
     £MODULAR COMPONENTS
@@ -165,7 +165,7 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
 #site-header { margin-bottom: 1.31em; padding-top:1.63em; }
 #site-header hgroup { margin: 0 40px;}
 #site-header h1 { font-size: 1.31em; line-height: 1em; margin-bottom: 0.5em; color: $tealDark; text-align: center; }
-#site-header h1 a { border: none; background: none; color: $tealDark;}
+#site-header h1 a { border: none; background: none; padding: 0; color: $tealDark;}
 #site-header h2 { margin-bottom: 1.31em; font-size: 1em; line-height: 1.3125em; text-transform: none; text-align: center; color: $tealDark; }
 #site-header nav { width: 100%; background: $teal; text-align: center;}
 #site-header nav li { display: inline-block; margin-right: -4px;/* closing inline-block spacing */} 
@@ -280,10 +280,11 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
 #projects article .intro { font-size: 1.13em; line-height: 1.33em;}
 #projects article figure { margin: 0 -10px 1.31em -10px; border-top: 2px solid #f0e7c4; border-bottom: 2px solid #f0e7c4;}
 #projects article img { width: 100%; height: auto;}
+#projects article figure + div { clear: both;}
 /* projects in accordion for handheld with JS enabled */
 @media screen and (max-device-width: 36em) { /* handhelds */
   .js #projects article:last-of-type { border-bottom: 1px solid $teal;}
-  .js #projects article h2 { position: relative; }
+  .js #projects article h2 { position: relative; padding-right: 20px; }
   .js #projects article h2:after { font-family: 'Icons'; position: absolute; right: 0; top: 0;}
   .js #projects article h2.closed:after { content: "\e02d";}
   .js #projects article h2.open:after { content: "\e02e";}
@@ -444,7 +445,6 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
   a:after,
   #projects article h2.closed:after,
   #projects article h2.open:after { display: none; content: ""; }
-
 }
 
 /*###########################################################################################*\
