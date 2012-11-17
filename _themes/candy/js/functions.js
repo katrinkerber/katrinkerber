@@ -1,5 +1,6 @@
 /* This file is set to import all plugins and is minified via CodeKit as 'scripts-min.js' */
 
+/* ############## IMPORT PLUGINS ############## */
 // @codekit-prepend "plugins/fancyBoxv2.1.0.js";
 
 
@@ -40,40 +41,16 @@ function projectsAccordion() {
 
 /* ############## CALL FUNCTIONS ############## */
 $(document).ready(function(){
-  // return to top
+  // return to top link clicked
   $('a.go-up').click(function(){
     $('html, body').animate({ scrollTop: 0 }, 600);
     return false;
   });
 
-  // iOS5+ allows for positon fixed, so adding a class to html used for snazzy fixed menu \o/ - http://stackoverflow.com/questions/8348139/detect-ios-version-less-than-5-with-javascript
-  if( /(iPhone|iPod)/i.test(navigator.userAgent) ) { 
-      if(/OS [2-4]_\d(_\d)? like Mac OS X/i.test(navigator.userAgent)) {  
-          // iOS 2-4
-      } else if(/CPU like Mac OS X/i.test(navigator.userAgent)) {
-          // iOS 1
-      } else {
-        $('html').addClass('positionfixed');
-      }
-  }
-
-  // <iOS3 and Android <4 don't display icon font, so adding class to HTML to hide them via CSS
-  if(/OS [2-3]_\d(_\d)? like Mac OS X/i.test(navigator.userAgent)) {  
-      // iOS 2-3 - this OS doesn't display the IcoMoon webfonts, so I am adding a class for this as well to disable them
-      $('html').addClass('old-mobile');
-  }
-  var ua = navigator.userAgent;
-  if( ua.indexOf("Android") >= 0 )
-  {
-    var androidversion = parseFloat(ua.slice(ua.indexOf("Android")+8)); 
-    if (androidversion < 4)
-    {
-        $('html').addClass('old-mobile');
-    }
-  }
-
-  // projects accordion for mobile devices
-  if( /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+  // projects accordion for mobile devices (not Android with screen width of more than 400, which would include the Samsung Galaxy Tablet)
+  if ( /Android/i.test(navigator.userAgent) && screen.width < 400 ) {
+    projectsAccordion();
+  } else if ( /webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ) {
     projectsAccordion();
   }
 
@@ -97,8 +74,7 @@ $(document).ready(function(){
   });
 });
 
-
+// hide or show 'back to top' link - need to wait until everything is fully loaded to get correct dimensions
 $(window).load(function(){
-  // hide or show 'back to top' link - need to wait until everything is fully loaded to get correct dimensions
   toggleBackToTopButton();
 });
