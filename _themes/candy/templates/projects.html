@@ -11,7 +11,13 @@
 
     {{ if snapshot }}
       <figure class="col-11 {{ switch between='floatright|' type='snapshot' }}">
+        {{ if slideshow:0:img }}
+        <a href="{{ slideshow:0:img }}" class="screenshot-gallery" data-slideshowimages="{{ slideshow }}{{ _site_root|backspace:1 }}{{ img }} {{ /slideshow }}" title="View more screenshots">
+          <img src="{{ _site_root|backspace:1 }}{{ snapshot }}" alt="Snapshot of {{ title }}'s site">
+        </a>
+        {{ else }}
         <img src="{{ _site_root|backspace:1 }}{{ snapshot }}" alt="Snapshot of {{ title }}'s site">
+        {{ endif }}
       </figure>
     {{ endif }}
 
@@ -34,7 +40,7 @@
 
     <div class="btns {{ switch between='right| ' type='btns' }}">
       {{ if slideshow:0:img }}
-      <a href="#" class="btn chocolate screenshot-gallery {{ slug }}" data-slideshowimages="{{ slideshow }}{{ _site_root|backspace:1 }}{{ img }} {{ /slideshow }}">View screenshots <i aria-hidden="true" class="icon-images"></i></a>
+      <a href="{{ slideshow:0:img }}" class="btn chocolate screenshot-gallery" data-slideshowimages="{{ slideshow }}{{ _site_root|backspace:1 }}{{ img }} {{ /slideshow }}">View screenshots <i aria-hidden="true" class="icon-images"></i></a>
       {{ endif }}
 
       {{ if link }}

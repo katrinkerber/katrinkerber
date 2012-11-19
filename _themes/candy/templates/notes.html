@@ -9,27 +9,27 @@
 
   {{ entries:listing folder="notes" limit="6" }}
     <article class="d-offset-1 d-col-5">
-      <h2><a href="{{ url }}">{{ title }}</a></h2>
+      <h2><a href="{{ url }}" title="Read whole note">{{ title }}</a></h2>
       <time datetime="{{ datestamp format='Y-m-j' }}">{{ datestamp format="jS F Y" }}</time>
-      {{ truncate:words limit="50" ending="&hellip;</p>" }}{ content }{{ /truncate:words }}
-      <a href="{{ url }}">Continue reading <i aria-hidden="true" class="icon-chevron-right right"></i></a>
+      {{ truncate:words limit="42" ending="&hellip;</p>" }}{ excerpt }{{ /truncate:words }}
+      <a href="{{ url }}" class="continue">Continue reading <i aria-hidden="true" class="icon-chevron-right right"></i></a>
     </article>
   {{ /entries:listing }}
 
   
   {{ entries:pagination folder="notes" limit="6"}}
     {{ if total_items > 6 }}
-    <ol class="pagination unstyled">
+    <div class="pagination">
       {{ if previous_page }}
-        <li><a href="{{ previous_page }}"><i aria-hidden="true" class="icon-chevron-left"></i>Previous page</a></li>
+      <a href="{{ previous_page }}"><i aria-hidden="true" class="icon-chevron-left"></i>Previous</a>
       {{ endif }}
      
-      <li> <a href="{{ current_page }}">{{ current_page }}</a> </li>
+      <span>Page {{ current_page }} of {{ total_pages }}</span>
       
       {{ if next_page }}
-        <li><a href="{{ next_page }}">Next page <i aria-hidden="true" class="icon-chevron-right right"></i></a></li>
+      <a href="{{ next_page }}">Next <i aria-hidden="true" class="icon-chevron-right right"></i></a>
       {{ endif }}
-    </ol>
+    </div>
     {{ endif }}
   {{ /entries:pagination }}
 </div>
