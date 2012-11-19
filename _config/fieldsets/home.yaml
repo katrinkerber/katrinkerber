@@ -22,5 +22,10 @@ fields:
       copy:
         display: Copy
         type: redactor
+
+  icon_1:
+    type: hidden
+  icon_2:
+    type: hidden
   content:
     type: hidden

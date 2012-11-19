@@ -5,6 +5,9 @@ include:
   - _page
 
 fields:
+  excerpt:
+    display: Excerpt
+    type: textarea
   content:
     type: redactor
     image_dir: /assets/img/notes/
