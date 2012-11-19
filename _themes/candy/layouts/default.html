@@ -34,7 +34,7 @@
     <!-- custom build of modernizr, contains HTML5 shiv and custom detection of mobile OS -->
     <script src="{{ theme:js src='libs/modernizr.js' }}"></script>
     <!-- adding GA in head to increase likelihood of tracking even if user should leave before page has completely loaded -->
-    <!-- <script src="js/analytics.js"></script> -->
+    <script src="{{ theme:js src='analytics.js' }}"></script>
 </head>
 <body id="{{ if segment_1 == 'notes' AND segment_2 }}note{{ elseif is_page == 'Hell yeah!' }}page{{ else }}{{ title|lower|slugify }}{{ endif }}">
 <!-- 
