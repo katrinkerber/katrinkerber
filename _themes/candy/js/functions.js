@@ -1,7 +1,7 @@
 /* This file is set to import all plugins and is minified via CodeKit as 'scripts-min.js' */
 
 /* ############## IMPORT PLUGINS ############## */
-// @codekit-prepend "plugins/fancyBoxv2.1.0.js";
+// @codekit-prepend "plugins/fancyBoxv2.1.1.js";
 
 
 /* ############## SET FUNCTIONS ############## */
@@ -64,11 +64,14 @@ $(document).ready(function(){
     imagesArray.pop();
     // let's open those bad boys
     $.fancybox.open(imagesArray, {
-        nextEffect    : 'fade',
-        prevEffect    : 'fade',
         loop          : false,
+        padding       : 2,
+        closeBtn      : false,
+        arrows        : false,
         autoCenter    : false,
-        padding       : 2
+        helpers       : {
+          buttons : {}
+        }
     });
     return false;
   });
