@@ -81,6 +81,8 @@ img { -ms-interpolation-mode: bicubic; vertical-align: middle; } /* improve imag
 a { color: $chocolate; text-decoration:none; border-bottom: 1px solid $red; padding: 0 2px; @include transition; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { color: #fff; background-color: $redFaded; border-color: $redFaded; outline: 0; }
+figure a { padding: 0; border: none; }
+figure a:hover, figure a:active { background: transparent;}
 a img { border: none; }
 a img:hover { opacity:0.8; -moz-opacity:0.8; }
 /* external inline links show icon */
@@ -268,7 +270,7 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
   @include keyframes(beat) { 0% { font-size: 12em; } 50% { font-size: 8em; } 100% { font-size: 12em; } }
   #home .intro i.icon-heart { margin: -0.15em 0 0 -25px; font-size: 12em; @include animate(show 3s linear, beat 0.8s linear 3 2s);}
   #home .intro .lead { margin-bottom: 0; color: #FFF;}
-  #home .intro + .colwrapper p { font-size: 1.5em; line-height: 1.17em; color: $tealDark;}
+  #home .items > p:first-child { font-size: 1.5em; line-height: 1.17em; color: $tealDark;}
   #home .item .icons { margin-left: 16.66667%;}
   #home .item:nth-child(2n) .icons { float: right; margin-left: 0; margin-right: 8.3333333%; padding-top: 2em;}
   #home .item:nth-child(2n) .icons + div { margin-left: 16.66667%;}
@@ -325,9 +327,11 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
 #field-notes article h2 a { border: none; padding: 0;}
 #field-notes article h2 a:hover {background: none; color: $red;}
 #field-notes article time { margin-bottom: 0.44em; color:lighten($chocolate, 20%);}
-#field-notes .pagination { clear: both; padding-top: 1.31em; text-align: center;}
-#field-notes .pagination li {display: inline-block; padding-left: 10px;}
-#field-notes .pagination li:first-child { padding-left: 0;}
+#field-notes article p { margin-bottom: 0;}
+#field-notes article a.continue { float: left; clear: both; margin-top: 1.31em;}
+#field-notes .pagination { clear: both; padding: 1.31em 0; text-align: center;}
+#field-notes .pagination a, #field-notes .pagination span { display: inline-block; margin-left: 10px;}
+#field-notes .pagination a:first-child, #field-notes .pagination span:first-child { margin-left: 0;}
 @media only screen and (min-width: 37.5em) { /* small - from 600px */
   #field-notes .filter { text-align: left; }
 }
@@ -458,8 +462,16 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
       text-shadow: none !important;
   }
 
-  #content a { border: none; text-decoration: underline;}
-  #content a[href]:after { content:" (" attr(href) ")"; }
+  /* hidden elements */
+  header nav,
+  .call-for-action,
+  #content .go-up,
+  footer[role=contentinfo],
+  #projects .screenshot-gallery,
+  #note aside { display: none;}
+
+  /* text links */
+  #content p a[href]:after, #content a.btn[href]:after { content:" (" attr(href) ")"; border-color: #999;}
   #content  abbr[title]:after { content: " (" attr(title) ")"; }
   
   thead { display: table-header-group; /* repeats table header on each page - h5bp.com/t */}
@@ -469,13 +481,7 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
 
   img { max-width: 100% !important;}
 
-
-  header nav,
-  .call-for-action,
-  #content .go-up,
-  footer[role=contentinfo],
-  #projects .screenshot-gallery,
-  #note aside { display: none;}
+  #site-header { padding: 10pt 30pt; margin: 0 auto 20pt auto; border-bottom: 1pt solid #000;}
 
   #projects #content article figure { width: 100%; border: none; }
   #projects #content article figure img { width: 50%;}
