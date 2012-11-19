@@ -16,7 +16,7 @@ fields:
   meta_description:
     display: Meta Description
     type: textarea
-    default: "I build web experiences with love for code, great CMS, passion for standards, and attention to detail. I specialise in Expression Engine and Statamic. Based in Surrey."
+    default: "I build web experiences with love for code, great CMS, passion for standards and attention to detail. I specialise in Expression Engine and Statamic. Based in Surrey."
 
   page_lead:
     display: Page lead
