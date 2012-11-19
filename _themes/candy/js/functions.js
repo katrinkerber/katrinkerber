@@ -64,6 +64,7 @@ $(document).ready(function(){
     imagesArray.pop();
     // let's open those bad boys
     $.fancybox.open(imagesArray, {
+        preload       : 1,
         loop          : false,
         padding       : 2,
         closeBtn      : false,
