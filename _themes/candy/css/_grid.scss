@@ -1,6 +1,6 @@
 $col: 8.3333333%;
 
-@media only screen and (min-width: 37.5em) { /* small - from 530px */
+@media only screen and (min-width: 37.5em) { /* small - from 600px */
 [class*=col-] { float: left; @include border-box; }
 .colwrapper { @include border-box; position: relative; width: 100%; max-width: 1040px; float: none; margin: 0 auto; padding: 0 20px;}
 /* ensure wrapper wraps round floating children */
