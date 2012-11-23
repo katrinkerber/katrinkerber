@@ -22,6 +22,7 @@ fields:
       copy:
         display: Copy
         type: redactor
+        width: '50%'
 
   icon_1:
     type: hidden
