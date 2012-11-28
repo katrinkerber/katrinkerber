@@ -98,8 +98,8 @@ li { margin-bottom: 0.44em;}
 li:last-child {margin-bottom: 0;}
 ul li { list-style-type: disc; }
 ol li { list-style-type: decimal; }
-ul.unstyled, ol.unstyled { margin-left: 0; }
-ul.unstyled li, ol.unstyled li { list-style: none; }
+.unstyled { margin-left: 0; }
+.unstyled li { list-style: none; }
 nav ul, nav ul li { margin:0; list-style:none; }
 dl { margin: 0 0 1.31em 0; }
 dt { font-weight: bold; }
@@ -206,12 +206,12 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
 #site-footer { position: relative; padding: 1.31em 10px 4.63em 10px; border-top: 1px solid $chocolate; font-size: 0.88em; line-height: 1.5em;}
 #site-footer h2 { font-size: 1.17em; color: $chocolate;}
 #site-footer a { white-space:nowrap;}
-#site-footer a.cssda-badge { position: absolute; right: 0; bottom: 5px; display: block; width: 68px; height: 96px; border: none; padding: 0; }
-#site-footer a.cssda-badge:after { content: "";}
-#site-footer a.cssda-badge:hover { background: transparent; }
+#site-footer .cssda-badge { position: absolute; right: 0; bottom: 5px; display: block; width: 68px; height: 96px; border: none; padding: 0; }
+#site-footer .cssda-badge:after { content: "";}
+#site-footer .cssda-badge:hover { background: transparent; }
 @media only screen and (min-width: 37.5em) { /* small - from 600px */
   #site-footer { padding-right: 45px;}
-  #site-footer a.cssda-badge { top: 10px; bottom: auto;}
+  #site-footer .cssda-badge { top: 10px; bottom: auto;}
 }
 @media only screen and (min-width: 42.19em) { /* medium - from 675px */
   #site-footer { padding: 1.31em 45px 2.63em 25px;}
