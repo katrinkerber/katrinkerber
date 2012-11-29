@@ -47,6 +47,7 @@ $col: 8.3333333%;
   .d-col-10 { width: $col * 10; }
   .d-col-11 { width: $col * 11; }
   .d-col-12 { width: $col * 12; }
+  .d-offset-0 { margin-left: 0;}
   .d-offset-1 { margin-left: $col; }
   .d-offset-2 { margin-left: $col * 2; }
   .d-offset-3 { margin-left: $col * 3; }

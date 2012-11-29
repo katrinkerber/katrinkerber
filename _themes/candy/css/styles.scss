@@ -242,11 +242,12 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
 #home .intro i.icon-keyboard { margin: -0.3em 0 0 80px; }
 @include keyframes(beat) { 0% { font-size: 6em; } 50% { font-size: 4em; } 100% { font-size: 6em; } } /* beating heart */
 #home .intro i.icon-heart { @include animate(beat 0.8s linear 3); margin-top: -0.25em; font-size: 6em;}
-#home .intro .lead { color:$tealDark;;}
+#home .intro .lead { color:$tealDark;}
+#home .items > p:first-child { text-align: center;}
 #home .item { margin-bottom: 1.31em; text-align: center;}
 #home .item i { font-size: 1.79em;}
 #home .item i:first-child {margin: 0 -20px 0 20px;}
-#home .item p {text-align: left;}
+#home .item p { text-align: left; }
 @media screen and (max-device-width: 36em) { /* handhelds */
   .positionfixed #home #site-header { padding-bottom: 1.31em;}
   .positionfixed #home #site-header h1 { margin-bottom: 0;}
@@ -258,6 +259,7 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
   @include keyframes(beat) { 0% { font-size: 7em; } 50% { font-size: 5em; } 100% { font-size: 7em; } }
   #home .intro i.icon-heart { font-size: 7em; margin-top: -0.2em;}
   #home .intro .lead { text-align: left; margin-bottom: 0.6em}
+  #home .items > p:first-child { text-align: left;}
   #home .item .icons { margin-top: 1em;}
   #home .item i { font-size: 3.5em;}
   #home .item i:first-child {margin: 0 -35px 0 0;}
@@ -277,10 +279,14 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
   @include keyframes(beat) { 0% { font-size: 12em; } 50% { font-size: 8em; } 100% { font-size: 12em; } }
   #home .intro i.icon-heart { margin: -0.15em 0 0 -25px; font-size: 12em; @include animate(show 3s linear, beat 0.8s linear 3 2s);}
   #home .intro .lead { margin-bottom: 0; color: #FFF;}
-  #home .items > p:first-child { font-size: 1.5em; line-height: 1.17em; color: $tealDark;}
-  #home .item .icons { margin-left: 16.66667%;}
-  #home .item:nth-child(2n) .icons { float: right; margin-left: 0; margin-right: 8.3333333%; padding-top: 2em;}
-  #home .item:nth-child(2n) .icons + div { margin-left: 16.66667%;}
+  
+  #home .items > p:first-child { margin: 0 0 2em 0; width: 100%; text-align: center; font-size: 1.5em; line-height: 1.17em; color: $tealDark;}
+  #home .row .item:not(.left) { @include border-box; padding-left: 3%;}
+  #home .item .icons { width: 100%; margin: 0 0 1em 0;}
+  #home .item i:first-child {margin: 0 -35px 0 35px;}
+  #home .item .copy { width: 100%;}
+  #home .item h2 {text-align: center;}
+  #home .item.last { float: none; margin: 0 auto;}
 }
 
 #projects article { margin-bottom: 0.64em; border-bottom: 1px solid $teal;}
