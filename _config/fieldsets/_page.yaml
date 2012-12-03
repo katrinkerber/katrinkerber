@@ -36,13 +36,14 @@ fields:
   call_for_action:
     display: Call for action
     type: grid
+    max_rows: 1
     fields:
       copy:
         display: Copy
         type: textarea
       linktext:
         display: Link text
-        type: textarea
+        type: text
       link:
         display: URL
         type: text
@@ -52,3 +53,4 @@ fields:
       buttoncolour:
         display: Button colour class
         type: text
+

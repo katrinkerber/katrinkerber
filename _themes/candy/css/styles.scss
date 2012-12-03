@@ -281,7 +281,7 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
   #home .intro .lead { margin-bottom: 0; color: #FFF;}
   
   #home .items > p:first-child { margin: 0 0 2em 0; width: 100%; text-align: center; font-size: 1.5em; line-height: 1.17em; color: $tealDark;}
-  #home .row .item:not(.left) { @include border-box; padding-left: 3%;}
+  #home .row .item { @include border-box; padding: 0 1.5%;}
   #home .item .icons { width: 100%; margin: 0 0 1em 0;}
   #home .item i:first-child {margin: 0 -35px 0 35px;}
   #home .item .copy { width: 100%;}

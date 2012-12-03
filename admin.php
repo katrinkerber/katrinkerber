@@ -63,6 +63,22 @@ $admin_app->add(new \Slim\Middleware\SessionCookie(
 # Get the config
 $admin_app->config = $config;
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// ENVIRONMENTS
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+$environments = Statamic::get_setting('_environments');
+
+if (is_array($environments)) {
+  $environment = Statamic::detect_environment($environments, $admin_app->request()->getUrl());
+  if ($environment) {
+    $admin_app->config['environment'] = $environment;
+    $admin_app->config['is_'.$environment] = true;
+    $environment_config = Spyc::YAMLLoad(file_get_contents("_config/environments/{$environment}.yaml"));
+    $admin_app->config = array_merge($admin_app->config, $environment_config);
+  }
+}
+
 # Is the control panel disabled?
 if (Statamic::get_setting('_admin_enabled', true) !== TRUE) {
   Statamic_View::set_templates(array_reverse(array("denied")));
