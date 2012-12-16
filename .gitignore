@@ -41,6 +41,6 @@ _config/users/*
 _config/add-ons/*
 _config/settings.yaml
 admin/*
-statamicdemo
+statamicdemo/*
 
 sftp-config.json
