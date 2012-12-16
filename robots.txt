@@ -2,3 +2,4 @@ User-Agent: *
 
 Disallow: /_themes/
 Disallow: /admin/
+Disallow: /statamicdemo/
