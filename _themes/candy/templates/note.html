@@ -15,7 +15,8 @@
     </h1>
     <time datetime="{{ datestamp format='Y-m-j' }}">{{ datestamp format="jS F Y" }}</time>
     {{ content }}
-<!--     <aside class="comments">
+    {{ if comments }}
+    <aside class="comments">
       <div id="disqus_thread"></div>
       <script type="text/javascript">
           var disqus_shortname = 'katrinkerber';
@@ -25,7 +26,8 @@
               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
           })();
       </script>      
-    </aside> -->
+    </aside>
+    {{ endif }}
   </article>
 
   {{ entries:listing folder="notes" limit="4" sort_by="random" conditions="title:not { title }" }}

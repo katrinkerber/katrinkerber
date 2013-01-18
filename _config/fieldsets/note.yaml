@@ -15,3 +15,7 @@ fields:
     type: hidden
   call_for_action:
     type: hidden
+  comments:
+    display: Enable comments?
+    type: checkbox
+    options: [Yes]
