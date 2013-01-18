@@ -22,6 +22,10 @@
 
   <!-- Styles are written as SCSS and then minified using CodeKit -->
   <link rel="stylesheet" href="{{ theme:css src='styles-min.css'}}" />
+  {{ if segment_1 == 'notes' AND segment_2 }}
+  <!-- Prism syntax highlighter  -->
+  <link rel="stylesheet" href="{{ theme:css src='prism.css'}}">
+  {{ endif }}
   
   <link rel="shortcut icon" href="{{ _site_root }}favicon.ico" />
   <link rel="apple-touch-icon" href="{{ _site_root }}apple-touch-icon.png" />
@@ -104,5 +108,9 @@ Do send any constructive feedback or tips for improvements my way to hello@katri
 <script>window.jQuery || document.write('<script src="/_themes/js/libs/jquery-1.8.3.min.js"><\/script>')</script>
 <!-- Site's plugins and functions merged and minimized with CodeKit-->
 <script src="{{ theme:js src='scripts-min.js' }}"></script>
+{{ if segment_1 == 'notes' AND segment_2 }}
+<!-- Prism syntax highlighter  -->
+<script src="{{ theme:js src='plugins/prism.js' }}"></script>
+{{ endif }}
 </body>
 </html>
