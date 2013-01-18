@@ -60,7 +60,7 @@ p img { margin: 0; }
   p.lead {  /* 35px */font-size: 2.19em; line-height: 1.31em; margin-bottom: 1.57em; text-align: left; font-family: $NewsCycleReg; color: $tealDark; } 
 }
 
-em { font-style: italic; }
+em, i { font-style: italic; }
 strong, b { font-weight: bold; }
 small { font-size: 0.81em; line-height: 1.15em; }
 abbr[title] { border-bottom: 1px dotted; }
