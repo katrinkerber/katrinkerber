@@ -8,12 +8,14 @@
   <p class="lead col-10 d-offset-1 d-col-8">{{ page_lead }}</p>
 
   {{ entries:listing folder="notes" limit="6" }}
-    <article class="d-offset-1 d-col-5">
-      <h2><a href="{{ url }}" title="Read whole note">{{ title }}</a></h2>
-      <time datetime="{{ datestamp format='Y-m-j' }}">{{ datestamp format="jS F Y" }}</time>
-      {{ truncate:words limit="42" ending="&hellip;</p>" }}{ excerpt }{{ /truncate:words }}
-      <a href="{{ url }}" class="continue">Continue reading <i aria-hidden="true" class="icon-chevron-right right"></i></a>
-    </article>
+    {{ switch between='<div class="row clear clearfix">|' }}
+      <article class="d-offset-1 d-col-5 clearfix">
+        <h2><a href="{{ url }}" title="Read whole note">{{ title }}</a></h2>
+        <time datetime="{{ datestamp format='Y-m-j' }}">{{ datestamp format="jS F Y" }}</time>
+        <p>{{ truncate:words limit="42" ending="&hellip;" }}{ excerpt }{{ /truncate:words }}</p>
+        <a href="{{ url }}" class="continue">Continue reading <i aria-hidden="true" class="icon-chevron-right right"></i></a>
+      </article>
+    {{ switch between='|</div>' }}
   {{ /entries:listing }}
 
   
