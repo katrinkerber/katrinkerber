@@ -1,5 +1,10 @@
 User-Agent: *
 
+Disallow: /_add-ons/
+Disallow: /_app/
+Disallow: /_cache/
+Disallow: / _config/
 Disallow: /_themes/
 Disallow: /admin/
 Disallow: /statamicdemo/
+Disallow: /dev/
