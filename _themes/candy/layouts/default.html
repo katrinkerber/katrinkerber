@@ -74,7 +74,7 @@ Do send any constructive feedback or tips for improvements my way to hello@katri
     <nav role="navigation">
       <ul>
         <li><a href="{{ homepage }}" {{if page_url == "/" }} class="current" {{ endif }}>Home</a></li>
-        {{ nav from="/" }}
+        {{ nav from="/" max_depth="1" }}
         <li><a href="{{ url }}"{{ if is_current || is_parent }} class="current"{{ endif }}>{{ if slug == "03-notes" }}Notes{{ else }}{{ title }}{{ endif }}</a></li>
         {{ /nav }}
       </ul>

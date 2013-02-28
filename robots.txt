@@ -8,3 +8,4 @@ Disallow: /_themes/
 Disallow: /admin/
 Disallow: /statamicdemo/
 Disallow: /dev/
+Disallow: /arboreal/
