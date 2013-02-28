@@ -30,8 +30,7 @@ fields:
     type: text
 
   content:
-    type: redactor
-    image_dir: /assets/img/
+    type: ckeditor
 
   call_for_action:
     display: Call for action

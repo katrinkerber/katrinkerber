@@ -21,7 +21,7 @@ fields:
         type: text
       copy:
         display: Copy
-        type: redactor
+        type: ckeditor
         width: '50%'
 
   icon_1:

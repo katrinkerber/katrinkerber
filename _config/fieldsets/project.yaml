@@ -10,7 +10,7 @@ fields:
     type: text
   intro:
     display: Intro para
-    type: redactor
+    type: ckeditor
   snapshot:
     display: Snapshot
     type: file
@@ -18,13 +18,13 @@ fields:
     destination: assets/img/projects
   goal:
     display: Goal
-    type: redactor
+    type: ckeditor
   involvement:
     display: My involvement
-    type: redactor
+    type: ckeditor
   special:
     display: Special features
-    type: redactor
+    type: ckeditor
   slideshow:
     display: Slideshow images
     type: grid

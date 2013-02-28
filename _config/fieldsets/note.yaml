@@ -5,12 +5,14 @@ include:
   - _page
 
 fields:
+  _template:
+    type: templates
+    default: note
   excerpt:
     display: Excerpt
     type: textarea
   content:
-    type: redactor
-    image_dir: /assets/img/notes/
+    type: ckeditor
   page_lead:
     type: hidden
   call_for_action:
