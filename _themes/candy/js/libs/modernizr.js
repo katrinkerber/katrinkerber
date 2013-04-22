@@ -6,7 +6,7 @@
 
 /* Tagging on some device/OS detection */
 var ua = navigator.userAgent;
-// iOS5+ and Android 4+ are good with positon fixed, so we can have a snazzy fixed menu \o/ - http://stackoverflow.com/questions/8348139/detect-ios-version-less-than-5-with-javascript
+// iOS5+ and Android 3+ are good with positon fixed, so we can have a snazzy fixed menu \o/ - http://stackoverflow.com/questions/8348139/detect-ios-version-less-than-5-with-javascript
 if( /(iPhone|iPod)/i.test(ua) ) { 
     if(/OS [2-4]_\d(_\d)? like Mac OS X/i.test(ua)) {  
         // iOS 2-4
@@ -16,11 +16,11 @@ if( /(iPhone|iPod)/i.test(ua) ) {
       document.getElementsByTagName('html')[0].className += 'positionfixed';
     }
 }
-// Android >=4
+// Android >=3
 if( ua.indexOf("Android") >= 0 )
 {
   var androidversion = parseFloat(ua.slice(ua.indexOf("Android")+8)); 
-  if (androidversion >= 4)
+  if (androidversion >= 3)
   {
       document.getElementsByTagName('html')[0].className += 'positionfixed';
   }
