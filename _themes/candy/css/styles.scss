@@ -90,7 +90,7 @@ a[href^="http://"]:not([href*="katrinkerber.com"]):after,
 a[href^="https://"]:not([href*="katrinkerber.com"]):after { position: relative; top: -0.4em; border-bottom: 0; padding: 0 0 0 5px; font-size: 80%; line-height: 0; font-family: 'Icons'; content: "\e014"; vertical-align: baseline; color: lighten($red, 25%); }
 a[href^="http://"]:not([href*="katrinkerber.com"]):hover:after, a[href^="http://"]:not([href*="katrinkerber.com"]):active:after,
 a[href^="https://"]:not([href*="katrinkerber.com"]):hover:after, a[href^="https://"]:not([href*="katrinkerber.com"]):active:after { color: #fff;}
-a.btn[href^="http://"]:after, a.btn[href^="https://"]:after { content: "";}
+a.btn[href^="http://"]:after, a.btn[href^="https://"]:after { content: none; display: none;}
 
 /* Lists */
 ul, ol { margin:0 0 1.75em 20px; }
@@ -137,7 +137,7 @@ a[href^="http://"].btn:hover:after { content: ""; }
 .btn.chocolate:hover { background: $yellow;}
 @media only screen and (min-width: 37.5em) { /* small - from 600px */
   .btn { float: left; width: auto; padding: 0 20px 0 15px; margin: 0 0 1.31em 0; text-align: left;}
-  .btn i:last-child { padding: 0 15px 0 0; vertical-align: baseline; }
+  .btn i:last-child { display: inline-block; padding: 0 15px 0 0; vertical-align: baseline; }
   .btn:hover i:last-child { padding: 0 0 0 15px; @include transition;}
 }
 /* Call for action */
@@ -175,8 +175,8 @@ body { background: $offWhite url('img/border-top.png') center top repeat-x;}
 #site-header nav a:hover { background-color: $tealDark;}
 #site-header nav .current { position: relative; background-color: $red;}
 #site-header nav .current:before { position: absolute; top: 0; left: 0; width: 100%; font-family: 'Icons'; content: "\e02d"; text-align: center;}
-@media screen and (max-device-width: 36em) { /* handhelds */
-/* fancy-schmanzy bottom fixed menu \o/ for iOS5+ - iOS version is detected via JS */
+@media only screen and (max-device-width: 36em) { /* handhelds */
+/* fancy-schmanzy bottom fixed menu \o/ for iOS5+ and Android 4+- OS version is detected via JS */
   .positionfixed #site-header { border-bottom: 1px solid $teal;}
   .positionfixed #site-header nav { position: fixed; bottom: 0; z-index: 999;}
   .positionfixed #site-header nav a.current:before { content: "\e02e";}

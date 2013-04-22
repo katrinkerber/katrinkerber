@@ -1,0 +1,52 @@
+---
+title: Getting your IcoMoon font to display in iOS 4.0
+_template: note
+status: live
+is_page: Nope
+meta_description: "When using an IcoMoon font, it's best to embed the font files using the Bulletproof @Font-Face Syntax, rather than the supplied code, to ensure it works properly, particularly in iOS 4.0."
+page_lead:
+icon_1: icon-mobile chocolate
+icon_2: icon-tick red
+call_for_action:
+excerpt: "When using an IcoMoon font, it's best to embed the font files using the Bulletproof @Font-Face Syntax, rather than the supplied code, to ensure it works properly, particularly in iOS 4.0."
+comments: 0
+---
+<p>Looking at the plethora of icons on my site, you will probably have guessed that I am a huge fan of web font icons. They can really lift a site's design and can be useful for user experience by marking links that leave a site or that download a file, for example.</p>
+
+<p>As long as they are enhancers of content rather than essential parts of it, they are a nice progressive touch which will not affect the overall browsing experience for users on older and less capable browsers.</p>
+
+<h2>IcoMoon magic</h2>
+
+<p>I used the fantastic <a href="http://icomoon.io/app/">IcoMoon App</a> with the <a href="http://www.entypo.com/">Entypo</a> and IcoMoon sets to generate a custom font for this site. Downloading and using the font was a breeze, but during my tests in BrowserStack I discovered that the icons weren't rendering correctly in iOS 4.0. Instead I got those lovely replacements:</p>
+
+<p style="text-align:center;"><img src="/assets/img/notes/wrong-icons-ios4.png" style="width: 319.22330097087377px; height: 411px;" width="320"></p>
+
+<p>Whilst this certainly makes a '<i>nice'</i> change to the dreaded square boxes, they didn't really fit into my design either.</p>
+
+<h2>Bulletproof @Font-Face Syntax to the rescue!</h2>
+
+<p>The @font-face declarations IcoMoon supplied in the downloadable package do seem odd to me. I haven't seen it done like that anywhere else.&nbsp;</p>
+<p>It uses two declarations, one for the EOT file and another for the SVG and TrueType ones. The latter has some crazy SVG data code going on:</p>
+
+<pre class="language-css">@font-face {
+&nbsp;&nbsp;font-family: 'icons-katrinkerber'; src: url(data:font/svg;charset=utf-8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiID4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8bWV0YWRhdGE+ClRoaXMgaXMgYSBjdXN0b20gU1ZHIGZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uCjIKPC9tZXRhZGF0YT4KPGRlZnM+Cjxmb250IGlkPSJpY29ucy1rYXRyaW5rZXJiZXIiIGhvcml6LWFkdi14PSI1MTIiID4KPGZvbnQtZmFjZSB1bml0cy1wZXItZW09IjUxMiIgYXNjZW50PSI0MzUiIGRlc2NlbnQ9Ii03NyIgLz4KPG1pc3NpbmctZ2x5cGggaG9yaXotYWR2LXg9IjUxMiIgLz4KPGdseXBoIHVuaWNvZGU9IiYjeGUwMDA7IiBkPSJNIDQ3NS4zNzcsMzMyLjU3MWwtNDQwLjMyLDAuMDAgYy0xOS43MTIsMC4wMC0zNS44NC0xNi4xMzItMzUuODQtMzUuODRsMC4wMC0yMzUuNTI0IGMwLjAwLTE5LjcxMiwgMTYuMTI4LTM1Ljg0LCAzNS44NC0zNS44NGwgNDQwLjMyLDAuMDAgYyAxOS43MDgsMC4wMCwgMzUuODQsMTYuMTI4LCAzNS44NCwzNS44NEwgNTExLjIxNywyOTYuNzMxIAoJQyA1MTEuMjE3LDMxNi40NCwgNDk1LjA4NSwzMzIuNTcxLCA[...]1NDEtMjUuNTM3LCAyNS45OTktNDguMTY0LCAyNS45OTktNDguMTY0TCAxNzAuNzA4LDE5LjgwOHoiIC8+CjxnbHlwaCBjbGFzcz0iaGlkZGVuIiB1bmljb2RlPSImI3hmMDAwOyIgZD0iTTAsNDM1TCA1MTIgLTc3TDAgLTc3IHoiIGhvcml6LWFkdi14PSIwIiAvPgo8L2ZvbnQ+PC9kZWZzPjwvc3ZnPg==) format('svg');
+}
+</pre>
+
+<h3><span style="font-weight: normal;">UPDATE</span></h3><p>It turns out that the above @font-face syntax is based on the "<b>Base64 Encode &amp; Embed Fonts in CSS</b>" setting in the preferences of the app, which for some reason I had ticked. Now all that code makes perfect sense; it is embedding the font directly. Un-checking this option downloads the CSS with the perfect @font-face syntax, so no reason to follow the manual steps below at all.&nbsp;</p><p>Cheeky little checkbox that.</p><p><strike>So I referred back to&nbsp;<a href="http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax">Fontspring's Bulletproof @Font-Face Syntax</a>:</strike></p>
+
+<pre class="language-css">&lt;strike&gt;@font-face {
+&nbsp; font-family: 'Icons';
+&nbsp; src: &nbsp;url('fonts/icons-katrinkerber.eot');
+&nbsp; src: &nbsp;url('fonts/icons-katrinkerber.eot?#iefix') format('embedded-opentype'),
+&nbsp; &nbsp; &nbsp; &nbsp; url('fonts/icons-katrinkerber.woff') format('woff'),
+&nbsp; &nbsp; &nbsp; &nbsp; url('icons-katrinkerber.ttf') format('truetype'),
+&nbsp; &nbsp; &nbsp; &nbsp; url('fonts/icons-katrinkerber.svg#icons-katrinkerber') format('svg');
+&nbsp; font-weight: normal;
+&nbsp; font-style: normal;
+}
+&lt;/strike&gt;</pre>
+
+<p><strike>It lived up to its name, as the icons displayed on iOS 4.0 are now the right ones. Yay!</strike></p>
+
+<h2><strike>The unhelpful part</strike></h2><p></p><p><strike>Whilst coming across the problem I *seem* to remember that it was caused by the SVG not rendering correctly, but I cannot locate that article again. Looking again today, there seems to be a suggestion floating around that the culprit could be the "Private Use Area" encoding, which we want oh-so-very much to make double-sure our fellow users with screen-readers aren't being pestered.</strike></p><p><strike>To my disgrace; I am not sure where exactly the issue lies with IcoMoon's syntax at the moment - if you know, then please <a href="http://twitter.com/?status=@katrinkerber">enlighten me</a>, as I am dying to know. Whatever the reasons may be, Fontspring's @Font-Face Syntax is still the way to go.&nbsp;<span style="line-height: 1.45em;">It's bulletproof after all.</span></strike></p>
