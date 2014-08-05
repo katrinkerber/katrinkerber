@@ -8,5 +8,11 @@
  */
 
 return array(
+  'katrinkerber.com' => array(
+    'siteUrl' => 'katrinkerber.com'
+  ),
 
+  'dev.katrinkerber.com' => array(
+    'siteUrl' => 'dev.katrinkerber.com'
+  )
 );
