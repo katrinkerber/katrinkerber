@@ -1,0 +1,7 @@
+{
+	buttons: ['html','|','formatting','|','bold','italic','|','unorderedlist','orderedlist','|','link'],
+	plugins: ['fullscreen'],
+	toolbarFixedBox: true,
+  formattingTags: ['p', 'blockquote', 'pre', 'code', 'h2', 'h3', 'h4'],
+  observeLinks: true
+}
