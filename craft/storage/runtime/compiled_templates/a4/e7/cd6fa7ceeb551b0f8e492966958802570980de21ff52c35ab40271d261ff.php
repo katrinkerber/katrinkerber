@@ -73,6 +73,15 @@ class __TwigTemplate_a4e7cd6fa7ceeb551b0f8e492966958802570980de21ff52c35ab40271d
         echo "\" />
   <meta property=\"og:image\" content=\"/favicon-152.png\" />
 
+  ";
+        // line 39
+        if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "")) {
+            // line 40
+            echo "    <meta name=\"google-site-verification\" content=\"kMorjArecrMzKj5DaWyOWdrtR5oG5x5yO3QpF63XBIc\" />
+  ";
+        }
+        // line 42
+        echo "
   <!-- Most JavaScript at bottom for optimal page load times, except for Modernizr, webfontloader and GA -->
   <!-- Custom Modernizr script, includes some mobile device/OS detection -->
   <script src=\"/assets/js/libs/modernizr.js\" async></script>
@@ -84,25 +93,25 @@ class __TwigTemplate_a4e7cd6fa7ceeb551b0f8e492966958802570980de21ff52c35ab40271d
   <header role=\"banner\" class=\"siteheader\">
     <h1 class=\"siteheader__header\">
       ";
-        // line 49
+        // line 53
         if ($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment")) {
-            // line 50
+            // line 54
             echo "        <a href=\"/\">Katrin Kerber</a>
       ";
         } else {
-            // line 52
+            // line 56
             echo "        Katrin Kerber
       ";
         }
-        // line 54
+        // line 58
         echo "    </h1>
     <p class=\"siteheader__tagline\">I build websites with love.</p>
     <nav class=\"siteheader__nav\" role=\"navigation\">
       <ul>
         ";
-        // line 58
+        // line 62
         $context["nav"] = array(0 => array("uri" => "", "title" => "Home"), 1 => array("uri" => "what-i-do", "title" => "What I Do"), 2 => array("uri" => "projects", "title" => "Projects"), 3 => array("uri" => "about", "title" => "About"), 4 => array("uri" => "notes", "title" => "Notes"), 5 => array("uri" => "contact", "title" => "Contact"));
-        // line 66
+        // line 70
         echo "        ";
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["nav"]) ? $context["nav"] : null));
@@ -120,13 +129,13 @@ class __TwigTemplate_a4e7cd6fa7ceeb551b0f8e492966958802570980de21ff52c35ab40271d
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 67
+            // line 71
             echo "          ";
             if ($this->getAttribute((isset($context["loop"]) ? $context["loop"] : null), "first")) {
-                // line 68
+                // line 72
                 echo "            <li>
               <a ";
-                // line 69
+                // line 73
                 if (($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == "")) {
                     echo "class=\"current\"";
                 }
@@ -134,20 +143,20 @@ class __TwigTemplate_a4e7cd6fa7ceeb551b0f8e492966958802570980de21ff52c35ab40271d
                 echo twig_escape_filter($this->env, \Craft\UrlHelper::getUrl($this->getAttribute((isset($context["item"]) ? $context["item"] : null), "uri")), "html", null, true);
                 echo "\">
                 ";
-                // line 70
+                // line 74
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : null), "title"), "html", null, true);
                 echo "
               </a>
             </li>
           ";
             } else {
-                // line 74
+                // line 78
                 echo "            ";
                 $context["current"] = ($this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment") == $this->getAttribute((isset($context["item"]) ? $context["item"] : null), "uri"));
-                // line 75
+                // line 79
                 echo "            <li>
               <a ";
-                // line 76
+                // line 80
                 if ((isset($context["current"]) ? $context["current"] : null)) {
                     echo "class=\"current\"";
                 }
@@ -155,14 +164,14 @@ class __TwigTemplate_a4e7cd6fa7ceeb551b0f8e492966958802570980de21ff52c35ab40271d
                 echo twig_escape_filter($this->env, \Craft\UrlHelper::getUrl($this->getAttribute((isset($context["item"]) ? $context["item"] : null), "uri")), "html", null, true);
                 echo "\">
                 ";
-                // line 77
+                // line 81
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : null), "title"), "html", null, true);
                 echo "
               </a>
             </li>
           ";
             }
-            // line 81
+            // line 85
             echo "        ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -176,21 +185,21 @@ class __TwigTemplate_a4e7cd6fa7ceeb551b0f8e492966958802570980de21ff52c35ab40271d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 82
+        // line 86
         echo "      </ul>
     </nav>
   </header>
 
   <main role=\"main\" class=\"page page--";
-        // line 86
+        // line 90
         echo twig_escape_filter($this->env, twig_lower_filter($this->env, $this->getAttribute((isset($context["entry"]) ? $context["entry"] : null), "section")), "html", null, true);
         echo " page--";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["craft"]) ? $context["craft"] : null), "request"), "firstSegment"), "html", null, true);
         echo "\">
 \t\t";
-        // line 87
+        // line 91
         $this->displayBlock('content', $context, $blocks);
-        // line 88
+        // line 92
         echo "  </main>
 
   <div class=\"backtotop\">
@@ -207,7 +216,7 @@ class __TwigTemplate_a4e7cd6fa7ceeb551b0f8e492966958802570980de21ff52c35ab40271d
 ";
     }
 
-    // line 87
+    // line 91
     public function block_content($context, array $blocks = array())
     {
     }
@@ -224,6 +233,6 @@ class __TwigTemplate_a4e7cd6fa7ceeb551b0f8e492966958802570980de21ff52c35ab40271d
 
     public function getDebugInfo()
     {
-        return array (  211 => 87,  194 => 88,  192 => 87,  186 => 86,  180 => 82,  166 => 81,  159 => 77,  151 => 76,  148 => 75,  145 => 74,  138 => 70,  130 => 69,  127 => 68,  124 => 67,  106 => 66,  104 => 58,  98 => 54,  94 => 52,  90 => 50,  88 => 49,  72 => 36,  63 => 34,  31 => 10,  20 => 1,);
+        return array (  220 => 91,  203 => 92,  201 => 91,  195 => 90,  189 => 86,  175 => 85,  168 => 81,  160 => 80,  157 => 79,  154 => 78,  147 => 74,  139 => 73,  136 => 72,  133 => 71,  115 => 70,  113 => 62,  107 => 58,  103 => 56,  99 => 54,  97 => 53,  84 => 42,  80 => 40,  78 => 39,  72 => 36,  63 => 34,  31 => 10,  20 => 1,);
     }
 }
