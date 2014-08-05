@@ -1,0 +1,14 @@
+.backtotop {
+  @include rem(font-size, 16px);
+  text-align: center;
+  html.svg & {
+    @include rem(margin-left, -12px);
+  }
+}
+.backtotop__link {
+  color: $greyBlue;
+  background: none;
+  @include hover-states {
+    background: none;
+  }
+}

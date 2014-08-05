@@ -1,0 +1,66 @@
+html.svg {
+  .icon {
+    @include inline-block;
+    @include rem(width, 32px);
+    @include rem(height, 32px);
+    background-image: url('../img/icons.svg');
+    background-repeat: no-repeat;
+    speak: none;
+  }
+  .icon--large {
+    @include rem(width, 40px);
+    @include rem(height, 40px);
+    -webkit-background-size: 35px auto;
+    background-size: 35px auto;
+
+    @include media-query(min, $breakpointMedium) {
+      @include rem(width, 107px);
+      @include rem(height, 107px);
+      -webkit-background-size: 100px auto;
+      background-size: 100px auto;
+    }
+  }
+  .icon--xlarge {
+    @include rem(width, 55px);
+    @include rem(height, 55px);
+    background-size: 53px auto;
+    @include media-query(min, $breakpointMedium) {
+      @include rem(width, 160px);
+      @include rem(height, 160px);
+      -webkit-background-size: 150px auto;
+      background-size: 150px auto;
+    }
+  }
+  .icon--heart {
+    background-position: center 0;
+  }
+  .icon--heart--orange {
+    background-position: center percentage(40/370);
+  }
+  .icon--heart--green {
+    background-position: center percentage(82/370);
+  }
+  .icon--heart--teal {
+    background-position: center percentage(124/370);
+  }
+  .icon--heart--grey {
+    background-position: center percentage(164/370);
+  }
+  .icon--wayfinder {
+    background-position: center percentage(207/370);
+  }
+  .icon--speed {
+    background-position: center percentage(254/370);
+  }
+  .icon--smile {
+    background-position: center percentage(299/370);
+  }
+  .icon--mobile {
+    background-position: center percentage(345/370);
+  }
+  .icon--arrow-up {
+    @include rem(width, 16px);
+    @include rem(height, 16px);
+    background-position: left percentage(368/370);
+  }
+}

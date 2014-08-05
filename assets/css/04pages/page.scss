@@ -1,0 +1,88 @@
+/*
+==========================================================================
+PAGE
+========================================================================== */
+body {
+  @include rem(padding, 0 0 16px);
+  background: $offwhite;
+  @include media-query(min, $breakpointMedium) {
+    @include rem(padding, 32px 0 16px);
+    background: $offwhite url('../img/page-border.png') center top repeat-x;
+  }
+}
+
+.page {
+  @include rem(padding, 0 12px 32px);
+  @include rem(max-width, 960px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page__intro {
+  @include rem(max-width, 864px);
+  margin-left: auto;
+  margin-right: auto;
+  @include rem(font-size, 26px);
+  @include rem(line-height, 32px);
+  @include rem(margin-bottom, 32px);
+  text-align: center;
+
+  @include media-query(min, $breakpointMedium) {
+    @include rem(font-size, 36px);
+    @include rem(line-height, 42px);
+    @include rem(margin-bottom, 48px);
+  }
+}
+
+.page__text {
+  @include rem(max-width, 688px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page__media,
+.page__code {
+  @include rem(margin-left, -12px);
+  @include rem(margin-right, -12px);
+}
+.page__code code {
+  @include rem(margin-bottom, -16px);
+}
+
+/*
+Page specific */
+.page--home {
+  text-align: center;
+}
+.page--home__intro {
+  @include rem(margin-bottom, 0);
+  color: $green;
+}
+.page--home__text {
+  @include rem(max-width, 720px);
+}
+.page--home__btn {
+  @include rem(margin-bottom, 48px);
+}
+
+
+.page--entries__more {
+  @include rem(margin-top, 48px);
+}
+
+.page--about__img {
+  display: block;
+  @include rem(width, 140px);
+  @include rem(margin, 0 auto 24px);
+  border-radius: 100%;
+  border: 2px solid white;
+  @include media-query(min, $breakpointMedium) {
+    @include rem(width, 180px);
+  }
+}
+
+.page--contact {
+  text-align: center;
+}
+
+

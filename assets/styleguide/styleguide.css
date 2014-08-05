@@ -1,0 +1,50 @@
+body {
+  max-width: none;
+  margin: 0;
+}
+.styleguide-note {
+  display: block;
+  margin: 0 0 1.5rem;
+  color: #888;
+  font-style: italic;
+}
+h1 + .styleguide-note,
+p + .styleguide-note {
+  margin-top: -1em;
+}
+th,
+td {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+header h1 {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 43.99em ) {
+  header nav {
+    border-bottom: 1px solid;
+    margin-bottom: 2rem;
+  }
+  header nav li {
+    display: inline-block;
+    padding: 1em 0.5em 1em 0;
+  }
+}
+@media only screen and (min-width: 44em ) {
+  header {
+    position: fixed;
+    left: 32px;
+    top: 16px;
+    width: 24%;
+    height: 100%;
+    overflow: auto;
+  }
+  nav ul {
+    margin-bottom: 1rem;
+  }
+  .page {
+    padding-left: 30%;
+  }
+}

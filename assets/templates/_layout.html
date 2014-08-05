@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>  <html class="no-js lt-ie9 lt-ie8 lt-ie7 ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>     <html class="no-js lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>     <html class="no-js lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>     <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->  <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8" />
+
+  <title>{% if pageTitle is defined %}{{ pageTitle }} - Katrin Kerber{% else %}Katrin Kerber - I build websites with love.{% endif %}</title>
+  <meta name="description" content="Freelance web developer based in Petersfield. I build successful websites with love for usability, high quality code, great CMS and attention to detail." />
+  <meta name="author" content="/humans.txt" />
+  <meta name="robots" content="/robots.txt" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <!-- Disable skype from styling numbers as skype buttons - DOES NOT VALIDATE -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+
+  <link rel="stylesheet" href="/assets/css/styles.min.css">
+
+  <!-- Icons - https://github.com/audreyr/favicon-cheat-sheet -->
+  <!-- IE6-10 -->
+  <link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
+  <!-- Everybody else -->
+  <link rel="icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
+  <!-- iOS 2.0+ and Android 2.1+ -->
+  <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
+  <!-- Metro tile -->
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="/favicon-144.png">
+
+  <!-- Open Graph protocol meta tags - http://ogp.me/ -->
+  <meta property="og:title" content="{% if pageTitle is defined %}{{ pageTitle }}{% else %}Katrin Kerber - I build websites with love.{% endif %}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ craft.request.url }}" />
+  <meta property="og:image" content="/favicon-152.png" />
+
+  <!-- Most JavaScript at bottom for optimal page load times, except for Modernizr, webfontloader and GA -->
+  <!-- Custom Modernizr script, includes some mobile device/OS detection -->
+  <script src="/assets/js/libs/modernizr.js" async></script>
+  <script src="/assets/js/libs/webfontloader.js" async></script>
+  <!-- adding GA in head to increase likelihood of tracking even if user should leave before page has completely loaded -->
+  <script src="/assets/js/analytics.js" async></script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" id="top">
+  <header role="banner" class="siteheader">
+    <h1 class="siteheader__header">
+      {% if craft.request.firstSegment %}
+        <a href="/">Katrin Kerber</a>
+      {% else %}
+        Katrin Kerber
+      {% endif %}
+    </h1>
+    <p class="siteheader__tagline">I build websites with love.</p>
+    <nav class="siteheader__nav" role="navigation">
+      <ul>
+        {% set nav = [
+          { uri: '', title: 'Home' },
+          { uri: 'what-i-do', title: 'What I Do' },
+          { uri: 'projects', title: 'Projects' },
+          { uri: 'about', title: 'About' },
+          { uri: 'notes', title: 'Notes' },
+          { uri: 'contact', title: 'Contact' }
+        ] %}
+        {% for item in nav %}
+          {% if loop.first %}
+            <li>
+              <a {% if craft.request.firstSegment == '' %}class="current"{% endif %} href="{{ url(item.uri) }}">
+                {{ item.title }}
+              </a>
+            </li>
+          {% else %}
+            {% set current = (craft.request.firstSegment == item.uri) %}
+            <li>
+              <a {% if current %}class="current"{% endif %} href="{{ url(item.uri) }}">
+                {{ item.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main" class="page page--{{ entry.section | lower }} page--{{ craft.request.firstSegment }}">
+		{% block content %}{% endblock %}
+  </main>
+
+  <div class="backtotop">
+    <a class="backtotop__link" href="#top"><i class="icon icon--arrow-up" aria-hidden="true"></i> Back to top</a>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write("<script src='/assets/js/libs/jquery-1.9.1.min.js'>\x3C/script>")
+  </script>
+  <script src="/assets/js/scripts.min.js"></script>
+</body>
+</html>

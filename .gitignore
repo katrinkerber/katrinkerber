@@ -1,4 +1,3 @@
-.htaccess
 # Numerous always-ignore extensions
 *.diff
 *.err
@@ -11,7 +10,7 @@
 *~
 *.sass-cache
 
-# OS or Editor folders
+# OS or Editor files and folders
 .DS_Store
 Thumbs.db
 .cache
@@ -34,14 +33,21 @@ dwsync.xml
 intermediate
 publish
 .idea
-_add-ons/*
-_app/*
+back_up
+## EE specific
+cache
+cache/*
+system/expressionengine/cache
+system/expressionengine/cache/*
+images/made
+images/captchas
+.PBSyncDB
+## Statamic specific
 _cache/*
-_config/users/*
-_config/add-ons/*
-_config/settings.yaml
-admin/*
-statamicdemo/*
-dev/*
+_logs/*
+transformed_img/*
+## Craft specific
+craft/*
 
+# SFTP set up file
 sftp-config.json

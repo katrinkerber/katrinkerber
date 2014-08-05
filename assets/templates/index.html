@@ -1,0 +1,40 @@
+{% extends "_layout" %}
+
+{% block content %}
+  <div class="icons-strip" role="presentation" aria-hidden="true">
+    <i class="icon icon--large icon--wayfinder" aria-hidden="true"></i>
+    <i class="icon icon--large icon--speed" aria-hidden="true"></i>
+    <i class="icon icon--xlarge icon--heart" aria-hidden="true"></i>
+    <i class="icon icon--large icon--smile" aria-hidden="true"></i>
+    <i class="icon icon--large icon--mobile" aria-hidden="true"></i>
+  </div>
+
+  {% if entry.pageIntro %}
+    <div class="page__intro page--home__intro">
+      {{ entry.pageIntro }}
+    </div>
+  {% endif %}
+
+  {% for contentSection in entry.pageContentSections %}
+    <div class="page__text page--home__text">
+      {{ contentSection.text }}
+    </div>
+  {% endfor %}
+
+  {% for callOut in entry.pageCallOut %}
+    <a class="btn page--home__btn" href="/contact">{{ callOut.linkText }}</a>
+  {% endfor %}
+
+  {% set project = craft.entries.section('entries').search('quote:*').order('RAND()').limit(1) %}
+  {% for project in project %}
+    {% for projectQuote in project.quote %}
+      <blockquote>
+        {{ projectQuote.text }}
+        <footer>
+          <cite>{{ projectQuote.sourceName }}, {{ projectQuote.sourceCompany }}</cite>
+          <a href="{{ project.url }}">View project</a>
+        </footer>
+      </blockquote>
+    {% endfor %}
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "_layout" %}
+{% set pageTitle = entry.title|ucwords %}
+
+{% block content %}
+  <h1 class="visuallyhidden">{{ entry.title|ucwords }}</h1>
+
+  {% include '_includes/pagecontentsections' %}
+{% endblock %}

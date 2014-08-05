@@ -1,0 +1,17 @@
+<ul class="listing-projects">
+  {% for project in projects %}
+    <li class="listing-projects__item {{ cycle(['listing-projects__item--odd', ''], loop.index0) }}" itemscope itemtype="http://schema.org/WebSite">
+      <a href="{{ project.url }}">
+        {% for image in project.listingImage %}
+          <img class="listing-projects__img" src="{{ image.url }}" alt="" role="presentation" aria-hidden="true" itemprop="image">
+        {% endfor %}
+        <h2 class="listing-projects__heading" itemprop="name">
+          {{ project.title|ucwords }}
+        </h2>
+        <time class="listing-projects__time" datetime="{{ project.postDate|date('Y-m-d') }}" itemprop="datePublished">
+          {{ project.postDate|date('F Y') }}
+        </time>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

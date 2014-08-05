@@ -1,0 +1,17 @@
+{% extends "_layout" %}
+{% set pageTitle = entry.title|ucwords %}
+
+{% block content %}
+  <h1 class="visuallyhidden">{{ entry.title|ucwords }}</h1>
+
+  {% if entry.pageIntro %}
+    <div class="page__intro">
+      {{ entry.pageIntro }}
+    </div>
+  {% endif %}
+
+  {% set projects = craft.entries.section('entries').type('projects') %}
+  {% include '_includes/listing-projects' %}
+
+  {% include '_includes/callout' %}
+{% endblock %}

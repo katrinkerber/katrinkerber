@@ -1,12 +1,16 @@
 User-Agent: *
+Disallow: /index.php
+Disallow: /_add-ons
+Disallow: /_app
+Disallow: /_cache
+Disallow: /_config
+Disallow: /_themes
+Disallow: /craft
+Disallow: /system
+Disallow: /themes
 
-Disallow: /_add-ons/
-Disallow: /_app/
-Disallow: /_cache/
-Disallow: / _config/
-Disallow: /_themes/
-Disallow: /admin/
-Disallow: /statamicdemo/
-Disallow: /dev/
-Disallow: /arboreal/
-Disallow: /ag/
+User-Agent: Googlebot-Image
+Disallow: /images
+
+User-agent: *
+Sitemap: /sitemap.xml

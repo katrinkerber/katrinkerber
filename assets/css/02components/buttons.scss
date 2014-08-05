@@ -1,0 +1,37 @@
+.btn {
+  @include inline-block;
+  @include rem(padding, 8px 32px);
+  background: $green;
+  background-image: none;
+  @include rem(border-radius, 40px);
+  font-family: $fontBold;
+  font-weight: normal;
+  color: $offwhite;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:visited {
+    color: $offwhite;
+  }
+  @include hover-states {
+    background: $teal;
+    color: $offwhite;
+  }
+}
+
+.btn--secondary {
+  border: 2px solid;
+  background-color: transparent;
+  color: $teal;
+  &:visited {
+    color: $teal;
+  }
+  @include hover-states {
+    color: $offwhite;
+  }
+}
+
+.center-btn {
+  @include rem(margin, 48px 0);
+  text-align: center;
+}

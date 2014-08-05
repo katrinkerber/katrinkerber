@@ -1,8 +1,0 @@
-fields:
-  status:
-    type: status
-    default: hidden
-  content:
-    type: ckeditor
-  test1:
-    type: ckeditor
