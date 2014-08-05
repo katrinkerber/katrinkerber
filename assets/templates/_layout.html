@@ -36,6 +36,10 @@
   <meta property="og:url" content="{{ craft.request.url }}" />
   <meta property="og:image" content="/favicon-152.png" />
 
+  {% if craft.request.firstSegment == '' %}
+    <meta name="google-site-verification" content="kMorjArecrMzKj5DaWyOWdrtR5oG5x5yO3QpF63XBIc" />
+  {% endif %}
+
   <!-- Most JavaScript at bottom for optimal page load times, except for Modernizr, webfontloader and GA -->
   <!-- Custom Modernizr script, includes some mobile device/OS detection -->
   <script src="/assets/js/libs/modernizr.js" async></script>
