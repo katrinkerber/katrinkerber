@@ -1020,12 +1020,12 @@ textarea {
   margin-bottom: 0; }
 
 .listing-projects {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  text-align: center; }
 
 .listing-projects__item {
   margin-bottom: 24px;
-  margin-bottom: 1.5rem;
-  text-align: center; }
+  margin-bottom: 1.5rem; }
   .listing-projects__item:not(:first-child):before {
     padding-top: 16px;
     padding-top: 1rem;
@@ -1046,13 +1046,13 @@ textarea {
       zoom: 1;
       *display: inline;
       *vertical-align: auto;
-      width: 48.33333%;
+      width: 46.66667%;
       margin-left: -0.41667%;
+      padding-left: 1.66667%;
+      padding-right: 1.66667%;
       vertical-align: top; }
       .listing-projects__item:not(:first-child):before {
-        display: none; }
-      .listing-projects__item.listing-projects__item--odd {
-        margin-right: 3.33333%; } }
+        display: none; } }
 
 .listing-projects__img {
   padding: 4px;
