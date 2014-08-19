@@ -87,7 +87,7 @@
     </nav>
   </header>
 
-  <main role="main" class="page page--{{ entry.section | lower }} page--{{ craft.request.firstSegment }}">
+  <main class="page {% if craft.request.firstSegment == '' %}page--home{% else %}page--{{ craft.request.firstSegment }}{% endif %}" role="main">
 		{% block content %}{% endblock %}
   </main>
 

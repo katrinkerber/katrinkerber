@@ -28,6 +28,9 @@
       display: none;
     }
   }
+  @include media-query(min, $breakpointLarge) {
+    width: percentage(380/1280);
+  }
 }
 .listing-projects__img {
   @include rem(padding, 4px);

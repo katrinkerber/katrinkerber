@@ -65,6 +65,9 @@ Page specific */
   @include rem(margin-bottom, 48px);
 }
 
+.page--projects {
+  @include rem(max-width, 1184px);
+}
 
 .page--entries__more {
   @include rem(margin-top, 48px);

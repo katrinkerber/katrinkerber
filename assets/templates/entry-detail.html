@@ -47,7 +47,7 @@
       <aside class="page--entries__more">
         <h2 class="lines-heading">Other Projects</h2>
 
-        {% set projects = craft.entries.section('entries').type('projects').id('not ' ~ entry.id).order('RAND()').limit('4') %}
+        {% set projects = craft.entries.section('entries').type('projects').id('not ' ~ entry.id).order('RAND()').limit('6') %}
         {% include '_includes/listing-projects' %}
 
         <div class="center-btn">

@@ -1053,6 +1053,9 @@ textarea {
       vertical-align: top; }
       .listing-projects__item:not(:first-child):before {
         display: none; } }
+  @media only screen and (min-width: 60em) {
+    .listing-projects__item {
+      width: 29.6875%; } }
 
 .listing-projects__img {
   padding: 4px;
@@ -1254,6 +1257,10 @@ Page specific */
 .page--home__btn {
   margin-bottom: 48px;
   margin-bottom: 3rem; }
+
+.page--projects {
+  max-width: 1184px;
+  max-width: 74rem; }
 
 .page--entries__more {
   margin-top: 48px;
