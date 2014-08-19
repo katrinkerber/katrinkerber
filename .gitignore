@@ -48,6 +48,7 @@ _logs/*
 transformed_img/*
 ## Craft specific
 craft/app/*
+craft/storage
 craft/storage/*
 
 # SFTP set up file
