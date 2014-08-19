@@ -61,6 +61,9 @@ Page specific */
 .page--home__text {
   @include rem(max-width, 720px);
 }
+.page--home__quote {
+  @include rem(max-width, 560px);
+}
 .page--home__btn {
   @include rem(margin-bottom, 48px);
 }

@@ -1300,6 +1300,10 @@ Page specific */
   max-width: 720px;
   max-width: 45rem; }
 
+.page--home__quote {
+  max-width: 560px;
+  max-width: 35rem; }
+
 .page--home__btn {
   margin-bottom: 48px;
   margin-bottom: 3rem; }

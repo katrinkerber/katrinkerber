@@ -28,7 +28,7 @@
   {% set project = craft.entries.section('entries').search('quote:*').order('RAND()').limit(1) %}
   {% for project in project %}
     {% for projectQuote in project.quote %}
-      <blockquote>
+      <blockquote class="page--home__quote">
         {{ projectQuote.text }}
         <footer>
           <cite>{{ projectQuote.sourceName }}, {{ projectQuote.sourceCompany }}</cite>
