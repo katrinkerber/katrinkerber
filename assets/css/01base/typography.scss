@@ -174,7 +174,7 @@ Quotes
 
 blockquote {
   @include rem(margin,0 auto 48px);
-  @include rem(max-width, 556px);
+  @include rem(max-width, 768px);
   color: $orange;
   text-align: center;
   &:before {

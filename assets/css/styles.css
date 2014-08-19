@@ -509,8 +509,8 @@ Quotes
 blockquote {
   margin: 0 auto 48px;
   margin: 0 auto 3rem;
-  max-width: 556px;
-  max-width: 34.75rem;
+  max-width: 768px;
+  max-width: 48rem;
   color: #e27a3f;
   text-align: center; }
   blockquote:before {
