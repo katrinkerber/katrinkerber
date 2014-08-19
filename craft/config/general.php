@@ -12,7 +12,7 @@ return array(
     'siteUrl' => 'katrinkerber.com'
   ),
 
-  'dev.katrinkerber.com' => array(
-    'siteUrl' => 'dev.katrinkerber.com'
+  'katrinkerber.dev' => array(
+    'siteUrl' => 'katrinkerber.dev'
   )
 );

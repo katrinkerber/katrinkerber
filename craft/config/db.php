@@ -19,11 +19,10 @@ return array(
 		'password' => 'kb1#%m1Gtgit'
 	),
 
-	'dev.katrinkerber.com' => array(
+	'katrinkerber.dev' => array(
 		'database' => 'craft_katrinkerber',
 		'server' => 'localhost',
 		'user' => 'root',
 		'password' => 'root'
 	)
-
 );

@@ -34,7 +34,7 @@
     "sourceMap": false,
     "useLibSass": false
   },
-  "serverHostname": null,
+  "serverHostname": "katrinkerber.dev",
   "serverPort": null,
   "simpleModeFileTypes": [
     "scss",
@@ -43,7 +43,7 @@
     "html",
     "php"
   ],
-  "simpleModePartnerServer": "dev.katrinkerber.com",
+  "simpleModePartnerServer": "katrinkerber.dev",
   "type": "simple",
   "useCompass": false
 }
