@@ -77,14 +77,16 @@
         {% set notes = craft.entries.section('entries').type('notes').id('not ' ~ entry.id).limit('4') %}
         {% for note in notes %}
           <li class="listing-notes__item">
-            <h3 class="listing-notes__heading">
-              <a href="{{ note.url }}">
-                {{ note.title|title|ucwords }}
-              </a>
-            </h3>
-            <time datetime="{{ note.postDate|date('Y-m-d') }}" itemprop="datePublished">
-              {{ note.postDate|date('jS F Y') }}
-            </time>
+            <div class="listing-notes__heading">
+              <h3>
+                <a href="{{ note.url }}">
+                  {{ note.title|title|ucwords }}
+                </a>
+              </h3>
+              <time datetime="{{ note.postDate|date('Y-m-d') }}" itemprop="datePublished">
+                {{ note.postDate|date('jS F Y') }}
+              </time>
+            </div>
           </li>
         {% endfor %}
       </ul>
