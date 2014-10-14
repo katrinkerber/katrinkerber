@@ -1,0 +1,70 @@
+.listing-projects {
+  @extend ul.no-bull;
+  @include rem(margin-top, 16px);
+  margin-bottom: 0;
+
+  @include media-query(min, $breakpointSmall) {
+    @include display(flex);
+    @include flex-wrap(wrap);
+    // @include align-content(stretch);
+    @include justify-content(space-between);
+  }
+}
+
+.listing-projects__item {
+  background-color: white;
+  text-align: left;
+
+  @include media-query(min, $breakpointSmall) {
+    @include rem(margin-bottom, 24px);
+    width: 48%;
+  }
+  @include media-query(min, $breakpointLarge) {
+    width: percentage(234/744);
+  }
+}
+.listing-projects__item__link {
+  @include inline-block;
+  @include rem(padding-bottom, 16px);
+  margin-bottom: 0;
+  color: $teal;
+  background: none;
+
+  @include hover-states {
+    color: $orange;
+    border-color: $orange;
+    background: none;
+  }
+  &:visited {
+    color: $greyLight;
+    border-color: $greyLight;
+
+  }
+}
+
+.listing-projects__img {
+  @include rem(margin-bottom, 16px);
+  width: 100%;
+  @include rem(max-width, 400px);
+
+  @include media-query(min, $breakpointMedium) {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+.listing-projects__heading {
+  @include rem(max-width, 408px);
+  margin-bottom: 0;
+
+  font-family: $font;
+  @include rem(font-size, 18px);
+  @include rem(line-height, 22px);
+  text-transform: none;
+}
+
+.listing-projects__time {
+  margin-bottom: 0;
+  @include rem(font-size, 16px);
+  line-height: 1;
+}

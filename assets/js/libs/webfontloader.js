@@ -1,6 +1,6 @@
 WebFontConfig = {
   custom: {
-    families: ['latolight', 'latolight_italic']
+    families: ['latolight', 'latolight_italic', 'lato_regular', 'lato_italic']
   }
 };
 

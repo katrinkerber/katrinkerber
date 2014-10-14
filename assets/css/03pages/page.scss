@@ -1,0 +1,81 @@
+/*
+==========================================================================
+PAGE
+========================================================================== */
+html {
+  background: url('/assets/img/bg-pattern.png') repeat;
+}
+
+// layout
+body {
+  margin-left: auto;
+  margin-right: auto;
+  @include media-query(min, $breakpointSmall) {
+    @include rem(padding, 0 8px);
+    @include rem(max-width, 712px);
+  }
+}
+
+@include media-query(min, $breakpointLarge) {
+  body {
+    width: auto;
+    @include rem(max-width, 1192px);
+    @include rem(margin-top, 24px);
+  }
+  .siteheader,
+  .callout {
+    float: left;
+    width: percentage(320/1192);
+    margin-left: percentage(24/1192);
+  }
+  .page {
+    float: right;
+    width: percentage(800/1192);
+    margin-right: percentage(24/1192);
+  }
+}
+
+// content
+.page__intro {
+  @include rem(font-size, 26px);
+  @include rem(line-height, 30px);
+  @include rem(margin-bottom, 16px);
+  color: $green;
+
+  @include media-query(min, $breakpointMedium) {
+    @include rem(font-size, 36px);
+    @include rem(line-height, 40px);
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+.page__intro--center {
+  text-align: center;
+}
+.page__code code {
+  @include rem(margin-bottom, -16px);
+}
+
+
+/* ===
+Page specific */
+.page--projects h1 + time {
+  @include rem(margin-top, -8px);
+}
+.page--about__img {
+  display: block;
+  @include rem(width, 100px);
+  @include rem(margin, 0 auto 16px);
+  border-radius: 100%;
+  border: 2px solid $green;
+  @include media-query(min, $breakpointMedium) {
+    @include rem(width, 140px);
+  }
+}
+.page--contact {
+  text-align: center;
+}
+
+

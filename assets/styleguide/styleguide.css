@@ -1,5 +1,5 @@
 body {
-  max-width: 1024px;
+  max-width: none;
   margin: 0;
 }
 .styleguide-note {
@@ -22,11 +22,11 @@ header h1 {
   margin-bottom: 0;
 }
 
+header nav .current {
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 43.99em ) {
-  header nav {
-    border-bottom: 1px solid;
-    margin-bottom: 2rem;
-  }
   header nav li {
     display: inline-block;
     padding: 1em 0.5em 1em 0;
@@ -35,8 +35,8 @@ header h1 {
 @media only screen and (min-width: 44em ) {
   header {
     position: fixed;
-    left: 32px;
-    top: 32px;
+    left: 0;
+    top: 0;
     width: 24%;
     height: 100%;
     overflow: auto;
@@ -45,6 +45,6 @@ header h1 {
     margin-bottom: 1rem;
   }
   .page {
-    padding-left: 30%;
+    width: 70%;
   }
 }

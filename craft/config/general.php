@@ -8,11 +8,18 @@
  */
 
 return array(
-  'katrinkerber.com' => array(
-    'siteUrl' => 'katrinkerber.com'
-  ),
 
-  'katrinkerber.dev' => array(
-    'siteUrl' => 'katrinkerber.dev'
-  )
+    '*' => array(
+      'errorTemplatePrefix' => "pages/",
+    ),
+    // local
+    '.dev' => array(
+      'devMode' => true,
+      'userSessionDuration' => false,
+      'siteUrl' => 'http://katrinkerber.dev',
+    ),
+    // live
+    '.com' => array(
+      'siteUrl' => 'http://katrinkerber.com',
+    ),
 );

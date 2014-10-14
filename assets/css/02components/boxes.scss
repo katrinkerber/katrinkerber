@@ -1,0 +1,39 @@
+.box {
+  @include box-sizing(border-box);
+  @include rem(padding, 16px 16px 24px);
+  @include rem(margin-bottom, 8px);
+
+  border-width: 4px;
+  border-image: none;
+  border-top-style: solid;
+
+  background: white;
+  background-repeat: repeat-x;
+
+  @include media-query(min, 480px) {
+    @include rem(margin-bottom, 24px);
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  &.siteheader {
+    border-width: 4px;
+  }
+}
+
+// top border colours
+.box--teal {
+  border-color: $teal;
+}
+.box--grey {
+  border-color: $greyBlue;
+}
+.box--orange {
+  border-color: $orange;
+}
+.box--green {
+  border-color: $green;
+}
+

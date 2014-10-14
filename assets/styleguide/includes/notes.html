@@ -27,12 +27,11 @@
   </ul>
 
   <h3>Attribute order</h3>
-  <p>HTML attributes should come in this particular order for easier reading of code:</p>
+  <p>The <strong>class attribute should always come first</strong>. Any other attributes should be grouped together in a logical way.</p>
   <ol>
     <li><code>class</code></li>
     <li><code>data-*</code></li>
-    <li><code>role</code></li>
-    <li><code>aria-*</code></li>
+    <li><code>role</code>, <code>aria-*</code></li>
     <li><code>src</code>, <code>alt</code>, <code>href</code></li>
     <li><code>for</code></li>
     <li><code>type</code>, <code>name</code>, <code>id</code>, <code>value</code></li>
@@ -88,15 +87,15 @@ h1 {
     </li>
       <li>
         <strong>Components</strong> <br>
-        Independent small-scale elements, like buttons, for example.
-      </li>
-      <li>
-        <strong>Modules</strong> <br>
-        Complex, independent modular parts of the site. Forms, for example.
+        Independent elements and modules, including icons, buttons and forms.
       </li>
       <li>
         <strong>Pages</strong> <br>
-        Page specific styles. Use sparingly, think <strong>'modular'</strong> as much as possible.
+        Page specific styles. Use sparingly, think <strong>'modular components'</strong> as much as possible.
+      </li>
+      <li>
+        <strong>Prism</strong> <br>
+        Used for code section styling.
       </li>
       <li>
         <strong>Print styles</strong>

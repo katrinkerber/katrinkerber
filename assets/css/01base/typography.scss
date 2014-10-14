@@ -23,46 +23,40 @@ body {
 
 
 /*=====*/
+h1, .heading_h1,
+h2, .heading_h2,
+h3, .heading_h3,
+h4, h5, h6, .heading_h4, .heading_h5, .heading_h6 {
+  font-family: $fontBold;
+  font-weight: bold;
+  text-transform: uppercase;
+  @include rem(letter-spacing, -0.5px);
+}
 
-h1, .faux_h1 {
+h1, .heading_h1 {
   @include rem(font-size, 32px);
   @include rem(line-height, 36px);
   @include rem(margin-bottom, 16px);
-  font-family: $fontBold;
-  font-weight: normal;
+
+  @include media-query(min, $breakpointMedium) {
+    @include rem(font-size, 36px);
+    @include rem(line-height, 40px);
+  }
 }
-h2, .faux_h2 {
-  @include rem(font-size, 26px);
+h2, .heading_h2 {
+  @include rem(font-size, 24px);
   @include rem(line-height, 30px);
-  @include rem(margin-bottom, 8px);
-  font-family: $fontBold;
-  font-weight: normal;
+  @include rem(margin-bottom, 4px);
 }
-h3, .faux_h3 {
-  @include rem(font-size, 22px);
-  @include rem(line-height, 28px);
-  @include rem(margin-bottom, 8px);
-  font-family: $fontBold;
-  font-weight: normal;
-}
-h4, h5, h6, .faux_h4, .faux_h5, .faux_h6 {
+h3, .heading_h3 {
   @include rem(font-size, 20px);
   @include rem(line-height, 26px);
   @include rem(margin-bottom, 4px);
-  font-family: $fontBold;
-  font-weight: normal;
 }
-
-
-.lines-heading {
-  @include rem(margin,48px 0 24px);
-  text-align: center;
-  &:before {
-    @include short-line(before);
-  }
-  &:after {
-    @include short-line(after);
-  }
+h4, h5, h6, .heading_h4, .heading_h5, .heading_h6 {
+  @include rem(font-size, 18px);
+  @include rem(line-height, 26px);
+  @include rem(margin-bottom, 4px);
 }
 
 /*=====*/
@@ -88,16 +82,8 @@ small {
 
 time {
   display: block;
+  @include rem(margin-bottom, 16px);
   color: $greyLight;
-  h1 + & {
-    @include rem(margin-top, -16px);
-  }
-  h2 + & {
-    @include rem(margin-top, -10px);
-  }
-  h3 + & {
-    @include rem(margin-top, -10px);
-  }
 }
 
 sup {
@@ -110,19 +96,9 @@ sub {
 hr {
   height: 0;
   border: 0;
-  border-top: 2px solid;
+  border-top: 1px dotted;
   margin: 0;
   @include rem(margin, 23px 0 23px 0);
-}
-.hr--short {
-  border: none;
-  @include rem(margin-bottom, 24px);
-  &:before {
-    @include short-line(before);
-  }
-}
-.hr--orange {
-  color: $orange;
 }
 
 ::-moz-selection {
@@ -137,30 +113,31 @@ Links
 ====*/
 a,
 .link {
-  background-image: url('../img/underline-teal.png');
+  background-image: url('../img/underline-orange.png');
   background-repeat: repeat-x;
   background-position: 0 98%;
-  color: $teal;
+
+  color: $orange;
   text-decoration:none;
   @include transition (all 0.3s);
+
+  @include hover-states {
+    color: $teal;
+    background-image: url('../img/underline-teal.png');
+  }
 }
 a:visited {
-  color: $orange;
+  color: $teal;
+  background-image: url('../img/underline-teal.png');
 }
-a:focus {
-  background-image: url('../img/underline-orange.png');
-  color: $orange;
-  outline: thin dotted;
-}
-a:hover, a:active {
-  background-image: url('../img/underline-orange.png');
-  color: $orange;
-  outline: 0;
-}
+
 a[href^='tel'] {
   pointer-events: none;
-  color: inherit;
   background: none;
+
+  &:after {
+    display: none;
+  }
 
   html.touch & {
     pointer-events: auto;
@@ -172,21 +149,19 @@ a[href^='tel'] {
 Quotes
 ====*/
 
+q {
+  font-family: $fontItalic;
+}
+
 blockquote {
-  @include rem(margin,0 auto 48px);
-  @include rem(max-width, 768px);
-  color: $orange;
-  text-align: center;
-  &:before {
-    @include short-line(before);
-  }
+  @include rem(margin, 0 0 24px);
+  color: $teal;
 }
 blockquote p {
+  font-family: $fontBoldItalic;
   @include rem(font-size, 20px);
-  @include rem(line-height, 26px);
-  @include rem(margin-bottom, 8px);
-  font-family: $fontItalic;
-
+  @include rem(line-height, 28px);
+  @include rem(margin-bottom, 4px);
 
   @include media-query(min, $breakpointMedium) {
     @include rem(font-size, 24px);
@@ -195,12 +170,8 @@ blockquote p {
 }
 blockquote cite {
   display: block;
-  font-family: $fontBold;
   font-weight: normal;
   font-style: normal;
-  &:before {
-   content:'– ';
-  }
   &:after {
    content: '\A';
    white-space: pre;
@@ -208,14 +179,13 @@ blockquote cite {
 }
 blockquote footer a {
   @include inline-block;
-  @include rem(padding-top, 16px);
-  font-weight: bold;
-  text-transform: uppercase;
-  color: $orange;
-  background-image: url('../img/underline-orange.png');
+  @include rem(margin-top, 8px);
+  background-image: url('../img/underline-teal.png');
+  font-family: $fontBold;
+  color: $teal;
   @include hover-states {
-    background-image: url('../img/underline-teal.png');
-    color: $teal;
+    color: $orange;
+    background-image: url('../img/underline-orange.png');
   }
 }
 
@@ -226,12 +196,12 @@ Lists
 ul {
   margin-left: 0;
   @include rem(padding-left, 18px);
-  @include rem(margin-bottom, 48px);
+  @include rem(margin, 8px 0 24px);
 }
 ol {
   margin-left: 0;
-  @include rem(padding-left, 24px);
-  @include rem(margin-bottom, 48px);
+  @include rem(padding-left, 22px);
+  @include rem(margin, 8px 0 24px);
 }
 ul ul,
 ol ol {

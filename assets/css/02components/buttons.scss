@@ -1,9 +1,11 @@
 .btn {
   @include inline-block;
-  @include rem(padding, 8px 32px);
+  @include rem(padding, 4px 24px);
+  @include rem(border-radius, 8px);
+  border: 2px solid $green;
   background: $green;
-  background-image: none;
-  @include rem(border-radius, 40px);
+
+  @include rem(font-size, 18px);
   font-family: $fontBold;
   font-weight: normal;
   color: $offwhite;
@@ -13,25 +15,27 @@
   &:visited {
     color: $offwhite;
   }
+
   @include hover-states {
     background: $teal;
+    border-color: $teal;
     color: $offwhite;
   }
+}
+
+.btn + .btn {
+  @include rem(margin-left, 16px);
 }
 
 .btn--secondary {
-  border: 2px solid;
   background-color: transparent;
-  color: $teal;
+  border-color: $greyBlue;
+  color: $greyBlue;
   &:visited {
-    color: $teal;
+    color: $greyBlue;
   }
   @include hover-states {
     color: $offwhite;
+    border-color: $teal;
   }
-}
-
-.center-btn {
-  @include rem(margin, 48px 0);
-  text-align: center;
 }

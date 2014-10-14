@@ -1,0 +1,45 @@
+{% extends "_layout" %}
+{% set pageTitle = entry.title|ucwords %}
+
+{% block content %}
+  <div class="box box--green">
+    <h1 class="visuallyhidden">{{ entry.title|ucwords }}</h1>
+
+    {% if entry.pageIntro %}
+      <div class="page__intro">
+        {{ entry.pageIntro }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="box box--grey">
+    <ul class="listing-notes">
+      {% set notes = craft.entries.section('entries').type('notes') %}
+      {% for note in notes %}
+        <li class="listing-notes__item">
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="listing-notes__heading lines-heading">
+              <h2 itemprop="name">
+                <a href="{{ note.url }}" itemprop="url">
+                  {{ note.title|title|ucwords }}
+                </a>
+              </h2>
+              <time datetime="{{ note.postDate|date('Y-m-d') }}" itemprop="datePublished">
+                {{ note.postDate|date('jS F Y') }}
+              </time>
+            </div>
+
+            <div class="listing-notes__text" itemprop="description">
+              {{ note.pageIntro }}
+            </div>
+
+            <a href="{{ note.url }}" itemprop="url">
+              Continue reading
+            </a>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+{% endblock %}

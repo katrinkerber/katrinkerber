@@ -48,7 +48,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	padding: 1em 0;
 	margin-bottom: 1em;
 	overflow: auto;
 }
@@ -60,7 +60,7 @@ pre[class*="language-"] code {
 
 :not(pre) > code,
 pre[class*="language-"] {
-	background: white;
+	background: $offwhite;
 }
 
 /* Inline code */

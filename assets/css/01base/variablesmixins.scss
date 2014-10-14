@@ -5,7 +5,7 @@ SASS VARIABLES, MIXINS, PLACEHOLDERS
 
 /*
 Colours */
-$offwhite: #FFFFF7;
+$offwhite: #FFFFFA;
 $greyBlue: #334D5C;
 $greyLight: #70828A;
 $greyFaded: #C3C9CD;
@@ -45,9 +45,19 @@ Font families */
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'lato_italic';
+  src: url('../fonts/lato-italic-webfont.eot');
+  src: url('../fonts/lato-italic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/lato-italic-webfont.svg#lato_italic') format('svg'),
+       url('../fonts/lato-italic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 $font: 'latolight', 'HelveticaLight', 'Helvetica-Light', 'Helvetica Light', Helvetica, Arial, sans-serif;
 $fontItalic: 'latolight_italic', 'HelveticaNeueLightItalic', 'HelveticaNeue-Light-Italic', 'Helvetica Neue Light Italic', 'Arial Italic', sans-serif;
 $fontBold: 'lato_regular', 'HelveticaNeue', 'Helvetica Neue', 'Arial', sans-serif;
+$fontBoldItalic: 'lato_italic', 'HelveticaNeueItalic', 'HelveticaNeue-Italic', 'Helvetica Neue Italic', 'Arial', sans-serif;
 
 
 /*
@@ -106,7 +116,8 @@ Examples:
 
 /*
 Breakpoints (converted to ems with media query mixin) */
-$breakpointSmall: 319px;
+$breakpointMini: 319px;
+$breakpointSmall: 480px;
 $breakpointMedium: 700px;
 $breakpointLarge: 960px;
 

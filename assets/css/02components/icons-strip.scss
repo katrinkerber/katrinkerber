@@ -1,0 +1,67 @@
+.icons-strip {
+  @include media-query(max, $breakpointMini) {
+    display: none;
+  }
+  @include rem(margin-bottom, 16px);
+  text-align: center;
+
+  @include media-query(min, $breakpointLarge) {
+    @include rem(margin-bottom, 32px);
+  }
+
+  .icon {
+    @include rem(margin, 0 4px);
+    @include animation-name(grow);
+    @include animation-duration(0.8s);
+    @include animation-timing-function(linear);
+    @include animation-fill-mode(forwards);
+    html.cssanimations & {
+      @include transform(scale(0));
+    }
+    @include media-query(min, $breakpointSmall) {
+      @include rem(margin, 0 16px);
+    }
+    @include media-query(min, 1200px) {
+      @include rem(margin, 0 24px);
+    }
+  }
+  .icon--xlarge {
+    @include rem(margin-bottom, -8px);
+    @include media-query(min, $breakpointMedium) {
+      @include rem(margin-bottom, -32px);
+    }
+  }
+  .icon--heart {
+    @include animation-name(beat);
+    @include animation-duration(1.5s);
+    @include animation-delay(1s);
+  }
+}
+
+@include keyframes(grow) {
+  0% {
+    @include transform(scale(0));
+  }
+  100% {
+    @include transform(scale(1));
+  }
+}
+
+@include keyframes(beat) {
+  0% {
+    @include transform(scale(0));
+  }
+  40% {
+    @include transform(scale(1.2));
+
+  }
+  60% {
+    @include transform(scale(0.5));
+  }
+  80% {
+    @include transform(scale(1.2));
+  }
+  100% {
+    @include transform(scale(1));
+  }
+}

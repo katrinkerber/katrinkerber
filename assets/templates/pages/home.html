@@ -1,0 +1,46 @@
+{% extends "_layout" %}
+
+{% block content %}
+  <div class="box box--green">
+    <div class="icons-strip" role="presentation" aria-hidden="true">
+      <i class="icon icon--large icon--wayfinder" aria-hidden="true"></i>
+      <i class="icon icon--large icon--smile" aria-hidden="true"></i>
+      <i class="icon icon--xlarge icon--heart icon--heart--green" aria-hidden="true"></i>
+      <i class="icon icon--large icon--speed" aria-hidden="true"></i>
+      <i class="icon icon--large icon--mobile" aria-hidden="true"></i>
+    </div>
+
+    {% if entry.pageIntro %}
+      <div class="page__intro page__intro--center">
+        {{ entry.pageIntro }}
+      </div>
+    {% endif %}
+  </div>
+
+  {# Testimonial #}
+  {% set project = craft.entries.section('entries').search('quote:*').order('RAND()').limit(1) %}
+  {% for project in project %}
+    <div class="box box--teal">
+      {% for image in project.mainImage %}
+        <figure class="page__media">
+          <img src="{{ image.url }}" alt="Project screenshots" itemprop="image">
+        </figure>
+      {% endfor %}
+      {% for projectQuote in project.quote %}
+        <blockquote>
+          {{ projectQuote.text }}
+          <footer>
+            <cite>{{ projectQuote.sourceName }}, {{ projectQuote.sourceCompany }}</cite>
+            <a href="{{ project.url }}">View project details</a>
+          </footer>
+        </blockquote>
+      {% endfor %}
+    </div>
+  {% endfor %}
+
+  {% for contentSection in entry.pageContentSections %}
+    <div class="box box--grey">
+      {{ contentSection.text }}
+    </div>
+  {% endfor %}
+{% endblock %}

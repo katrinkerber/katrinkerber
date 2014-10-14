@@ -14,10 +14,10 @@ html.svg {
     background-size: 35px auto;
 
     @include media-query(min, $breakpointMedium) {
-      @include rem(width, 107px);
-      @include rem(height, 107px);
-      -webkit-background-size: 100px auto;
-      background-size: 100px auto;
+      @include rem(width, 70px);
+      @include rem(height, 70px);
+      -webkit-background-size: 65px auto;
+      background-size: 65px auto;
     }
   }
   .icon--xlarge {
@@ -25,10 +25,10 @@ html.svg {
     @include rem(height, 55px);
     background-size: 53px auto;
     @include media-query(min, $breakpointMedium) {
-      @include rem(width, 160px);
-      @include rem(height, 160px);
-      -webkit-background-size: 150px auto;
-      background-size: 150px auto;
+      @include rem(width, 120px);
+      @include rem(height, 120px);
+      -webkit-background-size: 115px auto;
+      background-size: 115px auto;
     }
   }
   .icon--heart {

@@ -20,9 +20,9 @@ return array(
 	),
 
 	'katrinkerber.dev' => array(
-		'database' => 'craft_katrinkerber',
-		'server' => 'localhost',
-		'user' => 'root',
-		'password' => 'root'
+		'database' => 'katrinke_craft',
+		'server' => '91.197.231.206',
+		'user' => 'katrinke_katrin',
+		'password' => 'kb1#%m1Gtgit'
 	)
 );

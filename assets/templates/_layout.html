@@ -7,8 +7,8 @@
 <head>
   <meta charset="UTF-8" />
 
-  <title>{% if pageTitle is defined %}{{ pageTitle }} - Katrin Kerber{% else %}Katrin Kerber - I build websites with love.{% endif %}</title>
-  <meta name="description" content="Freelance web developer based in Petersfield. I build successful websites with love for usability, high quality code, great CMS and attention to detail." />
+  <title>{% if pageTitle is defined %}{{ pageTitle }} - Katrin Kerber{% else %}Katrin Kerber - I build successful and user-friendly websites.{% endif %}</title>
+  <meta name="description" content="I am a freelancer based in Petersfield. I work with organisations, individuals and agencies to build successful and user-friendly websites." />
   <meta name="author" content="/humans.txt" />
   <meta name="robots" content="/robots.txt" />
 
@@ -48,36 +48,40 @@
   <script src="/assets/js/analytics.js" async></script>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" id="top">
-  <header role="banner" class="siteheader">
-    <h1 class="siteheader__header">
+  <header class="siteheader box box--teal" role="banner" >
+    <h1 class="siteheader__heading">
       {% if craft.request.firstSegment %}
         <a href="/">Katrin Kerber</a>
       {% else %}
         Katrin Kerber
       {% endif %}
     </h1>
-    <p class="siteheader__tagline">I build websites with love.</p>
+
+    {% if craft.request.firstSegment %}
+      <p class="siteheader__tagline">
+        I work with organisations, individuals and agencies to build successful and user-friendly websites.
+      </p>
+    {% endif %}
+
     <nav class="siteheader__nav" role="navigation">
       <ul>
         {% set nav = [
           { uri: '', title: 'Home' },
-          { uri: 'what-i-do', title: 'What I Do' },
           { uri: 'projects', title: 'Projects' },
           { uri: 'about', title: 'About' },
-          { uri: 'notes', title: 'Notes' },
-          { uri: 'contact', title: 'Contact' }
+          { uri: 'notes', title: 'Notes' }
         ] %}
         {% for item in nav %}
           {% if loop.first %}
             <li>
-              <a {% if craft.request.firstSegment == '' %}class="current"{% endif %} href="{{ url(item.uri) }}">
+              <a {% if craft.request.firstSegment == '' %}class="current"{% endif %} href="/{{ item.uri }}">
                 {{ item.title }}
               </a>
             </li>
           {% else %}
             {% set current = (craft.request.firstSegment == item.uri) %}
             <li>
-              <a {% if current %}class="current"{% endif %} href="{{ url(item.uri) }}">
+              <a {% if current %}class="current"{% endif %} href="/{{ item.uri }}">
                 {{ item.title }}
               </a>
             </li>
@@ -91,7 +95,25 @@
 		{% block content %}{% endblock %}
   </main>
 
-  <div class="backtotop">
+  <aside class="callout box box--orange">
+    <h2 class="callout__heading">Let’s work together</h2>
+
+    {% if entry.pageCallOut  %}
+      {{ entry.pageCallOut }}
+    {% else %}
+      <p>I am available to work on new projects and would love to hear about yours.</p>
+    {% endif %}
+
+    <a class="callout__link" href="mailto:mail@katrinkerber.com">
+      mail@katrinkerber.com
+    </a>
+    <br>
+    <a class="callout__link" href="tel:01730301302">
+      01730 301 302
+    </a>
+  </aside>
+
+  <div class="backtotop box box--grey">
     <a class="backtotop__link" href="#top"><i class="icon icon--arrow-up" aria-hidden="true"></i> Back to top</a>
   </div>
 

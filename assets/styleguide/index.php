@@ -21,7 +21,7 @@
   <script src="/assets/js/libs/modernizr.js" async></script>
 </head>
 <body>
-<header role="banner">
+<header class="box box--multicolour box--small" role="banner">
   <h1>Style Guide</h1>
   <h2>Katrin Kerber</h2>
   <nav>
@@ -30,19 +30,15 @@
       <li><a href="#colours">Colours</a></li>
       <li><a href="#typography">Typography</a></li>
     </ul>
-    <span class="faux_h3">Components</span>
+    <span class="heading_h3">Components</span>
     <ul>
       <li><a href="#icons">Icons</a></li>
       <li><a href="#buttons">Buttons</a></li>
       <li><a href="#media">Media</a></li>
     </ul>
-    <span class="faux_h3">Modules</span>
-    <ul>
-      <li><a href="#callout">Callout</a></li>
-    </ul>
   </nav>
 </header>
-<div role="main" class="page">
+<div class="page box box--multicolour box--large page" role="main">
   <?php
     include 'includes/notes.html';
     include 'includes/colours.html';
@@ -50,7 +46,6 @@
     include 'includes/icons.html';
     include 'includes/buttons.html';
     include 'includes/media.html';
-    include 'includes/callout.html';
   ?>
 </div>
 <!-- /page -->

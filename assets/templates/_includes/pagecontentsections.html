@@ -2,7 +2,7 @@
 
   {% if block.type == 'sectionTitle' %}
 
-    <h2 class="lines-heading">{{ block.sectionTitle|ucwords }}</h2>
+    <h2 >{{ block.sectionTitle|ucwords }}</h2>
 
   {% elseif block.type == 'sectionImage' %}
 
@@ -47,9 +47,7 @@
 
   {% elseif block.type == 'sectionText' %}
 
-    <div class="page__text">
-      {{ block.text }}
-    </div>
+    {{ block.text }}
 
   {% endif %}
 

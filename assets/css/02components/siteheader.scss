@@ -1,0 +1,61 @@
+.siteheader__heading {
+  @extend .heading_h2;
+  color: $teal;
+  a {
+    background: none;
+    color: $teal;
+    @include hover-states {
+      color: $orange;
+    }
+  }
+}
+
+.siteheader__tagline {
+  @include rem(max-width, 272px);
+  @include rem(font-size, 16px);
+  @include rem(line-height, 20px);
+  color: $greyBlue;
+}
+
+.siteheader__nav {
+  @include rem(margin-top, 24px);
+}
+
+.siteheader__nav li {
+  @include inline-block;
+  @include rem(margin-right, 8px);
+  font-weight: normal;
+  line-height: 1;
+
+  @include media-query(min, $breakpointLarge) {
+    display: block;
+    @include rem(margin-bottom, 16px);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.siteheader__nav a {
+  display: block;
+  background: none;
+  color: $greyBlue;
+
+  @include hover-states {
+    color: $orange;
+  }
+
+  @include media-query(min, $breakpointLarge) {
+    display: block;
+    @include rem(padding-bottom, 8px);
+    border-bottom: 1px dotted;
+  }
+}
+.siteheader__nav .current {
+  color: $teal;
+  font-family: $fontBold;
+
+  @include media-query(min, $breakpointLarge) {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+  }
+}
