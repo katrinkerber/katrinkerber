@@ -1,6 +1,6 @@
 .box {
   @include box-sizing(border-box);
-  @include rem(padding, 16px 16px 24px);
+  @include rem(padding, 16px 16px 20px);
   @include rem(margin-bottom, 8px);
 
   border-width: 4px;

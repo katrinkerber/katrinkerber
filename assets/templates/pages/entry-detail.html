@@ -63,7 +63,7 @@
     <aside class="box box--grey">
       <h2 >Other Notes</h2>
       <ul class="listing-notes">
-        {% set notes = craft.entries.section('entries').type('notes').id('not ' ~ entry.id).limit('4') %}
+        {% set notes = craft.entries.section('entries').type('notes').id('not ' ~ entry.id).limit('3') %}
         {% for note in notes %}
           <li class="listing-notes__item">
             <div class="listing-notes__heading">

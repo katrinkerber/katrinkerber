@@ -1,3 +1,7 @@
+.siteheader {
+  position: relative;
+}
+
 .siteheader__heading {
   @extend .heading_h2;
   color: $teal;
@@ -11,6 +15,7 @@
 }
 
 .siteheader__tagline {
+  margin-bottom: 0;
   @include rem(max-width, 272px);
   @include rem(font-size, 16px);
   @include rem(line-height, 20px);
@@ -18,12 +23,23 @@
 }
 
 .siteheader__nav {
-  @include rem(margin-top, 24px);
+  @include rem(margin-top, 16px);
+  @include rem(font-size, 18px);
+  @include rem(line-height, 24px);
+
+  @include media-query(min, $breakpointMedium) {
+    position: absolute;
+    @include rem(right, 4px);
+    top: 0;
+  }
+  @include media-query(min, $breakpointLarge) {
+    position: static;
+  }
 }
 
 .siteheader__nav li {
   @include inline-block;
-  @include rem(margin-right, 8px);
+  @include rem(margin-right, 12px);
   font-weight: normal;
   line-height: 1;
 

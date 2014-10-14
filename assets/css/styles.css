@@ -329,8 +329,8 @@ HELPER CLASSES
 TYPOGRAPHY
 ========================================================================== */
 body {
-  font: 112.5%/1.4444em "latolight", "HelveticaLight", "Helvetica-Light", "Helvetica Light", Helvetica, Arial, sans-serif;
-  /* 18px/24px */
+  font: 100%/1.375em "latolight", "HelveticaLight", "Helvetica-Light", "Helvetica Light", Helvetica, Arial, sans-serif;
+  /* 16px/22px */
   color: #334D5C;
   /* Nicer text rendering in webkit */
   -webkit-font-smoothing: antialiased;
@@ -377,6 +377,9 @@ h2, .heading_h2, .siteheader__heading {
   line-height: 1.875rem;
   margin-bottom: 4px;
   margin-bottom: 0.25rem; }
+  p + h2, p + .heading_h2, p + .siteheader__heading {
+    margin-top: 24px;
+    margin-top: 1.5rem; }
 
 h3, .heading_h3 {
   font-size: 20px;
@@ -396,8 +399,8 @@ h4, h5, h6, .heading_h4, .heading_h5, .heading_h6 {
 
 /*=====*/
 p {
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
 
 em {
   font-family: "latolight_italic", "HelveticaNeueLightItalic", "HelveticaNeue-Light-Italic", "Helvetica Neue Light Italic", "Arial Italic", sans-serif;
@@ -428,8 +431,8 @@ hr {
   border: 0;
   border-top: 1px dotted;
   margin: 0;
-  margin: 23px 0 23px 0;
-  margin: 1.4375rem 0 1.4375rem 0; }
+  margin: 15px 0 15px 0;
+  margin: 0.9375rem 0 0.9375rem 0; }
 
 ::-moz-selection {
   background: rgba(246, 203, 81, 0.6); }
@@ -506,6 +509,10 @@ blockquote cite {
   blockquote cite:after {
     content: '\A';
     white-space: pre; }
+  blockquote cite + a {
+    margin-top: 8px;
+    margin-top: 0.5rem;
+    font-family: "lato_regular", "HelveticaNeue", "Helvetica Neue", "Arial", sans-serif; }
 
 blockquote footer a {
   display: inline-block;
@@ -513,10 +520,7 @@ blockquote footer a {
   zoom: 1;
   *display: inline;
   *vertical-align: auto;
-  margin-top: 8px;
-  margin-top: 0.5rem;
   background-image: url("../img/underline-teal.png");
-  font-family: "lato_regular", "HelveticaNeue", "Helvetica Neue", "Arial", sans-serif;
   color: #23A38F; }
   blockquote footer a:hover, blockquote footer a:focus, blockquote footer a:active {
     color: #E27A3F;
@@ -527,8 +531,8 @@ Lists
 ====*/
 ul {
   margin-left: 0;
-  padding-left: 18px;
-  padding-left: 1.125rem;
+  padding-left: 20px;
+  padding-left: 1.25rem;
   margin: 8px 0 24px;
   margin: 0.5rem 0 1.5rem; }
 
@@ -595,8 +599,8 @@ Components */
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 16px 16px 24px;
-  padding: 1rem 1rem 1.5rem;
+  padding: 16px 16px 20px;
+  padding: 1rem 1rem 1.25rem;
   margin-bottom: 8px;
   margin-bottom: 0.5rem;
   border-width: 4px;
@@ -631,14 +635,17 @@ Components */
   zoom: 1;
   *display: inline;
   *vertical-align: auto;
+  margin: 0 8px 8px 0;
+  margin: 0 0.5rem 0.5rem 0;
   padding: 4px 24px;
   padding: 0.25rem 1.5rem;
   border-radius: 8px;
   border-radius: 0.5rem;
   border: 2px solid #B7C11E;
-  background: #B7C11E;
-  font-size: 18px;
-  font-size: 1.125rem;
+  background-color: #B7C11E;
+  background-image: none;
+  font-size: 16px;
+  font-size: 1rem;
   font-family: "lato_regular", "HelveticaNeue", "Helvetica Neue", "Arial", sans-serif;
   font-weight: normal;
   color: #FFFFFA;
@@ -647,13 +654,10 @@ Components */
   .btn:visited {
     color: #FFFFFA; }
   .btn:hover, .btn:focus, .btn:active {
-    background: #23A38F;
+    background-image: none;
+    background-color: #23A38F;
     border-color: #23A38F;
     color: #FFFFFA; }
-
-.btn + .btn {
-  margin-left: 16px;
-  margin-left: 1rem; }
 
 .btn--secondary {
   background-color: transparent;
@@ -666,10 +670,10 @@ Components */
     border-color: #23A38F; }
 
 .callout {
-  font-size: 18px;
-  font-size: 1.125rem;
-  line-height: 24px;
-  line-height: 1.5rem; }
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 22px;
+  line-height: 1.375rem; }
   .callout p {
     margin-bottom: 8px;
     margin-bottom: 0.5rem; }
@@ -1044,6 +1048,10 @@ html.svg .icon--arrow-up {
   height: 1rem;
   background-position: left 99.45946%; }
 
+h2 + .listing-notes {
+  margin-top: 16px;
+  margin-top: 1rem; }
+
 .listing-notes__item {
   margin-bottom: 16px;
   margin-bottom: 1rem;
@@ -1077,7 +1085,7 @@ html.svg .icon--arrow-up {
   margin-top: 1rem;
   margin-bottom: 0; }
   @media only screen and (min-width: 30em) {
-    .listing-projects {
+    html.flexbox .listing-projects {
       display: -webkit-box;
       display: -moz-box;
       display: box;
@@ -1103,15 +1111,16 @@ html.svg .icon--arrow-up {
       -ms-flex-pack: justify; } }
 
 .listing-projects__item {
+  position: relative;
   background-color: white;
   text-align: left; }
   @media only screen and (min-width: 30em) {
-    .listing-projects__item {
+    html.flexbox .listing-projects__item {
       margin-bottom: 24px;
       margin-bottom: 1.5rem;
       width: 48%; } }
   @media only screen and (min-width: 60em) {
-    .listing-projects__item {
+    html.flexbox .listing-projects__item {
       width: 31.45161%; } }
 
 .listing-projects__item__link {
@@ -1120,6 +1129,7 @@ html.svg .icon--arrow-up {
   zoom: 1;
   *display: inline;
   *vertical-align: auto;
+  width: 100%;
   padding-bottom: 16px;
   padding-bottom: 1rem;
   margin-bottom: 0;
@@ -1136,12 +1146,9 @@ html.svg .icon--arrow-up {
 .listing-projects__img {
   margin-bottom: 16px;
   margin-bottom: 1rem;
-  width: 100%;
-  max-width: 400px;
-  max-width: 25rem; }
+  width: 100%; }
   @media only screen and (min-width: 43.75em) {
     .listing-projects__img {
-      max-width: 100%;
       padding: 0; } }
 
 .listing-projects__heading {
@@ -1208,6 +1215,9 @@ Responsive video */
   width: 100%;
   height: 100%; }
 
+.siteheader {
+  position: relative; }
+
 .siteheader__heading {
   color: #23A38F; }
   .siteheader__heading a {
@@ -1217,6 +1227,7 @@ Responsive video */
       color: #E27A3F; }
 
 .siteheader__tagline {
+  margin-bottom: 0;
   max-width: 272px;
   max-width: 17rem;
   font-size: 16px;
@@ -1226,8 +1237,21 @@ Responsive video */
   color: #334D5C; }
 
 .siteheader__nav {
-  margin-top: 24px;
-  margin-top: 1.5rem; }
+  margin-top: 16px;
+  margin-top: 1rem;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
+  @media only screen and (min-width: 43.75em) {
+    .siteheader__nav {
+      position: absolute;
+      right: 4px;
+      right: 0.25rem;
+      top: 0; } }
+  @media only screen and (min-width: 60em) {
+    .siteheader__nav {
+      position: static; } }
 
 .siteheader__nav li {
   display: inline-block;
@@ -1235,8 +1259,8 @@ Responsive video */
   zoom: 1;
   *display: inline;
   *vertical-align: auto;
-  margin-right: 8px;
-  margin-right: 0.5rem;
+  margin-right: 12px;
+  margin-right: 0.75rem;
   font-weight: normal;
   line-height: 1; }
   @media only screen and (min-width: 60em) {
@@ -1302,13 +1326,17 @@ html {
 
 body {
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  padding-bottom: 24px;
+  padding-bottom: 1.5rem;
+  max-width: 712px;
+  max-width: 44.5rem; }
   @media only screen and (min-width: 30em) {
     body {
-      padding: 0 8px;
-      padding: 0 0.5rem;
-      max-width: 712px;
-      max-width: 44.5rem; } }
+      padding-left: 8px;
+      padding-left: 0.5rem;
+      padding-right: 8px;
+      padding-right: 0.5rem; } }
 
 @media only screen and (min-width: 60em) {
   body {
@@ -1338,10 +1366,10 @@ body {
   color: #B7C11E; }
   @media only screen and (min-width: 43.75em) {
     .page__intro {
-      font-size: 36px;
-      font-size: 2.25rem;
-      line-height: 40px;
-      line-height: 2.5rem; } }
+      font-size: 30px;
+      font-size: 1.875rem;
+      line-height: 34px;
+      line-height: 2.125rem; } }
   .page__intro p {
     margin-bottom: 0; }
 

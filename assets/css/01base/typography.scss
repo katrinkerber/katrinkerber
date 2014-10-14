@@ -4,7 +4,7 @@ TYPOGRAPHY
 ========================================================================== */
 
 body {
-  font: 112.5%/1.4444em $font; /* 18px/24px */
+  font: 100%/1.375em $font; /* 16px/22px */
   color: $greyBlue;
 
    /* Nicer text rendering in webkit */
@@ -47,6 +47,10 @@ h2, .heading_h2 {
   @include rem(font-size, 24px);
   @include rem(line-height, 30px);
   @include rem(margin-bottom, 4px);
+
+  p + & {
+    @include rem(margin-top, 24px);
+  }
 }
 h3, .heading_h3 {
   @include rem(font-size, 20px);
@@ -62,7 +66,7 @@ h4, h5, h6, .heading_h4, .heading_h5, .heading_h6 {
 /*=====*/
 
 p {
-  @include rem(margin-bottom, 24px);
+  @include rem(margin-bottom, 16px);
 }
 
 em {
@@ -98,7 +102,7 @@ hr {
   border: 0;
   border-top: 1px dotted;
   margin: 0;
-  @include rem(margin, 23px 0 23px 0);
+  @include rem(margin, 15px 0 15px 0);
 }
 
 ::-moz-selection {
@@ -176,12 +180,15 @@ blockquote cite {
    content: '\A';
    white-space: pre;
   }
+
+  + a {
+    @include rem(margin-top, 8px);
+    font-family: $fontBold;
+  }
 }
 blockquote footer a {
   @include inline-block;
-  @include rem(margin-top, 8px);
   background-image: url('../img/underline-teal.png');
-  font-family: $fontBold;
   color: $teal;
   @include hover-states {
     color: $orange;
@@ -195,7 +202,7 @@ Lists
 ====*/
 ul {
   margin-left: 0;
-  @include rem(padding-left, 18px);
+  @include rem(padding-left, 20px);
   @include rem(margin, 8px 0 24px);
 }
 ol {

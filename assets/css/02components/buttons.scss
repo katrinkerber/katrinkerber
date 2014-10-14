@@ -1,11 +1,13 @@
 .btn {
   @include inline-block;
+  @include rem(margin, 0 8px 8px 0);
   @include rem(padding, 4px 24px);
   @include rem(border-radius, 8px);
   border: 2px solid $green;
-  background: $green;
+  background-color: $green;
+  background-image: none;
 
-  @include rem(font-size, 18px);
+  @include rem(font-size, 16px);
   font-family: $fontBold;
   font-weight: normal;
   color: $offwhite;
@@ -17,14 +19,11 @@
   }
 
   @include hover-states {
-    background: $teal;
+    background-image: none;
+    background-color: $teal;
     border-color: $teal;
     color: $offwhite;
   }
-}
-
-.btn + .btn {
-  @include rem(margin-left, 16px);
 }
 
 .btn--secondary {

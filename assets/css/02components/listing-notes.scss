@@ -1,5 +1,9 @@
 .listing-notes {
   @extend .no-bull;
+
+  h2 + & {
+    @include rem(margin-top, 16px);
+  }
 }
 
 .listing-notes__item {

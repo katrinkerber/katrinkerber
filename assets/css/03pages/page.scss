@@ -10,9 +10,12 @@ html {
 body {
   margin-left: auto;
   margin-right: auto;
+  @include rem(padding-bottom, 24px);
+  @include rem(max-width, 712px);
+
   @include media-query(min, $breakpointSmall) {
-    @include rem(padding, 0 8px);
-    @include rem(max-width, 712px);
+    @include rem(padding-left, 8px);
+    @include rem(padding-right, 8px);
   }
 }
 
@@ -43,8 +46,8 @@ body {
   color: $green;
 
   @include media-query(min, $breakpointMedium) {
-    @include rem(font-size, 36px);
-    @include rem(line-height, 40px);
+    @include rem(font-size, 30px);
+    @include rem(line-height, 34px);
   }
 
   p {
