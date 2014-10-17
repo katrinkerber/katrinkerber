@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Base styles */
 /*
@@ -10,26 +11,26 @@ Colours */
 Font families */
 @font-face {
   font-family: 'latolight';
-  src: url("../fonts/lato-light-webfont.eot");
-  src: url("../fonts/lato-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-light-webfont.svg#latolight") format("svg"), url("../fonts/lato-light-webfont.ttf") format("truetype");
+  src: url("../fonts/lato-light-webfont.woff") format("woff"), url("../fonts/lato-light-webfont.ttf") format("truetype");
+  /* Android <4.4 */
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'latolight_italic';
-  src: url("../fonts/lato-lightitalic-webfont.eot");
-  src: url("../fonts/lato-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-lightitalic-webfont.svg#latolight_italic") format("svg"), url("../fonts/lato-lightitalic-webfont.ttf") format("truetype");
+  src: url("../fonts/lato-lightitalic-webfont.woff") format("woff"), url("../fonts/lato-lightitalic-webfont.ttf") format("truetype");
+  /* Android <4.4 */
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'lato_regular';
-  src: url("../fonts/lato-regular-webfont.eot");
-  src: url("../fonts/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-regular-webfont.svg#lato_regular") format("svg"), url("../fonts/lato-regular-webfont.ttf") format("truetype");
+  src: url("../fonts/lato-regular-webfont.woff") format("woff"), url("../fonts/lato-regular-webfont.ttf") format("truetype");
+  /* Android <4.4 */
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'lato_italic';
-  src: url("../fonts/lato-italic-webfont.eot");
-  src: url("../fonts/lato-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-italic-webfont.svg#lato_italic") format("svg"), url("../fonts/lato-italic-webfont.ttf") format("truetype");
+  src: url("../fonts/lato-italic-webfont.woff") format("woff"), url("../fonts/lato-italic-webfont.ttf") format("truetype");
+  /* Android <4.4 */
   font-weight: normal;
   font-style: normal; }
 /*
@@ -351,16 +352,16 @@ h2, .heading_h2, .siteheader__heading,
 h3, .heading_h3,
 h4, h5, h6, .heading_h4, .heading_h5, .heading_h6 {
   font-family: "lato_regular", "HelveticaNeue", "Helvetica Neue", "Arial", sans-serif;
-  font-weight: bold;
+  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: -0.5px;
   letter-spacing: -0.03125rem; }
 
 h1, .heading_h1 {
-  font-size: 32px;
-  font-size: 2rem;
-  line-height: 36px;
-  line-height: 2.25rem;
+  font-size: 26px;
+  font-size: 1.625rem;
+  line-height: 30px;
+  line-height: 1.875rem;
   margin-bottom: 16px;
   margin-bottom: 1rem; }
   @media only screen and (min-width: 43.75em) {
@@ -465,8 +466,7 @@ html.touch a[href^='tel'] {
     background-image: url("../img/underline-teal.png"); }
 
 a:visited {
-  color: #23A38F;
-  background-image: url("../img/underline-teal.png"); }
+  color: #23A38F; }
 
 a[href^='tel'] {
   pointer-events: none;
@@ -495,6 +495,8 @@ blockquote p {
   line-height: 1.75rem;
   margin-bottom: 4px;
   margin-bottom: 0.25rem; }
+  blockquote p:before {
+    content: '“'; }
   @media only screen and (min-width: 43.75em) {
     blockquote p {
       font-size: 24px;
@@ -586,14 +588,20 @@ Components */
 @media only screen and (min-width: 43.75em) {
   .backtotop {
     display: none; } }
+html.no-js .backtotop {
+  display: none; }
 
-.backtotop__link {
+.backtotop__btn {
+  padding: 0;
   background: none;
+  border: none;
   font-size: 16px;
   font-size: 1rem;
   color: #334D5C; }
-  .backtotop__link:hover, .backtotop__link:focus, .backtotop__link:active {
-    background: none; }
+  .backtotop__btn:hover, .backtotop__btn:focus, .backtotop__btn:active {
+    cursor: pointer;
+    background: none;
+    color: #23A38F; }
 
 .box {
   -webkit-box-sizing: border-box;
@@ -1048,9 +1056,11 @@ html.svg .icon--arrow-up {
   height: 1rem;
   background-position: left 99.45946%; }
 
-h2 + .listing-notes {
-  margin-top: 16px;
-  margin-top: 1rem; }
+.listing-notes {
+  margin-top: 0; }
+  aside .listing-notes {
+    margin-top: 16px;
+    margin-top: 1rem; }
 
 .listing-notes__item {
   margin-bottom: 16px;
@@ -1058,10 +1068,6 @@ h2 + .listing-notes {
   padding-bottom: 16px;
   padding-bottom: 1rem;
   border-bottom: 1px solid #C3C9CD; }
-
-.listing-notes__heading h2,
-.listing-notes__heading h3 {
-  font-family: "latolight", "HelveticaLight", "Helvetica-Light", "Helvetica Light", Helvetica, Arial, sans-serif; }
 
 .listing-notes__heading a {
   background: none;
@@ -1119,9 +1125,6 @@ h2 + .listing-notes {
       margin-bottom: 24px;
       margin-bottom: 1.5rem;
       width: 48%; } }
-  @media only screen and (min-width: 60em) {
-    html.flexbox .listing-projects__item {
-      width: 31.45161%; } }
 
 .listing-projects__item__link {
   display: inline-block;
@@ -1155,7 +1158,6 @@ h2 + .listing-notes {
   max-width: 408px;
   max-width: 25.5rem;
   margin-bottom: 0;
-  font-family: "latolight", "HelveticaLight", "Helvetica-Light", "Helvetica Light", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 22px;

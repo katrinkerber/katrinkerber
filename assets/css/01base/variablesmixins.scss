@@ -20,40 +20,33 @@ $orange: #E27A3F;
 Font families */
 @font-face {
   font-family: 'latolight';
-  src: url('../fonts/lato-light-webfont.eot');
-  src: url('../fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/lato-light-webfont.svg#latolight') format('svg'),
-       url('../fonts/lato-light-webfont.ttf') format('truetype');
+  src: url('../fonts/lato-light-webfont.woff') format('woff'),
+       url('../fonts/lato-light-webfont.ttf') format('truetype'); /* Android <4.4 */
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'latolight_italic';
-  src: url('../fonts/lato-lightitalic-webfont.eot');
-  src: url('../fonts/lato-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/lato-lightitalic-webfont.svg#latolight_italic') format('svg'),
-       url('../fonts/lato-lightitalic-webfont.ttf') format('truetype');
+  src: url('../fonts/lato-lightitalic-webfont.woff') format('woff'),
+       url('../fonts/lato-lightitalic-webfont.ttf') format('truetype'); /* Android <4.4 */
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'lato_regular';
-  src: url('../fonts/lato-regular-webfont.eot');
-  src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/lato-regular-webfont.svg#lato_regular') format('svg'),
-       url('../fonts/lato-regular-webfont.ttf') format('truetype');
+  src: url('../fonts/lato-regular-webfont.woff') format('woff'),
+       url('../fonts/lato-regular-webfont.ttf') format('truetype'); /* Android <4.4 */
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'lato_italic';
-  src: url('../fonts/lato-italic-webfont.eot');
-  src: url('../fonts/lato-italic-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/lato-italic-webfont.svg#lato_italic') format('svg'),
-       url('../fonts/lato-italic-webfont.ttf') format('truetype');
+  src: url('../fonts/lato-italic-webfont.woff') format('woff'),
+       url('../fonts/lato-italic-webfont.ttf') format('truetype'); /* Android <4.4 */
   font-weight: normal;
   font-style: normal;
 }
+
 $font: 'latolight', 'HelveticaLight', 'Helvetica-Light', 'Helvetica Light', Helvetica, Arial, sans-serif;
 $fontItalic: 'latolight_italic', 'HelveticaNeueLightItalic', 'HelveticaNeue-Light-Italic', 'Helvetica Neue Light Italic', 'Arial Italic', sans-serif;
 $fontBold: 'lato_regular', 'HelveticaNeue', 'Helvetica Neue', 'Arial', sans-serif;

@@ -1,7 +1,8 @@
 .listing-notes {
   @extend .no-bull;
+  margin-top: 0;
 
-  h2 + & {
+  aside & {
     @include rem(margin-top, 16px);
   }
 }
@@ -12,10 +13,6 @@
   border-bottom: 1px solid $greyFaded;
 }
 
-.listing-notes__heading h2,
-.listing-notes__heading h3 {
-  font-family: $font;
-}
 .listing-notes__heading a {
   background: none;
   color: $greyBlue;

@@ -24,11 +24,6 @@
       width: 48%;
     }
   }
-  @include media-query(min, $breakpointLarge) {
-    html.flexbox & {
-      width: percentage(234/744);
-    }
-  }
 }
 
 .listing-projects__item__link {
@@ -63,7 +58,6 @@
   @include rem(max-width, 408px);
   margin-bottom: 0;
 
-  font-family: $font;
   @include rem(font-size, 18px);
   @include rem(line-height, 22px);
   text-transform: none;

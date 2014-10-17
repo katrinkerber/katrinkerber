@@ -28,14 +28,14 @@ h2, .heading_h2,
 h3, .heading_h3,
 h4, h5, h6, .heading_h4, .heading_h5, .heading_h6 {
   font-family: $fontBold;
-  font-weight: bold;
+  font-weight: normal;
   text-transform: uppercase;
   @include rem(letter-spacing, -0.5px);
 }
 
 h1, .heading_h1 {
-  @include rem(font-size, 32px);
-  @include rem(line-height, 36px);
+  @include rem(font-size, 26px);
+  @include rem(line-height, 30px);
   @include rem(margin-bottom, 16px);
 
   @include media-query(min, $breakpointMedium) {
@@ -132,7 +132,6 @@ a,
 }
 a:visited {
   color: $teal;
-  background-image: url('../img/underline-teal.png');
 }
 
 a[href^='tel'] {
@@ -166,6 +165,10 @@ blockquote p {
   @include rem(font-size, 20px);
   @include rem(line-height, 28px);
   @include rem(margin-bottom, 4px);
+
+  &:before {
+    content: '“';
+  }
 
   @include media-query(min, $breakpointMedium) {
     @include rem(font-size, 24px);
