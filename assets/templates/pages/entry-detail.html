@@ -29,7 +29,7 @@
           {% if entry.projectUrl %}
             <a class="btn" href="{{ entry.projectUrl }}" itemprop="url">Visit site</a>
           {% endif %}
-          <a class="btn btn--secondary" href="/projects">View other projects</a>
+
         </div>
 
       {% for projectQuote in entry.quote %}
@@ -42,6 +42,13 @@
           </blockquote>
         </div>
       {% endfor %}
+
+        <aside class="box">
+          <h2>Other projects</h2>
+          {% set projects = craft.entries.section('entries').type('projects').order('RAND()').limit(2) %}
+          {% include '_includes/listing-projects' %}
+          <a class="btn btn--secondary" href="/projects">View all</a>
+        </aside>
     </article>
 
   {% endif %}
