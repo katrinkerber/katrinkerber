@@ -23,7 +23,9 @@
     <div class="box box--teal">
       {% for image in project.mainImage %}
         <figure class="page__media">
-          <img src="{{ image.url }}" alt="Project screenshots" itemprop="image">
+          <a href="{{ project.url }}">
+            <img src="{{ image.url }}" alt="Project screenshots" itemprop="image">
+          </a>
         </figure>
       {% endfor %}
       {% for projectQuote in project.quote %}
