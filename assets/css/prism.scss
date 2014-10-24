@@ -10,7 +10,8 @@ pre[class*="language-"] {
 	text-shadow: 0 1px white;
 	font-family: 'Source Code Pro', Consolas, Monaco, 'Andale Mono', monospace;
 	font-weight: 400;
-	font-size: 18px;
+	font-size: 16px;
+	line-height: 22px;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
@@ -48,8 +49,10 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em 0;
+	padding: 1em 16px;
 	margin-bottom: 1em;
+	margin-left: -16px;
+	margin-right: -16px;
 	overflow: auto;
 }
 
@@ -60,12 +63,12 @@ pre[class*="language-"] code {
 
 :not(pre) > code,
 pre[class*="language-"] {
-	background: $offwhite;
+	background: #FEF9EC;
 }
 
 /* Inline code */
 :not(pre) > code {
-	padding: .1em .2em;
+	padding: 0 .2em;
 	color: $teal;
 }
 
