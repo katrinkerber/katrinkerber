@@ -64,9 +64,6 @@ body {
 
 /* ===
 Page specific */
-.page--projects h1 + time {
-  @include rem(margin-top, -8px);
-}
 .page--about__img {
   display: block;
   @include rem(width, 100px);

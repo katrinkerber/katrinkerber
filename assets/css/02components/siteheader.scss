@@ -4,6 +4,7 @@
 
 .siteheader__heading {
   @extend .heading_h2;
+  text-transform: uppercase;
   color: $teal;
   a {
     background: none;

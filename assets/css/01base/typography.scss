@@ -13,7 +13,7 @@ body {
   -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
 
   @include media-query(min, $breakpointMedium) {
-    font: 125%/1.4em $font; /* 20px/28px */
+    font: 112.5%/1.4444em $font; /* 18px/26px */
   }
 }
 
@@ -29,7 +29,6 @@ h3, .heading_h3,
 h4, h5, h6, .heading_h4, .heading_h5, .heading_h6 {
   font-family: $fontBold;
   font-weight: normal;
-  text-transform: uppercase;
   @include rem(letter-spacing, -0.5px);
 }
 
@@ -88,6 +87,10 @@ time {
   display: block;
   @include rem(margin-bottom, 16px);
   color: $greyLight;
+
+  h1 + & {
+    @include rem(margin-top, -8px);
+  }
 }
 
 sup {

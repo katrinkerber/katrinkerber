@@ -340,8 +340,8 @@ body {
   -ms-text-size-adjust: 100%; }
   @media only screen and (min-width: 43.75em) {
     body {
-      font: 125%/1.4em "latolight", "HelveticaLight", "Helvetica-Light", "Helvetica Light", Helvetica, Arial, sans-serif;
-      /* 20px/28px */ } }
+      font: 112.5%/1.4444em "latolight", "HelveticaLight", "Helvetica-Light", "Helvetica Light", Helvetica, Arial, sans-serif;
+      /* 18px/26px */ } }
 
 .wf-inactive body {
   font-family: 'HelveticaLight', 'Helvetica-Light', 'Helvetica Light', Helvetica, Arial, sans-serif; }
@@ -353,7 +353,6 @@ h3, .heading_h3,
 h4, h5, h6, .heading_h4, .heading_h5, .heading_h6 {
   font-family: "lato_regular", "HelveticaNeue", "Helvetica Neue", "Arial", sans-serif;
   font-weight: normal;
-  text-transform: uppercase;
   letter-spacing: -0.5px;
   letter-spacing: -0.03125rem; }
 
@@ -420,6 +419,9 @@ time {
   margin-bottom: 16px;
   margin-bottom: 1rem;
   color: #70828A; }
+  h1 + time {
+    margin-top: -8px;
+    margin-top: -0.5rem; }
 
 sup {
   top: -0.5em; }
@@ -1076,9 +1078,12 @@ html.svg .icon--arrow-up {
     color: #23A38F; }
 
 .listing-notes__heading time {
-  margin-bottom: 0;
+  margin-bottom: 4px;
+  margin-bottom: 0.25rem;
   font-size: 16px;
   font-size: 1rem; }
+  aside .listing-notes__heading time {
+    margin-bottom: 0; }
 
 .listing-notes__text {
   margin-bottom: 8px;
@@ -1221,6 +1226,7 @@ Responsive video */
   position: relative; }
 
 .siteheader__heading {
+  text-transform: uppercase;
   color: #23A38F; }
   .siteheader__heading a {
     background: none;
@@ -1384,10 +1390,6 @@ body {
 
 /* ===
 Page specific */
-.page--projects h1 + time {
-  margin-top: -8px;
-  margin-top: -0.5rem; }
-
 .page--about__img {
   display: block;
   width: 100px;
@@ -1417,7 +1419,8 @@ pre[class*="language-"] {
   text-shadow: 0 1px white;
   font-family: 'Source Code Pro', Consolas, Monaco, 'Andale Mono', monospace;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 22px;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -1447,8 +1450,10 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
     text-shadow: none; } }
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 1em 0;
+  padding: 1em 16px;
   margin-bottom: 1em;
+  margin-left: -16px;
+  margin-right: -16px;
   overflow: auto; }
 
 pre[class*="language-"] code {
@@ -1457,11 +1462,11 @@ pre[class*="language-"] code {
 
 :not(pre) > code,
 pre[class*="language-"] {
-  background: #FFFFFA; }
+  background: #FEF9EC; }
 
 /* Inline code */
 :not(pre) > code {
-  padding: .1em .2em;
+  padding: 0 .2em;
   color: #23A38F; }
 
 .token.comment,
