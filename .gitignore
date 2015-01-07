@@ -34,6 +34,8 @@ intermediate
 publish
 .idea
 back_up
+statamicdemo
+
 ## EE specific
 cache
 cache/*
