@@ -45,7 +45,7 @@
 
         <aside class="box">
           <h2>Other projects</h2>
-          {% set projects = craft.entries.section('entries').type('projects').order('RAND()').limit(2) %}
+          {% set projects = craft.entries.section('entries').type('projects').id('not ' ~ entry.id).order('RAND()').limit(2) %}
           {% include '_includes/listing-projects' %}
           <a class="btn btn--secondary" href="/projects">View all</a>
         </aside>
