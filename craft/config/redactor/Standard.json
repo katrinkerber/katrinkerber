@@ -1,12 +1,6 @@
 {
-	buttons: ['html','|','formatting','|','bold','italic','|','unorderedlist','orderedlist','|','link'],
-	plugins: ['fullscreen'],
-	toolbarFixedBox: true,
-  formattingTags: ['p', 'blockquote', 'pre', 'h2', 'h3', 'h4'],
-  formattingAdd: [
-  {
-    tag: 'code',
-    title: 'Inline code'
-  }],
-  observeLinks: true
+  formatting: ['h2', 'h3', 'h4','p'],
+  buttons: ['formatting','bold','italic','unorderedlist','orderedlist','link','html'],
+  plugins: ['fullscreen'],
+  toolbarFixedBox: true
 }
