@@ -1,0 +1,69 @@
+{% extends "_layout" %}
+
+{% block content %}
+  {% cache using key craft.request.path %}
+
+    <article itemscope itemtype="http://schema.org/CreativeWork">
+      <header class="page-heading">
+        <h1 class="page-heading__heading" itemprop="name">{{ entry.title }}</h1>
+        <span class="page-heading__subheading">{{ entry.projectDate|date('F Y') }}</span>
+      </header>
+
+      {% set image = entry.mainImage[0] ?? null %}
+      {% if image %}
+        <figure>
+          <img
+            src="{{ image.getUrl({ mode: 'fit', width: 960 }) }}"
+            srcset="{{ image.getUrl({ mode: 'fit', width: 480 }) }} 480w,
+                    {{ image.getUrl({ mode: 'fit', width: 960 }) }} 960w"
+            sizes="(min-width: 960px) 960px, 100vw"
+            alt="Image of screenshots of {{ entry.title }} website"
+            itemprop="image"
+          >
+        </figure>
+      {% endif %}
+
+      {% include 'includes/_pagecontent.twig' %}
+
+      {% if entry.siteLink %}
+        {% if entry.siteLink starts with 'http' %}
+          {% set link = entry.siteLink | trim('/') %}
+        {% else %}
+          {% set link = 'http://' ~ entry.siteLink | trim('/') %}
+        {% endif %}
+        <div class="maxwidth592 mt--32 mb--32">
+          <a href="{{ link }}" itemprop="url">Visit site</a>
+        </div>
+      {% endif %}
+
+
+      {% for entry in craft.entries.section('testimonials').relatedTo(entry) %}
+        <blockquote class="maxwidth592">
+          {{ entry.quote|replace({'&nbsp;' : ' '})|raw }}
+          {% if entry.source %}
+            <cite>{{ entry.source }}</cite>
+          {% endif %}
+        </blockquote>
+      {% endfor %}
+    </article>
+
+    {% set entries = craft.entries.section('projects').active('1').order('projectDate desc') %}
+    {% set prevEntry = entry.getPrev(entries) %}
+    {% set nextEntry = entry.getNext(entries) %}
+    <div class="prev-next">
+      {% if prevEntry %}
+        <a class="prev-next__link" href="{{ prevEntry.url }}">
+          <i class="icon icon--arrow-left" aria-hidden="true"></i>
+          <span class="sr-only">Previous project: </span>{{ prevEntry.title }}
+        </a>
+      {% endif %}
+      {% if nextEntry %}
+        <a class="prev-next__link prev-next__link--next" href="{{ nextEntry.url }}">
+          <span class="sr-only">Next project: </span>{{ nextEntry.title }}
+          <i class="icon icon--arrow-right" aria-hidden="true"></i>
+        </a>
+      {% endif %}
+    </div>
+
+  {% endcache %}
+{% endblock %}

@@ -1,0 +1,46 @@
+.icon {
+  @include inline-block;
+  vertical-align: bottom;
+  background-repeat: no-repeat;
+  @include transition(all 0.3s ease-in-out);
+}
+
+.icon--arrow-right {
+  @include rem(width, 24px);
+  @include rem(height, 24px);
+  @include rem(margin-left, 4px);
+  background-image: url('../images/arrow-right.png');
+  html.svg & {
+    background-image: url('../images/arrow-right.svg');
+  }
+
+  a:hover &,
+  a:hover &,
+  a:active &,
+  &--blue {
+    background-image: url('../images/arrow-right--blue.png');
+    html.svg & {
+      background-image: url('../images/arrow-right--blue.svg');
+    }
+  }
+}
+
+.icon--arrow-left {
+  @include rem(width, 24px);
+  @include rem(height, 24px);
+  @include rem(margin-right, 4px);
+  background-image: url('../images/arrow-left.png');
+  html.svg & {
+    background-image: url('../images/arrow-left.svg');
+  }
+
+  a:hover &,
+  a:hover &,
+  a:active &,
+  &--blue {
+    background-image: url('../images/arrow-left--blue.png');
+    html.svg & {
+      background-image: url('../images/arrow-left--blue.svg');
+    }
+  }
+}

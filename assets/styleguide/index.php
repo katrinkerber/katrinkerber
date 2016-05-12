@@ -1,87 +1,78 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]>  <html class="no-js lt-ie9 lt-ie8 lt-ie7 ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>     <html class="no-js lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>     <html class="no-js lt-ie9 ie8" lang="en"> <![endif]-->
+<!doctype html>
+<!--[if IE 7 ]>     <html class="no-js old-ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>     <html class="no-js old-ie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]>     <html class="no-js ie9" lang="en"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="UTF-8" />
 
-  <title>Style Guide Katrin Kerber</title>
+  <title>Style Guide for Katrin Kerber</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- link to the site's main CSS here -->
+  <meta name="robots" content="noindex, nofollow">
+
   <link rel="stylesheet" href="/assets/css/styles.min.css">
-  <link rel="stylesheet" href="/assets/styleguide/styleguide.css">
 
-  <!-- favicon -->
-  <link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
-
-  <script src="/assets/js/libs/modernizr.js" async></script>
+  <script src="/assets/libs/modernizr.js"></script>
 </head>
-<body>
-<header class="box box--multicolour box--small" role="banner">
-  <h1>Style Guide</h1>
-  <h2>Katrin Kerber</h2>
-  <nav>
-    <ul>
-      <li><a href="#notes">Notes</a></li>
-      <li><a href="#colours">Colours</a></li>
-      <li><a href="#typography">Typography</a></li>
-    </ul>
-    <span class="heading_h3">Components</span>
-    <ul>
-      <li><a href="#icons">Icons</a></li>
-      <li><a href="#buttons">Buttons</a></li>
-      <li><a href="#media">Media</a></li>
-    </ul>
-  </nav>
-</header>
-<div class="page box box--multicolour box--large page" role="main">
-  <?php
-    include 'includes/notes.html';
-    include 'includes/colours.html';
-    include 'includes/typography.html';
-    include 'includes/icons.html';
-    include 'includes/buttons.html';
-    include 'includes/media.html';
-  ?>
-</div>
-<!-- /page -->
 
-<!-- JavaScript -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<!-- Styleguide specific -->
-<script src="/assets/js/scripts.min.js"></script>
-<!-- tabs -->
-<script type="text/javascript">
-  $(document).ready(function() {
-    // tabs
-    var $sections = $('.page').find('section.tab-content');
-    var $links    = $('nav').find('a');
+<body class="page--guide">
 
-    if(window.location.hash) {
-      $sections.hide();
-      $('.page').find('section.tab-content' + window.location.hash).show();
-      $('nav').find('a[href="' + window.location.hash + '"]').addClass('current');
-    } else {
-      $sections.hide();
-      $('.page').find('section.tab-content#notes').show();
-      $('nav li:first-child a').addClass('current');
-    }
+  <header class="page--guide__header" role="banner">
+    <h1>Katrin Kerber</h1>
+    <h2>Style Guide</h2>
+    <nav>
+      <ul>
+        <!-- section links populated via JS -->
+      </ul>
+    </nav>
+  </header>
 
-    $links.click(function(){
-      var $this  = $(this);
-      var target = $(this).attr('href');
-      window.location.hash = target;
-      $links.not(this).removeClass('current');
-      $sections.hide();
-      $this.addClass('current');
-      $('section' +target).fadeIn(500);
-      return false;
-    });
-  });
-</script>
+  <main role="main">
+
+    <div data-section data-section-title="Coding guidelines">
+      <?php
+        include 'includes/notes/intro.html';
+        include 'includes/notes/html.html';
+        include 'includes/notes/css.html';
+        include 'includes/notes/js.html';
+      ?>
+    </div>
+
+    <div data-section data-section-title="Tools">
+      <?php
+        include 'includes/tools/colours.html';
+        include 'includes/tools/helpers.html';
+        include 'includes/tools/mixins.html';
+      ?>
+    </div>
+
+    <div data-section data-section-title="Base">
+      <?php
+        include 'includes/base/typography.html';
+      ?>
+    </div>
+
+    <div data-section data-section-title="Modules">
+      <?php
+        include 'includes/modules/page-intro.html';
+        include 'includes/modules/page-heading.html';
+        include 'includes/modules/media.html';
+        include 'includes/modules/code.html';
+        include 'includes/modules/icon-panels.html';
+        include 'includes/modules/projects.html';
+        include 'includes/modules/notes.html';
+        include 'includes/modules/prev-next.html';
+      ?>
+    </div>
+  </main>
+
+
+  <!-- JavaScript -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/assets/libs/prism/prism.js"></script>
+  <!-- Styleguide specific -->
+  <script src="/assets/js/styleguide.min.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
-  formatting: ['h2', 'h3', 'h4','p'],
-  buttons: ['formatting','bold','italic','unorderedlist','orderedlist','link','html'],
-  plugins: ['fullscreen'],
+  formatting: ['h2', 'h3', 'h4', 'blockquote', 'p'],
+	buttons: ['format','bold','italic','lists','link'],
+	plugins: ['fullscreen','source'],
   toolbarFixedBox: true
 }

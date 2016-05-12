@@ -1,0 +1,14 @@
+{% extends "_layout" %}
+
+
+{% block content %}
+  {% cache using key craft.request.path %}
+
+    <h1 class="sr-only">{{ entry.title }}</h1>
+
+    {% include 'includes/_pageintro.twig' %}
+
+    {% include 'includes/_pagecontent.twig' %}
+
+  {% endcache %}
+{% endblock %}

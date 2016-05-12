@@ -13,14 +13,14 @@ return array(
 	),
 
 	'katrinkerber.com' => array(
-		'database' => 'katrinke_craft',
+		'database' => 'katrinke_2016',
 		'server' => 'localhost',
 		'user' => 'katrinke_katrin',
 		'password' => 'kb1#%m1Gtgit'
 	),
 
 	'katrinkerber.dev' => array(
-		'database' => 'katrinke_craft',
+		'database' => 'katrinke_2016',
 		'server' => '91.197.231.206',
 		'user' => 'katrinke_katrin',
 		'password' => 'kb1#%m1Gtgit'

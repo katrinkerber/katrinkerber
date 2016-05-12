@@ -1,0 +1,33 @@
+{% extends "_layout" %}
+
+
+{% block content %}
+  {% cache using key craft.request.path %}
+
+    <h1 class="sr-only">{{ entry.title }}</h1>
+
+    {% include 'includes/_pageintro.twig' %}
+
+    {% set entries = craft.entries({
+      section: 'testimonials',
+      with: [
+        'project'
+      ]
+    }) %}
+
+    <ul class="list--nobull maxwidth592">
+      {% for entry in entries %}
+        <li>
+          {% set project = entry.project[0] ?? null %}
+          <blockquote class="maxwidth592">
+            {{ entry.quote|replace({'&nbsp;' : ' '})|raw }}
+            {% if entry.source %}
+              <cite>{{ entry.source }}{% if project %}, <a href="{{ project.url }}">{{ project.title }}</a>{% endif %}</cite>
+            {% endif %}
+          </blockquote>
+        </li>
+      {% endfor %}
+    </ul>
+
+  {% endcache %}
+{% endblock %}

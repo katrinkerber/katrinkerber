@@ -5,11 +5,11 @@
 # ------------------------------------------------------------------------------
 # | Better website experience for IE                                           |
 # ------------------------------------------------------------------------------
-  # Force IE to render pages in the highest available mode in the various
+	# Force IE to render pages in the highest available mode in the various
   # cases when it may not: http://hsivonen.iki.fi/doctype/ie-mode.pdf.
   # Use, if installed, Google Chrome Frame.
 
-  <IfModule mod_headers.c>
+	<IfModule mod_headers.c>
       Header set X-UA-Compatible "IE=edge,chrome=1"
       # `mod_headers` can't match based on the content-type, however, we only
       # want to send this header for HTML pages and not for the other resources
@@ -89,12 +89,12 @@ AddDefaultCharset utf-8
 # ----------------------------------------------------------------------
 
 # Configure the PHP file upload size
-# php_value post_max_size 32M
-# php_value upload_max_filesize 32M
-# php_value max_execution_time 600
+php_value post_max_size 50M
+php_value upload_max_filesize 32M
+php_value max_execution_time 600
 
 # Override default memory limit so PHP can process large files
-# php_value memory_limit 128M
+php_value memory_limit 512M
 
 # ------------------------------------------------------------------------------
 # | Rewrite engine                                                             |
@@ -127,9 +127,9 @@ AddDefaultCharset utf-8
 # redirect the other one.
 
 <IfModule mod_rewrite.c>
-    RewriteCond %{HTTPS} !=on
-    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-    RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
 </IfModule>
 
 # ------------------------------------------------------------------------------
@@ -153,7 +153,7 @@ AddDefaultCharset utf-8
 # private places like the CMS's directories).
 
 <IfModule mod_autoindex.c>
-    Options -Indexes
+  Options -Indexes
 </IfModule>
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -162,9 +162,9 @@ AddDefaultCharset utf-8
 # This includes directories used by version control systems such as Git and SVN.
 
 <IfModule mod_rewrite.c>
-    RewriteCond %{SCRIPT_FILENAME} -d [OR]
-    RewriteCond %{SCRIPT_FILENAME} -f
-    RewriteRule "(^|/)\." - [F]
+  RewriteCond %{SCRIPT_FILENAME} -d [OR]
+  RewriteCond %{SCRIPT_FILENAME} -f
+  RewriteRule "(^|/)\." - [F]
 </IfModule>
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -174,9 +174,9 @@ AddDefaultCharset utf-8
 # danger when anyone has access to them.
 
 <FilesMatch "(^#.*#|\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|sw[op])|~)$">
-    Order allow,deny
-    Deny from all
-    Satisfy All
+  Order allow,deny
+  Deny from all
+  Satisfy All
 </FilesMatch>
 
 # ------------------------------------------------------------------------------

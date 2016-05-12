@@ -34,7 +34,6 @@ intermediate
 publish
 .idea
 back_up
-statamicdemo
 
 ## EE specific
 cache
@@ -44,12 +43,21 @@ system/expressionengine/cache/*
 images/made
 images/captchas
 .PBSyncDB
+
 ## Statamic specific
 _cache/*
 _logs/*
 transformed_img/*
+
 ## Craft specific
-craft/app/*
-craft/storage/*
+/craft/*
+!/craft/config
+!/craft/translations
+!/craft/plugins
+
 # SFTP set up file
 sftp-config.json
+
+# Sketch data files
+*.sketch/Data
+*.sketch/metadata

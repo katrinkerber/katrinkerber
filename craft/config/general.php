@@ -8,18 +8,34 @@
  */
 
 return array(
-
-    '*' => array(
-      'errorTemplatePrefix' => "pages/",
+  '*' => array(
+    'omitScriptNameInUrls' => true,
+    'phpMaxMemoryLimit' => '1024M',
+    'sendPoweredByHeader' => false,
+    'timezone' => 'Europe/London',
+    'defaultFilePermissions' => 0744,
+    'defaultFolderPermissions' => 0775,
+    'convertFilenamesToAscii' => true,
+    'limitAutoSlugsToAscii' => true,
+    // 'imageDriver' => 'gd',
+    'defaultSearchTermOptions' => array(
+      'attribute' => 'title',
+      'subLeft' => true,
+      'subRight' => true,
     ),
-    // local
-    '.dev' => array(
-      'devMode' => true,
-      'userSessionDuration' => false,
-      'siteUrl' => 'http://katrinkerber.dev',
-    ),
-    // live
-    '.com' => array(
-      'siteUrl' => 'http://katrinkerber.com',
-    ),
+    'errorTemplatePrefix' => "pages/",
+    'postCpLoginRedirect' => 'entries',
+    'preserveImageColorProfiles' => true
+  ),
+  // local
+  '.dev' => array(
+    'devMode' => true,
+    'enableTemplateCaching' => false,
+    'userSessionDuration' => false,
+    'siteUrl' => 'http://katrinkerber.dev',
+  ),
+  // live
+  '.com' => array(
+    'siteUrl' => 'http://katrinkerber.com'
+  ),
 );

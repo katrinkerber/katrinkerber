@@ -1,27 +1,31 @@
-@import "00bourbon/bourbon";
+@import "../libs/bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "../libs/prism/prism.css";
 
 /*
-Base styles */
-@import "01base/variablesmixins";
-@import "01base/normalize";
-@import "01base/helpers";
-@import "01base/typography";
+Tools */
+@import "01tools/colours";
+@import "01tools/mixins";
+@import "01tools/helpers";
 
 /*
-Components */
-@import "02components/*";
+Base */
+@import "02base/normalize";
+@import "02base/typography";
+
+/*
+Modules */
+@import "03modules/*";
+
+/*
+Layout */
+@import "04layout/*";
 
 /*
 Pages */
-@import "03pages/*";
-
-/*
-Prism */
-@import "prism";
+@import "05pages/*";
 
 /*
 Print */
 @import "print";
-
 
 

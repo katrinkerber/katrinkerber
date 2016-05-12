@@ -1,0 +1,29 @@
+.sitefooter {
+  @include rem(margin-top, 32px);
+  border-top: 1px solid $greyLightest;
+  text-align: center;
+
+  @media screen and (min-width: em(640px)) {
+    @include rem(margin-top, 64px);
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  &__links {
+    @extend .list--inline;
+    @include rem(margin-top, 20px);
+  }
+
+  &__link {
+    @include rem(margin-left, 8px);
+    @include rem(margin-right, 8px);
+    @include rem(font-size, 14px);
+
+    @media screen and (min-width: em(640px)) {
+      @include rem(margin-left, 16px);
+      @include rem(margin-right, 16px);
+    }
+  }
+}

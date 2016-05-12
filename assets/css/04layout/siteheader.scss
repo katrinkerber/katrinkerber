@@ -1,0 +1,83 @@
+.siteheader {
+  border-bottom: 1px solid $greyLightest;
+  text-align: center;
+
+  &__homelink {
+    text-decoration: none;
+
+    @include hover-states {
+      h1 {
+        color: $pink;
+      }
+    }
+  }
+
+  &__avatar {
+    @include rem(max-width, 80px);
+    @include rem(margin-bottom, 8px);
+    border-radius: 100%;
+
+    @media screen and (min-width: em(640px)) {
+      @include rem(max-width, 100px);
+    }
+    @media screen and (min-width: em(740px)) {
+      @include rem(max-width, 140px);
+      @include rem(margin-bottom, 16px);
+    }
+  }
+
+  h1 {
+    @include rem(margin-bottom, 4px);
+    @include rem(font-size, 24px);
+    color: $yellow;
+    @include transition(color 0.3s ease-in-out);
+
+    @media screen and (min-width: em(740px)) {
+      @include rem(font-size, 32px);
+    }
+  }
+  h2 {
+    margin-bottom: 0;
+    @include rem(font-size, 14px);
+    font-weight: normal;
+    color: $greyLightest;
+
+    @media screen and (min-width: em(740px)) {
+      @include rem(font-size, 16px);
+    }
+  }
+}
+
+.nav-primary {
+  @extend .list--inline;
+  @include rem(padding-top, 16px);
+  @include rem(padding-bottom, 12px);
+
+  @media screen and (min-width: em(740px)) {
+    @include rem(padding-top, 24px);
+    @include rem(padding-bottom, 20px);
+  }
+
+  &__item {
+    @include rem(margin-left, 8px);
+    @include rem(margin-right, 8px);
+
+    @media screen and (min-width: em(740px)) {
+      @include rem(margin-left, 16px);
+      @include rem(margin-right, 16px);
+    }
+  }
+
+  &__link {
+    color: $grey;
+    text-decoration: none;
+
+    @include hover-states {
+      color: $pink;
+    }
+
+    &--current {
+      color: $yellow;
+    }
+  }
+}

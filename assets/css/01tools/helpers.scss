@@ -1,0 +1,109 @@
+/* ==========================================================================
+HELPER CLASSES/MIXINS
+========================================================================== */
+
+// SCREEN READERS ONLY
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+  @mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+
+// CLEARFIX: CONTAIN FLOATS
+.clearfix {
+  /* trigger hasLayout and contain floats for IE 6/7 */
+  *zoom: 1;
+  &:after {
+      content: ' ';
+      display: table;
+      clear: both;
+  }
+}
+  @mixin clearfix {
+    *zoom: 1;
+    &:after {
+        content: ' ';
+        display: table;
+        clear: both;
+    }
+  }
+
+
+// INLINE BLOCK
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  zoom:1;
+  vertical-align: top;
+}
+  @mixin inline-block {
+    display: inline-block;
+    *display: inline;
+    zoom:1;
+    vertical-align: top;
+  }
+
+
+// MAXWIDTH
+.maxwidth592 {
+  @include rem(max-width, 592px);
+  margin-left: auto;
+  margin-right: auto;
+}
+.maxwidth980 {
+  @include rem(max-width, 980px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// LIST MODIFIERS
+.list--nobull {
+  padding-left: 0;
+
+  li {
+    list-style: none;
+  }
+}
+.list--inline {
+  margin: 0;
+  padding-left: 0;
+
+  li {
+    @include inline-block;
+  }
+}
+
+
+// TEXT MODIFIERS
+.text--center {
+  text-align: center;
+}
+.text--upper {
+  text-transform: uppercase;
+}
+
+// SPACING
+.mt--32 {
+  @include rem(margin-top, 32px);
+}
+.mb--32 {
+  @include rem(margin-bottom, 32px);
+}

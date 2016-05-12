@@ -1,0 +1,21 @@
+{% extends "_layout" %}
+
+
+{% block content %}
+  {% cache using key craft.request.path %}
+
+    {% include 'includes/_pageintro.twig' %}
+
+    <div class="icon-panels">
+      {% for block in entry.iconSections %}
+        <div class="icon-panels__item {% if (loop.length is odd) and (loop.last) %}icon-panels__item--center{% endif %}">
+          <img class="icon-panels__item__icons" src="{{ block.iconSvg.first.url }}" onerror="this.src='{{ block.iconPNG.first.url }}'; this.onerror=null;" alt="" role="presentation" aria-hidden="true">
+          <h2 class="icon-panels__item__heading">
+            {{ block.heading }}
+          </h2>
+          {{ block.text|replace({'&nbsp;' : ' '})|raw }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endcache %}
+{% endblock %}

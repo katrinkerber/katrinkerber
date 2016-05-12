@@ -1,0 +1,30 @@
+{% extends "_layout" %}
+
+
+{% block content %}
+  {% cache using key craft.request.path %}
+
+    <h1 class="sr-only">{{ entry.title }}</h1>
+
+    {% include 'includes/_pageintro.twig' %}
+
+    {% set entries = craft.entries.section('notes').active('1') %}
+
+    <ul class="notes">
+      {% for entry in entries %}
+        <li class="notes__item">
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <a href="{{ entry.url }}" itemprop="url">
+              <h2 itemprop="headline">{{ entry.title }}</h2>
+              <time class="page-heading__subheading" datetime="{{ entry.postDate|date('Y-m-d') }}" itemprop="datePublished">
+                {{ entry.postDate|date('jS F Y') }}
+              </time>
+              <p>{{ entry.pageIntro }}</p>
+            </a>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+
+  {% endcache %}
+{% endblock %}

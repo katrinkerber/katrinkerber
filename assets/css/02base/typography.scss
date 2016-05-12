@@ -1,0 +1,141 @@
+/*
+==========================================================================
+TYPOGRAPHY
+========================================================================== */
+body {
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  font-size: 100%;
+  line-height: 1.6;
+  color: $grey;
+
+  @media screen and (min-width: em(640px)) {
+    @include rem(font-size, 18px);
+  }
+}
+
+/*=====*/
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+h1, .h1 {
+  @include rem(font-size, 32px);
+  @include rem(margin-bottom, 8px);
+
+  @media screen and (min-width: em(640px)) {
+    @include rem(font-size, 44px);
+  }
+}
+h2, .h2 {
+  @include rem(font-size, 24px);
+  @include rem(margin-bottom, 24px);
+
+  @media screen and (min-width: em(640px)) {
+    @include rem(font-size, 28px);
+  }
+}
+h3, .h3 {
+  @include rem(font-size, 18px);
+  @include rem(margin-bottom, 8px);
+
+  @media screen and (min-width: em(640px)) {
+    @include rem(font-size, 22px);
+  }
+}
+h4, h5, h6, .h4, .h5, .h6 {
+  @include rem(font-size, 16px);
+  @include rem(margin-bottom, 8px);
+
+  @media screen and (min-width: em(640px)) {
+    @include rem(font-size, 18px);
+  }
+}
+
+
+/*=====*/
+
+p {
+  @include rem(margin-bottom, 24px);
+}
+p img {
+  margin: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $greyLightest;
+  @include rem(padding-bottom, 24px);
+  @include rem(margin-top, 24px);
+  margin-bottom: 0;
+}
+
+::-moz-selection {
+  background: transparentize($yellow, 0.4);
+}
+::selection {
+  background: transparentize($yellow, 0.4);
+}
+
+/*====
+Quotes
+====*/
+blockquote {
+  box-sizing: border-box;
+  margin-left: 0;
+  @include rem(margin-top, 48px);
+  @include rem(margin-bottom, 48px);
+  @include rem(padding-left, 16px);
+  @include rem(padding-bottom, 2px);
+  border-left: 2px solid $blue;
+}
+blockquote p {
+  @include rem(font-size, 20px);
+  line-height: 1.5;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+blockquote cite {
+  @include rem(font-size, 14px);
+  line-height: 1.2;
+  font-style: normal;
+  color: $greyLighter;
+}
+
+/*====
+Links
+====*/
+a {
+  color: $pink;
+  text-decoration: underline;
+  @include transition(all 0.3s ease-in-out);
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover,
+a:active {
+  color: $blue;
+  outline: 0;
+}
+
+/*====
+Lists
+====*/
+ul, ol {
+  @include rem(margin-top, 24px);
+  @include rem(margin-bottom, 24px);
+  margin-left: 0;
+  @include rem(padding-left, 20px);
+
+  li {
+    @include rem(margin-bottom, 4px);
+  }
+}
+ul ul,
+ol ol {
+  margin-bottom: 0;
+}

@@ -1,0 +1,54 @@
+{% for block in entry.pageContent %}
+  {% switch block.type %}
+
+    {% case "text" %}
+
+      <div class="maxwidth592">
+        {{ block.text|replace({'&nbsp;' : ' '})|raw }}
+      </div>
+
+    {% case "code" %}
+
+<pre class="{{ block.language }} maxwidth980"><code>
+{{ block.code }}
+</code></pre>
+
+    {% case "image" %}
+
+      {% set image = block.image[0] ?? null %}
+      {% if image %}
+        <figure>
+          {% if image.width < 960 %}
+            <img
+              src="{{ image.url }}"
+              alt="{{ image.alt }}"
+            >
+          {% else %}
+            <img
+              src="{{ image.getUrl({ mode: 'fit', width: 960 }) }}"
+              srcset="{{ image.getUrl({ mode: 'fit', width: 480 }) }} 480w,
+                      {{ image.getUrl({ mode: 'fit', width: 960 }) }} 960w"
+              sizes="(min-width: 960px) 960px, 100vw"
+              alt="{{ image.alt }}"
+            >
+          {% endif %}
+
+          {% if image.caption %}
+            <figcaption>
+              {{ image.caption }}
+            </figcaption>
+          {% endif %}
+        </figure>
+      {% endif %}
+
+    {% case "quote" %}
+
+      <blockquote class="maxwidth592">
+        {{ block.quote|replace({'&nbsp;' : ' '})|raw }}
+        {% if block.source %}
+          <cite>{{ block.source|striptags('<a>')|raw }}</cite>
+        {% endif %}
+      </blockquote>
+
+  {% endswitch %}
+{% endfor %}

@@ -1,0 +1,34 @@
+/*
+REM MIXIN
+Adapted from https://github.com/bitmanic/rem/blob/master/stylesheets/_rem.scss
+rem(font-size, 28px) will return:
+font-size: 28px;
+font-size: 1.75rem; */
+$basesize-px: 16px;
+@mixin rem($property, $values) {
+  // Create empty lists that we can dump values into
+  $px-values: ();
+  $rem-values: ();
+  // Loop through each value and put into px and rem lists
+  @each $value in $values {
+    // if value is 0 or not a numerical value (i.e. auto), return as is
+    @if $value == 0 or type-of( $value ) != "number" {
+      $px-values: append($px-values, $value);
+      $rem-values: append($rem-values, $value);
+    } @else {
+      $px-values: append($px-values, $value );
+      $rem-values: append($rem-values, ($value/$basesize-px) * 1rem );
+    }
+  }
+  // Return the property and its list of converted values
+  #{$property}: $px-values;
+  #{$property}: $rem-values;
+}
+
+/*
+Hover states mixin */
+@mixin hover-states {
+  &:hover, &:focus, &:active {
+    @content;
+  }
+}

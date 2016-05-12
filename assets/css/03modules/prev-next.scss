@@ -1,0 +1,26 @@
+.prev-next {
+  @extend .clearfix;
+  @include rem(margin-top, 48px);
+  @include rem(margin-bottom, 48px);
+  text-align: center;
+
+  @media screen and (min-width: em(640px)) {
+    @include rem(margin-top, 64px);
+    @include rem(margin-bottom, 64px);
+  }
+
+  &__link {
+    display: block;
+    @include rem(margin-bottom, 16px);
+
+    @media screen and (min-width: em(640px)) {
+      float: left;
+      max-width: 48%;
+      margin-bottom: 0;
+
+      &--next {
+        float: right;
+      }
+    }
+  }
+}

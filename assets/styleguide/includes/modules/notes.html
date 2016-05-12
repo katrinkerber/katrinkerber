@@ -1,0 +1,47 @@
+<section id="notes" data-section-child>
+  <h1>Notes Listing</h1>
+  <small class="note">03modules/notes.scss</small>
+
+  <ul class="notes">
+    <li class="notes__item">
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+        <a href="" itemprop="url">
+          <h2 itemprop="headline">Building a Multilingual Site with Statamic</h2>
+          <time class="page-heading__subheading" datetime="{{ entry.postDate|date('Y-m-d') }}" itemprop="datePublished">
+            24th October 2014
+          </time>
+          <p>A quick run-through of what I did to build a multilingual Statamic site.</p>
+        </a>
+      </article>
+    </li>
+    <li class="notes__item">
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+        <a href="" itemprop="url">
+          <h2 itemprop="headline">Building a Multilingual Site with Statamic</h2>
+          <time class="page-heading__subheading" datetime="{{ entry.postDate|date('Y-m-d') }}" itemprop="datePublished">
+            24th October 2014
+          </time>
+          <p>A quick run-through of what I did to build a multilingual Statamic site.</p>
+        </a>
+      </article>
+    </li>
+  </ul>
+
+<pre><code class="code language-twig">
+&lt;ul class="notes">
+  {% for entry in entries %}
+    &lt;li class="notes__item">
+      &lt;article itemscope itemtype="http://schema.org/BlogPosting">
+        &lt;a href="{{ entry.url }}" itemprop="url">
+          &lt;h2 itemprop="headline">{{ entry.title }}&lt;/h2>
+          &lt;time class="page-heading__subheading" datetime="{{ entry.postDate|date('Y-m-d') }}" itemprop="datePublished">
+            {{ entry.postDate|date('jS F Y') }}
+          &lt;/time>
+          &lt;p>{{ entry.pageIntro }}&lt;/p>
+        &lt;/a>
+      &lt;/article>
+    &lt;/li>
+  {% endfor %}
+&lt;/ul>
+</code></pre>
+</section>

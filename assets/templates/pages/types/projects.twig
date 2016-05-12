@@ -1,0 +1,42 @@
+{% extends "_layout" %}
+
+
+{% block content %}
+  {% cache using key craft.request.path %}
+
+    <h1 class="sr-only">{{ entry.title }}</h1>
+
+    {% include 'includes/_pageintro.twig' %}
+
+    {% set entries = craft.entries({
+      section: 'projects',
+      order: 'projectDate desc',
+      active: '1',
+      with: [
+        ['thumbnail', {
+            withTransforms: [{ mode: 'fit', width: 460 }]
+        }]
+      ]
+    }) %}
+
+    <ul class="projects">
+      {% for entry in entries %}
+        <li class="projects__item {% if (loop.length is odd) and (loop.last) %}projects__item--center{% endif %}">
+          <article itemscope itemtype="http://schema.org/CreativeWork">
+            <a href="{{ entry.url }}">
+              {% set image = entry.thumbnail[0] ?? null %}
+              {% if image %}
+                <img class="projects__item__img" src="{{ image.getUrl({ mode: 'fit', width: 460 }) }}" alt="" role="presentation" aria-hidden="true" itemprop="image">
+              {% endif %}
+
+              <h2 class="projects__item__heading" itemprop="name">
+                {{ entry.title }}
+              </h2>
+            </a>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+
+  {% endcache %}
+{% endblock %}

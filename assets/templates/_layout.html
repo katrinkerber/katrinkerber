@@ -1,117 +1,145 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]>  <html class="no-js lt-ie9 lt-ie8 lt-ie7 ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>     <html class="no-js lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>     <html class="no-js lt-ie9 ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]>     <html class="no-js ie9" lang="en"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->  <html lang="en" class="no-js"> <!--<![endif]-->
+{% spaceless %}
+<!doctype html>
+<!--[if IE 7 ]> <html class="no-js oldie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]> <html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]> <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="UTF-8" />
 
-  <title>{% if pageTitle is defined %}{{ pageTitle }} - Katrin Kerber{% else %}Katrin Kerber - I build successful and user-friendly websites.{% endif %}</title>
-  <meta name="description" content="I am a freelancer based in Petersfield. I work with organisations, individuals and agencies to build successful and user-friendly websites." />
-  <meta name="author" content="/humans.txt" />
-  <meta name="robots" content="/robots.txt" />
+  {# For IE, use the latest supported mode, see http://stackoverflow.com/a/6771584 #}
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  {% set metaTitle %}
+    {% if pageTitle|default %}
+      {{ pageTitle }} | {{ siteName }}
+    {% elseif entry.title|default %}
+      {% if craft.request.getFirstSegment() %}
+        {{ entry.title }} - {{ siteName }}
+      {% else %}
+        {{ siteName }}
+      {% endif %}
+    {% endif %}
+  {% endset %}
+
+  {% block metaTitle %}
+    <title>{% spaceless %}{{ metaTitle }}{% endspaceless %}</title>
+  {% endblock %}
+
+  <meta name="description" content="I am a freelance front-end developer based in Hampshire. I transform designs into user-friendly and successful websites." />
+
+  {% block robots %}
+    {% if craft.config.devMode %}
+      <meta name="robots" content="noindex, nofollow">
+    {% else %}
+      <meta name="robots" content="/robots.txt" />
+    {% endif %}
+  {% endblock %}
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-   <!-- Disable skype from styling numbers as skype buttons - DOES NOT VALIDATE -->
+  {# Disable skype from styling numbers as skype buttons #}
   <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
 
-  <link rel="stylesheet" href="/assets/css/styles.min.css">
+  {# CSS #}
+  {% if craft.config.devMode or ('staging' in craft.request.url() ) %}
+    <link rel="stylesheet" href="/assets/css/styles.min.css?v{{now|date("Y-m-d-H-i")}}">
+  {% else %}
+    <link rel="stylesheet" href="/assets/css/styles.min.css?v=1.0">
+  {% endif %}
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' >
 
-  <!-- Icons - https://github.com/audreyr/favicon-cheat-sheet -->
-  <!-- IE6-10 -->
-  <link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
-  <!-- Everybody else -->
-  <link rel="icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
-  <!-- iOS 2.0+ and Android 2.1+ -->
-  <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
-  <!-- Metro tile -->
+  {# Icons - https://github.com/audreyr/favicon-cheat-sheet #}
+  {# ICO generator: http://www.icoconverter.com #}
+  {# IE6-10 #}
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48 64x64" href="/favicon.ico">
+  {# Everybody else #}
+  <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/favicon.ico">
+  {# iOS 2.0+ and Android 2.1+ #}
+  <link rel="apple-touch-icon" href="/favicon-152.png">
+  {# Metro tile #}
   <meta name="msapplication-TileColor" content="#FFFFFF">
   <meta name="msapplication-TileImage" content="/favicon-144.png">
 
-  <!-- Open Graph protocol meta tags - http://ogp.me/ -->
-  <meta property="og:title" content="{% if pageTitle is defined %}{{ pageTitle }}{% else %}Katrin Kerber - I build websites with love.{% endif %}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ craft.request.url }}" />
-  <meta property="og:image" content="/favicon-152.png" />
+  <script src="/assets/libs/modernizr.js"></script>
 
-  {% if craft.request.firstSegment == '' %}
-    <meta name="google-site-verification" content="kMorjArecrMzKj5DaWyOWdrtR5oG5x5yO3QpF63XBIc" />
+  {# <!--[if lte IE 8 ]>
+    <script src="/assets/libs/respond.min.js"></script>
+  <![endif]--> #}
+
+  {# adding GA in head to increase likelihood of tracking even if user should leave before page has completely loaded #}
+  {% if not craft.config.devMode %}
+    <script src="/assets/js/analytics.min.js" async></script>
   {% endif %}
-
-  <!-- Custom Modernizr script, includes some mobile device/OS detection -->
-  <script src="/assets/js/libs/modernizr.js" async></script>
-  <script src="/assets/js/libs/webfontloader.js" async></script>
-  <!-- adding GA in head to increase likelihood of tracking even if user should leave before page has completely loaded -->
-  <script src="/assets/js/analytics.js" async></script>
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" id="top">
-  <header class="siteheader box box--teal" role="banner" >
-    <h1 class="siteheader__heading">
-      {% if craft.request.firstSegment %}
-        <a href="/">Katrin Kerber</a>
-      {% else %}
-        Katrin Kerber
-      {% endif %}
-    </h1>
 
+<body {% if entry is defined %}class="page--{{ entry.slug }}"{% endif %} itemscope itemtype="http://schema.org/WebPage">
+
+  <header class="siteheader" role="banner">
     {% if craft.request.firstSegment %}
-      <p class="siteheader__tagline">
-        I work with organisations, individuals and agencies to build successful and user-friendly websites.
-      </p>
+      <a class="siteheader__homelink" href="/">
+        <img class="siteheader__avatar" src="/assets/images/katrin-kerber.jpg" alt="" role="presentation" aria-hidden="true">
+        <h1>Katrin Kerber</h1>
+        <h2>Freelance Front-End Developer</h2>
+      </a>
+    {% else %}
+      <img class="siteheader__avatar" src="/assets/images/katrin-kerber.jpg" alt="" role="presentation" aria-hidden="true">
+      <h1>Katrin Kerber</h1>
+      <h2>Freelance Front-End Developer</h2>
     {% endif %}
 
-    <nav class="siteheader__nav" role="navigation">
-      <ul>
-        {% set nav = [
-          { uri: '', title: 'Home' },
-          { uri: 'projects', title: 'Projects' },
-          { uri: 'about', title: 'About' },
-          { uri: 'notes', title: 'Notes' }
-        ] %}
-        {% for item in nav %}
-          {% if loop.first %}
-            <li>
-              <a {% if craft.request.firstSegment == '' %}class="current"{% endif %} href="/{{ item.uri }}">
-                {{ item.title }}
-              </a>
-            </li>
-          {% else %}
-            {% set current = (craft.request.firstSegment == item.uri) %}
-            <li>
-              <a {% if current %}class="current"{% endif %} href="/{{ item.uri }}">
-                {{ item.title }}
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </nav>
+
+    {% set navigation %}
+      {% cache globally using key 'mainnav' %}
+        <nav class="nav-primary" role="navigation" aria-label="main-navigation">
+          <ul class="nav-primary__items">
+            {% set pages = craft.entries.section('pages') %}
+            {% nav page in pages %}
+              <li class="nav-primary__item">
+                {# adding the slug in the class allows us to cache the navigation and then replace this class with 'nav-primary__link--current' for the current item #}
+                <a class="nav-primary__link slug--{{ page.slug }}" href="{{ page.url }}">
+                  {{ page.title }}
+                </a>
+              </li>
+            {% endnav %}
+          </ul>
+        </nav>
+      {% endcache %}
+    {% endset %}
+
+    {% if craft.request.firstSegment is empty %}
+      {{ navigation|replace({
+        ('slug--__home__'): 'nav-primary__link--current'
+      })|raw }}
+    {% else %}
+      {{ navigation|replace({
+        ('slug--'~ craft.request.firstSegment): 'nav-primary__link--current'
+      })|raw }}
+    {% endif %}
   </header>
 
-  <main class="page {% if craft.request.firstSegment == '' %}page--home{% else %}page--{{ craft.request.firstSegment }}{% endif %}" role="main">
-		{% block content %}{% endblock %}
+  <main class="pagecontent" role="main">
+    {% block content %}{% endblock %}
   </main>
 
-  <aside class="callout box box--orange">
-    <h2 class="callout__heading">Let’s work together</h2>
+  <footer class="sitefooter" role="contentinfo">
+    <h2 class="sr-only">Get in touch</h2>
+    <ul class="sitefooter__links">
+      <li class="sitefooter__link">
+        <a href="mailto:hello@katrinkerber.com">Email me</a>
+      </li>
+      <li class="sitefooter__link">
+        <a href="https://twitter.com/katrinkerber">Twitter</a>
+      </li>
+      <li class="sitefooter__link">
+        <a href="https://github.com/katrinkerber">GitHub</a>
+      </li>
+    </ul>
+  </footer>
 
-    {% if entry.pageCallOut  %}
-      {{ entry.pageCallOut }}
-    {% else %}
-      <p>I am available to work on new projects and would love to hear about yours.</p>
-    {% endif %}
-
-    <a class="callout__link" href="mailto:hello@katrinkerber.com">
-      hello@katrinkerber.com
-    </a>
-  </aside>
-
-  <div class="backtotop box box--grey">
-    <button class="backtotop__btn" onclick="window.scrollTo(0,0)"><i class="icon icon--arrow-up" aria-hidden="true"></i> Back to top</button>
-  </div>
-
-  <script src="/assets/js/libs/prism.js"></script>
+  {% block pageJS %}
+  {% endblock %}
 </body>
+
 </html>
+{% endspaceless %}

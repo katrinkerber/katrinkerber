@@ -1,0 +1,35 @@
+.icon-panels {
+  @extend .maxwidth980;
+
+  @media screen and (min-width: em(960px)) {
+    @include display(flex);
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+  }
+}
+
+.icon-panels__item {
+  @extend .maxwidth592;
+
+  @media screen and (min-width: em(960px)) {
+    width: percentage(458/980);
+    margin-left: 0;
+    margin-right: 0;
+
+    &--center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__icons {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include rem(margin-bottom, 16px);
+  }
+
+  &__heading {
+    text-align: center;
+  }
+}

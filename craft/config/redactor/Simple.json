@@ -1,5 +1,5 @@
 {
-	buttons: ['html','|', 'bold','italic','|','unorderedlist','orderedlist','|','link'],
-	toolbarFixedBox: true,
-  paragraphy: false
+  buttons: ['bold', 'italic','link'],
+  plugins: ['source'],
+  toolbarFixedBox: true
 }
